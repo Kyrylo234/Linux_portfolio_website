@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7d5767e6.css",
+    "main.js": "/static/js/main.5c19133c.js",
+    "static/js/453.f8c96074.chunk.js": "/static/js/453.f8c96074.chunk.js",
+    "static/media/IMG_8472.JPG": "/static/media/IMG_8472.2096b94477950f68afdc.JPG",
+    "static/media/Kyrylo_Postupalenko_CV.pdf": "/static/media/Kyrylo_Postupalenko_CV.4a29e4de0b9be8d777ca.pdf",
+    "static/media/desktop.jpeg": "/static/media/desktop.8c356bc1052783dacc73.jpeg",
+    "static/media/Lancaster.png": "/static/media/Lancaster.d70f8b98fd20d42fb710.png",
+    "static/media/GitHub.png": "/static/media/GitHub.1b03e7425ff65933908b.png",
+    "static/media/power.png": "/static/media/power.51c7b6e2f6e209127b3c.png",
+    "static/media/LinkedIn.png": "/static/media/LinkedIn.8f22d041c094e30d9bd4.png",
+    "static/media/Volume.png": "/static/media/Volume.843c16848c0e2eab7adb.png",
+    "static/media/More.png": "/static/media/More.a62cefd7f17295121e88.png",
+    "static/media/network.png": "/static/media/network.c88055d5eddb60b2b798.png",
+    "static/media/Notepad.svg": "/static/media/Notepad.b750b8c2b35b75d133a8f198a92066e0.svg",
+    "index.html": "/index.html",
+    "main.7d5767e6.css.map": "/static/css/main.7d5767e6.css.map",
+    "main.5c19133c.js.map": "/static/js/main.5c19133c.js.map",
+    "453.f8c96074.chunk.js.map": "/static/js/453.f8c96074.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d5767e6.css",
+    "static/js/main.5c19133c.js"
+  ]
+}
