@@ -4,7 +4,9 @@ function HomeButton({setApp1Visible}) {
     } 
     return (
       <>
-        <div className="HomeButton" onClick={handleClick}><div className="Circle"><p>Home</p></div></div>
+        <div className="HomeButton" onClick={handleClick}>
+          <div className="Circle"><div className="Square"></div></div>
+          </div>
       </>
     )
   }
