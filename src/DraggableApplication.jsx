@@ -1,10 +1,9 @@
 import React, { useRef} from 'react';
 function DraggableApplication({ children, appProperties, setAppProperties}) {
     const elementRef = useRef(null);
-
     
 
-    const handleMouseOver = event =>{
+    const handleMouseMove = event =>{
       const element = elementRef.current;
       const handleMouseOff = event =>{
         document.body.style.cursor = 'auto';
@@ -210,7 +209,7 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
         ref={elementRef}
         onMouseDown={handleMouseDown}
         onTouchMove={handleMouseDown}
-        onMouseOver={handleMouseOver}
+        onMouseMove={handleMouseMove}
         className='DraggableApplication'
         style={{ position: 'absolute', width: appProperties.width+'px', height: appProperties.height+'px', left:appProperties.left+'px', top:appProperties.top+'px'}}
       >

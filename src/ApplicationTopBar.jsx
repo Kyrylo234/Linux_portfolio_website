@@ -1,12 +1,8 @@
 import MinMaxClose from './MinMaxClose.jsx'
 function ApplicationTopBar({toggleVisibility}) {  
-  const handleMouseOver = event =>{
-    document.body.style.cursor = 'move';
-    event.stopPropagation();
-  }
     return (
       <>
-        <div className="ApplicationTopBar" onMouseOver={handleMouseOver}>
+        <div className="ApplicationTopBar">
           <h5>About Me</h5>
             <MinMaxClose toggleVisibility={toggleVisibility}/>
         </div>

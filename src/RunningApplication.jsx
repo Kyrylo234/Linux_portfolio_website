@@ -38,7 +38,7 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties})
       <>
         <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties}>
         <ApplicationTopBar toggleVisibility={toggleVisibility}/>
-        <div className="RunningApplication" onMouseDown={stopPropagation} onMouseOver={stopPropagation}>
+        <div className="RunningApplication" onMouseDown={stopPropagation} onMouseMove={stopPropagation}>
             <div className='applicationOptions'>
               <div className="ApplicationOptionsOption" onClick={aboutMeFunction} id="active">
                 <h5>About Me</h5>
