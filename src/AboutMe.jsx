@@ -32,7 +32,7 @@ function AboutMe() {
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Russian</p></div>
         <h4>Hobbies</h4>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Volleyball</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Gym</p></div>
+        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Fitness</p></div>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Video Production</p></div>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Travelling</p></div>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Cars</p></div>
