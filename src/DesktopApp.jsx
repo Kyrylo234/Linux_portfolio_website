@@ -10,13 +10,19 @@ function DesktopApp() {
     const applicationRef = useRef();
 
     const toggleVisibility = () => {
-        setIsVisible(!isVisible);
+        close();
         if(isVisible){
           applicationRef.current.setInactive();
         }else{
           applicationRef.current.setActive();
         }
     }; 
+
+    const close = () => {
+      setIsVisible(!isVisible);
+      applicationRef.current.setInactive();
+      setAppProperties({width:500, height:500, left:100, top:100, active:0})
+  }; 
 
 
     return (
@@ -26,7 +32,7 @@ function DesktopApp() {
         <TopBar/>
         <Application toggleVisibility={toggleVisibility} />
         {isVisible && (
-            <RunningApplication toggleVisibility={toggleVisibility} loading="lazy" appProperties={appProperties} setAppProperties={setAppProperties}/>
+            <RunningApplication toggleVisibility={toggleVisibility} close={close}loading="lazy" appProperties={appProperties} setAppProperties={setAppProperties}/>
         )}
     </div>
       </>

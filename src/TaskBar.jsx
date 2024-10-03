@@ -9,10 +9,10 @@ import { forwardRef, useState } from 'react';
 import React, { useImperativeHandle, useRef } from 'react';
 import TaskBarButtonActive from './TaskBarButtonActive.jsx';
 const TaskBar = forwardRef(({toggleVisibility}, ref) => {
-        const [buttonColour, setColour] = useState({backgroundColor: "rgba(255, 99, 71, 1)"})
+        const [buttonColour, setColour] = useState({backgroundColor: "rgb(184, 129, 175)"})
         useImperativeHandle(ref,() => ({
           setActive(){
-            setColour({backgroundColor: "rgba(255, 99, 71, 1)"})
+            setColour({backgroundColor: "rgb(184, 129, 175)"})
             console.log(buttonColour)
           },
           setInactive(){

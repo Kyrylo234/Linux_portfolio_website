@@ -4,7 +4,7 @@ import React, {useState } from 'react';
 import AboutMe from "./AboutMe.jsx";
 import Volunteering from './Volunteering.jsx'
 import Education from "./Education.jsx";
-function RunningApplication({toggleVisibility, appProperties, setAppProperties}) {  
+function RunningApplication({toggleVisibility, appProperties, setAppProperties, close}) {  
     const [content,changeContent] = useState(<AboutMe/>);
 
     const educationFunction = event => {
@@ -32,7 +32,7 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties})
     return (
       <>
         <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties}>
-        <ApplicationTopBar toggleVisibility={toggleVisibility}/>
+        <ApplicationTopBar toggleVisibility={toggleVisibility} close={close}/>
         <div className="RunningApplication">
             <div className='applicationOptions'>
               <div className="ApplicationOptionsOption" onClick={aboutMeFunction} id="active">

@@ -1,10 +1,10 @@
 import MinMaxClose from './MinMaxClose.jsx'
-function ApplicationTopBar({toggleVisibility}) {  
+function ApplicationTopBar({toggleVisibility, close}) {  
     return (
       <>
         <div className="ApplicationTopBar">
           <h5>About Me</h5>
-            <MinMaxClose toggleVisibility={toggleVisibility}/>
+            <MinMaxClose toggleVisibility={toggleVisibility} close={close}/>
         </div>
       </>
     )
