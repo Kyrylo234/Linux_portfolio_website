@@ -26,7 +26,7 @@ function Application({toggleVisibility}){
           <AppsButton title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
         <DraggableComponent className="DraggableOne" order={4}>
-          <a href={CV} download="Kyrylo_Postupalenko_CV">
+          <a href={CV} download="Kyrylo_Postupalenko_CV" draggable="false">
             <AppsButton title='CV' source={LancasterLogo}  alternative='GitHub logo' loading="lazy"/>
           </a>
         </DraggableComponent>

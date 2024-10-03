@@ -36,6 +36,14 @@ function DraggableComponent({ children, source, order}) {
         }
         setDragging(false);
     };
+
+    const handleMouseOver = () => {
+      document.body.style.cursor = 'pointer';
+    }
+
+    const handleMouseLeave = () => {
+      document.body.style.cursor = 'auto';
+    }
   
     return (
       <div
@@ -43,6 +51,8 @@ function DraggableComponent({ children, source, order}) {
         onMouseDown={handleMouseDown}
         onClick={handleClick}
         onTouchMove={handleMouseDown}
+        onMouseOver={handleMouseOver}
+        onMouseLeave={handleMouseLeave}
         style={{ position: 'absolute', left: '65px', top: offsetFromTop}}
       >
         {children}
