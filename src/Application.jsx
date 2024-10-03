@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useImperativeHandle, useRef } from 'react';
 import AppsButton from './AppsButton.jsx';
 import Image from './assets/LinkedIn.png';
 import Image1 from './assets/GitHub.png';
@@ -8,8 +8,8 @@ import Notepad from './assets/Notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';
 import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
 
-function Application({toggleVisibility}) {
 
+function Application({toggleVisibility}){
   return (
       <>
       <div className='Applications'>

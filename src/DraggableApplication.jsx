@@ -139,8 +139,6 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
           }
         }else if(event.nativeEvent.offsetX<5 || event.nativeEvent.offsetX> (element.clientWidth-5)){
           //resize on the sides
-          console.log((event.nativeEvent.offsetX))
-          console.log(element.clientWidth-5)
           if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left side
             document.addEventListener('mousemove', handleMouseMoveResizeEastWestLeft);
               
