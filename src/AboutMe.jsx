@@ -14,7 +14,11 @@ function AboutMe() {
 
     return (
       <div className="fiftyPix">
-        <div className='DescriptionDiv'><p>Third-year CS student at Lancaster University.</p></div>
+        <h4>About Me</h4>
+        <div className='DescriptionDiv'><p>A passionate and hardworking third year computer science student at Lancaster University. Seeking a graduate role in
+        software engineering to further develop my skills in a practical environment whilst making a positive contribution to the
+        organisation.</p>
+        </div>
         <h4>Skills</h4>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Java</p></div>
         <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>JavaScript</p></div>
@@ -38,7 +42,7 @@ function AboutMe() {
           <button onMouseDown={copyFunction}>Copy</button>
         </div>
         
-        <a href={CV} download="Kyrylo_Postupalenko_CV" target='_blank'>
+        <a href={CV} download="Kyrylo_Postupalenko_CV">
           <button>Download my cv</button>
         </a>
       </div>

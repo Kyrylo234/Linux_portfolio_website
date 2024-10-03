@@ -24,6 +24,11 @@ body{
   border-radius: 5px;
 }
 
+.Application h5{
+  font-style: normal;
+  color: white;
+}
+
 .Application img{
   width: 50px;
   height: 50px;

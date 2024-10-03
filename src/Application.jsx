@@ -6,6 +6,7 @@ import CSPPTLogo from './assets/csppt_logo.png'
 import LancasterLogo from './assets/Lancaster.png';
 import Notepad from './assets/Notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';
+import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
 
 function Application({toggleVisibility}) {
 
@@ -25,7 +26,9 @@ function Application({toggleVisibility}) {
           <AppsButton title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
         <DraggableComponent className="DraggableOne" order={4}>
-          <AppsButton title='CV' source={LancasterLogo}  alternative='GitHub logo' loading="lazy"/>
+          <a href={CV} download="Kyrylo_Postupalenko_CV">
+            <AppsButton title='CV' source={LancasterLogo}  alternative='GitHub logo' loading="lazy"/>
+          </a>
         </DraggableComponent>
       </div>
       </>
