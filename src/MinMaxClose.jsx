@@ -9,9 +9,9 @@ function MinMaxClose({toggleVisibility}) {
     return (
       <>
         <div className="MinMaxClose">
-            <button onClick={toggleVisibility} title="Minimise" accessibilitylabel="Minimise"><img src={Minimise}></img></button>
-            <button onClick={handleClickMax} title="Maximise" accessibilitylabel="Maximise"><img src={Maximise}></img></button>
-            <button onClick={toggleVisibility} title="close" accessibilitylabel="Close"><img src={Close}></img></button>
+            <button className="MinMaxCloseButton" onClick={toggleVisibility} title="Minimise" accessibilitylabel="Minimise"><img src={Minimise}></img></button>
+            <button className="MinMaxCloseButton" onClick={handleClickMax} title="Maximise" accessibilitylabel="Maximise"><img src={Maximise}></img></button>
+            <button className="MinMaxCloseButton" onClick={toggleVisibility} title="close" accessibilitylabel="Close"><img src={Close}></img></button>
         </div>
       </>
     )
