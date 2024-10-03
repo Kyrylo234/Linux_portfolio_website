@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     // Add the event listener when the component mounts
+    handleResize();
     window.addEventListener('resize', handleResize);
   }, []);
 
