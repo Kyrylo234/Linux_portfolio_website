@@ -29,16 +29,11 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties})
       element.setAttribute('id', 'active');
     }
 
-    function stopPropagation(event){
-      document.body.style.cursor = 'auto';
-      event.stopPropagation();
-    }
-
     return (
       <>
         <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties}>
         <ApplicationTopBar toggleVisibility={toggleVisibility}/>
-        <div className="RunningApplication" onMouseDown={stopPropagation} onMouseMove={stopPropagation}>
+        <div className="RunningApplication">
             <div className='applicationOptions'>
               <div className="ApplicationOptionsOption" onClick={aboutMeFunction} id="active">
                 <h5>About Me</h5>

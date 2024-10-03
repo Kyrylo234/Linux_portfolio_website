@@ -166,11 +166,10 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
 
           if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //Top
             document.addEventListener('mousemove', handleMouseMoveResizeNorthSouthTop);
-              
             const handleMouseUp = () => {
               document.removeEventListener('mousemove', handleMouseMoveResizeNorthSouthTop);
               document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+              setAppProperties({...appProperties,top:Number((element.style.top).substring(0, element.style.top.length - 2))});
             }
             document.addEventListener('mouseup', handleMouseUp);
 
