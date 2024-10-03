@@ -10,7 +10,7 @@ function DesktopApp() {
     const applicationRef = useRef();
 
     const toggleVisibility = () => {
-        close();
+        closeApp();
         if(isVisible){
           applicationRef.current.setInactive();
         }else{
@@ -19,10 +19,15 @@ function DesktopApp() {
     }; 
 
     const close = () => {
-      setIsVisible(!isVisible);
+      closeApp();
       applicationRef.current.setInactive();
       setAppProperties({width:500, height:500, left:100, top:100, active:0})
   }; 
+
+  const closeApp = () => {
+    setIsVisible(!isVisible);
+}; 
+  
 
 
     return (
