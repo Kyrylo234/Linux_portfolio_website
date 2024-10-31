@@ -1,6 +1,9 @@
 # Linux_portfolio_website
  A wesbite made to show my portfolio of projects
 
+### Stack used:
+- React.js
+
  ## Computer Version:
  
  <img src="/ImagesForGitHub/Desktop.png">
