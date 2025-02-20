@@ -1,7 +1,8 @@
 # Linux_portfolio_website
- A wesbite made to show my portfolio of projects.
+- A website made to show my portfolio of projects.
+- Reactively responds to different screen sizes
  
- [Website Link](https://kyrylo.uk)
+ [Kyrylo.uk](https://kyrylo.uk)
 
 ### Stack used:
 - React.js
