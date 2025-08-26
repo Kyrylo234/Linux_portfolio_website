@@ -1,33 +1,33 @@
-import React, { useState, useEffect, handleResize } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import DesktopApp from './DesktopApp.jsx';
 import Phone from './Phone.jsx';
+
 function App() {
-  const [content,changeContent] = useState(<DesktopApp/>);
+  const [content, changeContent] = useState(<DesktopApp />);
 
   const handleResize = () => {
-    if(window.innerWidth < 768){
-      if(content!==<Phone/>){
-        changeContent(<Phone/>)
-      }
-    }else{
-      if(content!==<DesktopApp/>){
-        changeContent(<DesktopApp/>)
-      }
+    if (window.innerWidth < 768) {
+      changeContent(<Phone />);
+    } else {
+      changeContent(<DesktopApp />);
     }
   };
 
   useEffect(() => {
-    // Add the event listener when the component mounts
+    // Run once on mount
     handleResize();
-    window.addEventListener('resize', handleResize);
-  }, []);
 
-  return (
-    <div>
-    {content}
-    </div>
-  );
+    // Attach listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // ✅ safe to leave [] because handleResize doesn’t depend on props/state
+
+  return <div>{content}</div>;
 }
 
 export default App;
