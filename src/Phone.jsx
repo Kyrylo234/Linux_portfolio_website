@@ -28,7 +28,7 @@ function Phone() {
   }; 
 
     return (
-      <>
+      <div style={{overscrollBehavior: "none", overflow: 'hidden' }}>
         {desktopVisible && (
             <PhoneApps loading="lazy" setApp1Visible={toggleDesktopVisibility} setProjectsVisible={toggleProjectsVisible}/>
         )}
@@ -40,7 +40,7 @@ function Phone() {
         )}
         <TopBar/>
         <HomeButton setApp1Visible={returnHome}/>
-      </>
+      </div>
     )
   }
   

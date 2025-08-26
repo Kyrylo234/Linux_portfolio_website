@@ -40,10 +40,10 @@ function Volunteering() {
               }}>Copy</button>
         </div>
       <h4 style={{ marginBottom: "0"}}>Features on the News:</h4>
-      <p><a  href="https://media.fredolsencruises.com/pressreleases/suffolk-based-fred-olsen-companies-fund-lorry-to-send-team-donations-to-ukraine-3167273">Suffolk-based Fred. Olsen companies fund lorry to send team donations to Ukraine</a></p>
-      <p><a  href="https://www.farmersguide.co.uk/rural/farm-turns-unused-shed-into-sorting-centre-for-ukrainian-donations/">Farm turns unused shed into sorting centre for Ukrainian donations</a></p>
-      <p><a  href="https://www.gazette-news.co.uk/news/19984464.war-ukraine-spurs-volunteers-extraordinary-lengths/">War in Ukraine spurs volunteers to extraordinary lengths</a></p>
-      <p><a  href="https://www.ipswichstar.co.uk/news/21883950.three-lorries-goods-heading-ukraine-overwhelming-response/">Three lorries of goods heading to Ukraine after 'overwhelming' response</a></p>
+      <p><a  href="https://media.fredolsencruises.com/pressreleases/suffolk-based-fred-olsen-companies-fund-lorry-to-send-team-donations-to-ukraine-3167273" style={{color: "inherit" }}>Suffolk-based Fred. Olsen companies fund lorry to send team donations to Ukraine</a></p>
+      <p><a  href="https://www.farmersguide.co.uk/rural/farm-turns-unused-shed-into-sorting-centre-for-ukrainian-donations/" style={{color: "inherit" }}>Farm turns unused shed into sorting centre for Ukrainian donations</a></p>
+      <p><a  href="https://www.gazette-news.co.uk/news/19984464.war-ukraine-spurs-volunteers-extraordinary-lengths/" style={{color: "inherit" }}>War in Ukraine spurs volunteers to extraordinary lengths</a></p>
+      <p><a  href="https://www.ipswichstar.co.uk/news/21883950.three-lorries-goods-heading-ukraine-overwhelming-response/" style={{color: "inherit" }}>Three lorries of goods heading to Ukraine after 'overwhelming' response</a></p>
       </div>
       <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Ukro-Saxons</h3>
