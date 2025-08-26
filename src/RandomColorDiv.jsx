@@ -16,7 +16,7 @@ function RandomColorDiv({ text }) {
         backgroundColor: randomColor,
         display: "inline-block",   // shrink-wrap around text
         padding: "5px 7px",
-        margin: "0 1px",
+        margin: "1px 1px",
         color: "white",
         fontWeight: "bold",
         borderRadius: "20px",

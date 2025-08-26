@@ -4,7 +4,12 @@ function Education() {
         <>
         <div className="fiftyPix">
         <img src={Lancaster} style={{width:'100px', height:'100px'}}></img>
-        <h2>Lancaster University</h2>
+        <h2><a 
+    href="https://www.lancaster.ac.uk" 
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    Lancaster University
+  </a></h2>
         <h4 style={{ margin: "10px 0" }}>Bachelor of Science</h4>
         <h4 style={{ margin: "10px 0" }}>First Class Honours</h4>
         <p style={{margin: "10px 0" }}>in</p>

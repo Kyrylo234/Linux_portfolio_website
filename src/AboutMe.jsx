@@ -15,37 +15,90 @@ function AboutMe() {
 
     return (
       <div className="fiftyPix">
-        <h4>About Me</h4>
-        <div className='DescriptionDiv'><p>A passionate and hardworking third year computer science student at Lancaster University. Seeking a graduate role in
-        software engineering to further develop my skills in a practical environment whilst making a positive contribution to the
-        organisation.</p>
+        <h2>About Me</h2>
+        <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
+        <h3>Personal Profile</h3>
+        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
+        <h5>A passionate and hardworking Computer Science graduate from Lancaster University, seeking a software engineering role to apply and improve my skills in a practical environment whilst contribution positively to the organisation.</h5>
         </div>
-        <h4>Skills</h4>
+        </div>
+        <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
+        <h3 style={{margin: "10px 0" }}>Skills</h3>
+        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
+        <h4 style={{margin: "5px 0" }}>Programming</h4>
         <RandomColorDiv text="Java"/>
         <RandomColorDiv text="JavaScript"/>
-        <RandomColorDiv text="CSS"/>
-        <RandomColorDiv text="React.js"/>
         <RandomColorDiv text="Python"/>
         <RandomColorDiv text="C"/>
-        <h4>Languages</h4>
+        <RandomColorDiv text="Dart"/>
+        <RandomColorDiv text="SQL"/>
+        <RandomColorDiv text="HTML/CSS"/>
+        </div>
+        <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
+        <h4 style={{margin: "5px 0" }}>Tech</h4>
+        <RandomColorDiv text="React.js"/>
+        <RandomColorDiv text="Swing(Java)"/>
+        <RandomColorDiv text="Flutter(Dart)"/>
+        <RandomColorDiv text="Git"/>
+        </div>
+        <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
+        <h4 style={{margin: "5px 0" }}>Languages</h4>
         <RandomColorDiv text="English"/>
         <RandomColorDiv text="Ukrainian"/>
         <RandomColorDiv text="Russian"/>
-        <h4>Hobbies</h4>
+        </div>
+        </div>
+        <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
+        <h4 style={{margin: "5px 0" }}>Hobbies</h4>
+        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
         <RandomColorDiv text="Volleyball"/>
         <RandomColorDiv text="Fitness"/>
         <RandomColorDiv text="Video Production"/>
         <RandomColorDiv text="Travelling"/>
         <RandomColorDiv text="Cars"/>
-        <h4>Contact Me</h4>
-        <div className='Inline'>
-          <h5>kyrylop2004@gmail.com</h5>
-          <button onMouseDown={copyFunction}>Copy</button>
+        </div>
         </div>
         
-        <a href={CV} download="Kyrylo_Postupalenko_CV">
-          <button>Download my cv</button>
-        </a>
+        <div style={{ 
+          marginTop: "10px",
+          padding: "5px",
+          border: "2px solid #dddddd8e",
+          borderRadius: "8px",
+          textAlign: "center"  // center-aligns text like <h3>
+        }}>
+          <h3 style={{ margin: "0 0 16px", fontSize: "20px", fontWeight: "600" }}>Contact Me</h3>
+      <div style={{ 
+        display: "flex", 
+        justifyContent: "center", // center horizontally
+        alignItems: "center", 
+        gap: "8px", 
+        marginBottom: "16px" 
+      }}>
+        <h5 style={{ margin: 0, fontSize: "16px" }}>Kyrylop2004@gmail.com</h5>
+        <button 
+          onMouseDown={copyFunction}
+          style={{
+            padding: "6px 12px",
+            borderRadius: "6px",
+            border: "none",
+            backgroundColor: "#008080",
+            color: "white",
+            cursor: "pointer"
+        }}>Copy</button>
+  </div>
+
+  <a href={CV} download="cv" style={{ textDecoration: "none" }}>
+    <button
+      style={{
+        padding: "8px 14px",
+        borderRadius: "6px",
+        border: "none",
+        backgroundColor: "#444",
+        color: "white",
+        cursor: "pointer"
+    }}>Download my CV</button>
+  </a>
+</div>
       </div>
     );
   }
