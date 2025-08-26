@@ -1,4 +1,5 @@
 import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
+import RandomColorDiv from './RandomColorDiv';
 function AboutMe() {
   function generateRandColour(){
     let value = Math.floor(Math.random()*16777215).toString(16);
@@ -20,22 +21,22 @@ function AboutMe() {
         organisation.</p>
         </div>
         <h4>Skills</h4>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Java</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>JavaScript</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>CSS</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>React.js</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Python</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>C</p></div>
+        <RandomColorDiv text="Java"/>
+        <RandomColorDiv text="JavaScript"/>
+        <RandomColorDiv text="CSS"/>
+        <RandomColorDiv text="React.js"/>
+        <RandomColorDiv text="Python"/>
+        <RandomColorDiv text="C"/>
         <h4>Languages</h4>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>English</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Ukrainian</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Russian</p></div>
+        <RandomColorDiv text="English"/>
+        <RandomColorDiv text="Ukrainian"/>
+        <RandomColorDiv text="Russian"/>
         <h4>Hobbies</h4>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Volleyball</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Fitness</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Video Production</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Travelling</p></div>
-        <div style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>Cars</p></div>
+        <RandomColorDiv text="Volleyball"/>
+        <RandomColorDiv text="Fitness"/>
+        <RandomColorDiv text="Video Production"/>
+        <RandomColorDiv text="Travelling"/>
+        <RandomColorDiv text="Cars"/>
         <h4>Contact Me</h4>
         <div className='Inline'>
           <h5>kyrylop2004@gmail.com</h5>

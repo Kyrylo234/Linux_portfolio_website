@@ -1,11 +1,12 @@
 import DraggableApplication from "./DraggableApplication"
 import ApplicationTopBar from "./ApplicationTopBar"
-import React, {useState } from 'react';
+import React, {createRef, useRef, useState } from 'react';
 import AboutMe from "./AboutMe.jsx";
 import Volunteering from './Volunteering.jsx'
 import Education from "./Education.jsx";
 function RunningApplication({toggleVisibility, appProperties, setAppProperties, close}) {  
     const [content,changeContent] = useState(<AboutMe/>);
+    const elementRef = React.createRef();
 
     const educationFunction = event => {
       changeContent(<Education/>)
@@ -29,10 +30,14 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties, 
       element.setAttribute('id', 'active');
     }
 
+    const setFullScreen = event =>{
+      elementRef.style.width = '100%';
+    }
+
     return (
       <>
-        <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties}>
-        <ApplicationTopBar toggleVisibility={toggleVisibility} close={close}/>
+        <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties} ref={elementRef}>
+        <ApplicationTopBar toggleVisibility={toggleVisibility} close={close} setFullScreen={setFullScreen}/>
         <div className="RunningApplication">
             <div className='applicationOptions'>
               <div className="ApplicationOptionsOption" onClick={aboutMeFunction} id="active">
