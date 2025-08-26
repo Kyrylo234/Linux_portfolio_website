@@ -11,35 +11,47 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
       }
 
       document.addEventListener('mouseout', handleMouseOff);
+      
+      const target = event.nativeEvent.target;
+      const current = event.currentTarget; // the element with the handler
 
-      if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
-        if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left
-          if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-            document.body.style.cursor = 'nwse-resize';
-          }else{ //bottom
-            document.body.style.cursor = 'nesw-resize';
+      if (current.classList.contains("DraggableApplication") && target === current) {
+        if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
+          if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left
+            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
+              document.body.style.cursor = 'nwse-resize';
+            }else{ //bottom
+              document.body.style.cursor = 'nesw-resize';
+            }
+          }else{ //right
+            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
+              document.body.style.cursor = 'nesw-resize';
+            }else{ //bottom
+              document.body.style.cursor = 'nwse-resize';
+            }
           }
-        }else{ //right
-          if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-            document.body.style.cursor = 'nesw-resize';
-          }else{ //bottom
-            document.body.style.cursor = 'nwse-resize';
-          }
+        }else if(event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)){
+          //resize on the sides
+          document.body.style.cursor = 'ew-resize';
+
+        }else if(event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10)){
+          //resize
+          document.body.style.cursor = 'ns-resize';
+        }else{ //Move the application around
+          document.body.style.cursor = 'move';
         }
-      }else if(event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)){
-        //resize on the sides
-        document.body.style.cursor = 'ew-resize';
-
-      }else if(event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10)){
-        //resize
-        document.body.style.cursor = 'ns-resize';
-      }else{ //Move the application around
-        document.body.style.cursor = 'move';
+      } else {
+        if (event.target.classList.contains("ApplicationOptionsOption") || (event.target.closest(".ApplicationOptionsOption") && event.target.tagName.toLowerCase() === "h5")) {
+          document.body.style.cursor = "pointer";
+        } else {
+          document.body.style.cursor = "move";
+        }
       }
+
+      
     }
   
     const handleMouseDown = (event) => {
-      
         const element = elementRef.current;
 
         const initialX = event.pageX;
@@ -92,9 +104,8 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
         };
 
         
-        
-
-        if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
+        if (!event.target.classList.contains("ApplicationOptionsOption") || !(event.target.closest(".ApplicationOptionsOption") && event.target.tagName.toLowerCase() === "h5")) {
+          if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
           if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left
             if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
               document.addEventListener('mousemove', handleMouseMoveResizeTopLeft);
@@ -198,6 +209,7 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
           }
 
           document.addEventListener('mouseup', handleMouseUp);
+        }
         }
     };
   

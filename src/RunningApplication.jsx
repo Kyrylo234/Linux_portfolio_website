@@ -30,9 +30,12 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties, 
       element.setAttribute('id', 'active');
     }
 
-    const setFullScreen = event =>{
-      elementRef.style.width = '100%';
-    }
+
+    const setFullScreen = () => {
+      console.log(elementRef.current)
+      elementRef.current.requestFullscreen();
+
+  };
 
     return (
       <>
@@ -47,7 +50,11 @@ function RunningApplication({toggleVisibility, appProperties, setAppProperties, 
               <div className="ApplicationOptionsOption" onClick={volunteeringFunction}><h5>Volunteering</h5></div>
               
               </div>
-            <div className="Contents">
+            <div className="Contents" style={{
+              overflow: "scroll",
+              scrollbarWidth: "none",      // Firefox
+              msOverflowStyle: "none",     // IE/Edge
+            }}>
               {content}
             </div>
             
