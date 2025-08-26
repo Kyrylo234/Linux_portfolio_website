@@ -9,7 +9,7 @@ function Project({source, elements}) {
     return (
       <>
       <div style={{marginTop:'20px'}}>
-        <img src={source} style={{width:'90vw', height:'auto'}}></img>
+        <img src={source} style={{width:'90vw', height:'auto'}} alt=""></img>
         {elements.map((text, i) => (
         <div key={i} style={{backgroundColor:'#'+generateRandColour()}} className="ColouredDiv"><p>{text}</p></div>
       ))}

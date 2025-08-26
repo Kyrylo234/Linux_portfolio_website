@@ -3,7 +3,7 @@ function Education() {
     return (
         <>
         <div className="fiftyPix" style={{ marginTop: "10%" }}>
-        <img src={Lancaster} style={{width:'100px', height:'100px'}}></img>
+        <img src={Lancaster} style={{width:'100px', height:'100px'}} alt="Lancaster University Logo"></img>
         <h2><a 
     href="https://www.lancaster.ac.uk" 
     style={{ textDecoration: "none", color: "inherit" }}

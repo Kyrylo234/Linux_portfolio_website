@@ -1,14 +1,6 @@
 import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
 import RandomColorDiv from './RandomColorDiv';
 function AboutMe() {
-  function generateRandColour(){
-    let value = Math.floor(Math.random()*16777215).toString(16);
-    if(value.length<=5){
-      value+='0'
-    }
-    return value;
-  }
-
   function copyFunction(event){
     navigator.clipboard.writeText("kyrylop2004@gmail.com");
   }

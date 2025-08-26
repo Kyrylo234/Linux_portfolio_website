@@ -1,5 +1,3 @@
-import Project from "./Project"
-import image from "./assets/GitHub.png"
 import PhoneApps from "./PhoneApps"
 import TopBar from "./TopBar"
 import HomeButton from "./HomeButton"

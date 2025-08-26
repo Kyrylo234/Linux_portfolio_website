@@ -5,7 +5,6 @@ import Image1 from './assets/GitHub.png';
 import CSPPTLogo from './assets/csppt_logo.png'
 import LancasterLogo from './assets/Lancaster.png';
 import Notepad from './assets/Notepad.svg'
-import DraggableComponentPhone from './DraggableComponentPhone.jsx';
 function PhoneApps({setApp1Visible,setProjectsVisible}) {  
     return (
       <>

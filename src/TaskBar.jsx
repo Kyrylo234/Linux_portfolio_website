@@ -6,7 +6,7 @@ import NotePad from './assets/Notepad.svg'
 import More from './assets/More.png'
 import TaskBarButton from './TaskBarButton.jsx';
 import { forwardRef, useState } from 'react';
-import React, { useImperativeHandle, useRef } from 'react';
+import React, { useImperativeHandle} from 'react';
 import TaskBarButtonActive from './TaskBarButtonActive.jsx';
 const TaskBar = forwardRef(({toggleVisibility}, ref) => {
         const [buttonColour, setColour] = useState({backgroundColor: "rgb(184, 129, 175)"})

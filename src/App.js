@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, handleResize } from 'react';
 import './App.css';
 import DesktopApp from './DesktopApp.jsx';
 import Phone from './Phone.jsx';
