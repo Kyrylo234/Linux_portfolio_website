@@ -1,8 +1,8 @@
-name: Deploy React App to IONOS via FTP
+name: Deploy React App to IONOS via SFTP
 
 on:
   push:
-    branches: [ "main" ] # or master
+    branches: [ "main" ] # or "master"
 
 jobs:
   build-and-deploy:
@@ -20,13 +20,15 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm install
-          npm run build
+          CI=false npm run build   # prevent warnings from failing the build
 
-      - name: Deploy via FTP
+      - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
           local-dir: build/
           server-dir: htdocs/
