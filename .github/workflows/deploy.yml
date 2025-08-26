@@ -23,12 +23,11 @@ jobs:
           CI=false npm run build   # prevent warnings from failing the build
 
       - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
+          port: 22
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          port: 22
-          local-dir: build/
-          server-dir: htdocs/
+          local_path: build/*
+          remote_path: /
