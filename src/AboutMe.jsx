@@ -50,13 +50,11 @@ function AboutMe() {
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Hobbies</h4>
-        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
         <RandomColorDiv text="Volleyball"/>
         <RandomColorDiv text="Fitness"/>
         <RandomColorDiv text="Video Production"/>
         <RandomColorDiv text="Travelling"/>
         <RandomColorDiv text="Cars"/>
-        </div>
         </div>
         
         <div style={{ 
