@@ -1,13 +1,13 @@
 # Linux_portfolio_website
 - A website made to show my portfolio of projects.
-- Reactively responds to different screen sizes
+- Based on the screen size displays a Ubuntu desktop or an Iphone look
  
  [Kyrylo.uk](https://kyrylo.uk)
 
 ### Stack used:
 - React.js
 
- ## Computer Version:
+ ## Desktop Version:
  
  <img src="/ImagesForGitHub/Desktop.png">
  <img src="/ImagesForGitHub/DesktopWithApp.png">
