@@ -6,7 +6,7 @@ import React, { useRef, useState } from 'react';
 import RunningApplication from './RunningApplication.jsx';
 function DesktopApp() { 
     const [isVisible, setIsVisible] = useState(true);
-    const [appProperties, setAppProperties] = useState({width:500, height:500, left:100, top:100, active:0});
+    const [appProperties, setAppProperties] = useState({width:500, height:500, left:100, top:100, active:0, fullScreen:false});
     const applicationRef = useRef();
 
     const toggleVisibility = () => {
@@ -21,12 +21,12 @@ function DesktopApp() {
     const close = () => {
       closeApp();
       applicationRef.current.setInactive();
-      setAppProperties({width:500, height:500, left:100, top:100, active:0})
+      setAppProperties({width:500, height:500, left:100, top:100, active:0, fullScreen:false})
   }; 
 
   const closeApp = () => {
     setIsVisible(!isVisible);
-}; 
+  }; 
   
 
 

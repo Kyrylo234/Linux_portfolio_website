@@ -1,10 +1,9 @@
-import React, { useRef} from 'react';
-function DraggableApplication({ children, appProperties, setAppProperties}) {
-    const elementRef = useRef(null);
-    
+import React, { forwardRef } from "react";
+
+const DraggableApplication = forwardRef(({ children, appProperties, setAppProperties }, ref) => {    
 
     const handleMouseMove = event =>{
-      const element = elementRef.current;
+      const element = ref.current;
       const handleMouseOff = event =>{
         document.body.style.cursor = 'auto';
         document.removeEventListener('mouseout', handleMouseOff);
@@ -52,7 +51,7 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
     }
   
     const handleMouseDown = (event) => {
-        const element = elementRef.current;
+        const element = ref.current;
 
         const initialX = event.pageX;
         const initialY = event.pageY;
@@ -114,7 +113,13 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
               const handleMouseUp = () => {
                 document.removeEventListener('mousemove', handleMouseMoveResizeTopLeft);
                 document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+                setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width: parseInt(element.style.width),
+                  height: parseInt(element.style.height),
+                  left: parseInt(element.style.left),
+                  top: parseInt(element.style.top)
+                }));
               }
               document.addEventListener('mouseup', handleMouseUp);
             }else{ //bottom
@@ -123,7 +128,10 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
               const handleMouseUp = () => {
                 document.removeEventListener('mousemove', handleMouseMoveResizeBottomLeft);
                 document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+                setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
+                }));
               }
               document.addEventListener('mouseup', handleMouseUp);
             }
@@ -134,7 +142,10 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
               const handleMouseUp = () => {
                 document.removeEventListener('mousemove', handleMouseMoveResizeTopRight);
                 document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+                setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                
+                }));
               }
               document.addEventListener('mouseup', handleMouseUp);
             }else{ //bottom
@@ -143,7 +154,11 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
               const handleMouseUp = () => {
                 document.removeEventListener('mousemove', handleMouseMoveResizeBottomRight);
                 document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+                
+                setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                 width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
+                }));
               }
               document.addEventListener('mouseup', handleMouseUp);
             }
@@ -156,7 +171,10 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
             const handleMouseUp = () => {
               document.removeEventListener('mousemove', handleMouseMoveResizeEastWestLeft);
               document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+              setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                 width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
+                }));
             }
             document.addEventListener('mouseup', handleMouseUp);
 
@@ -166,7 +184,10 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
             const handleMouseUp = () => {
               document.removeEventListener('mousemove', handleMouseMoveResizeEastWestRight);
               document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+              
+              setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                }));
             }
             document.addEventListener('mouseup', handleMouseUp);
           }
@@ -178,7 +199,11 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
             const handleMouseUp = () => {
               document.removeEventListener('mousemove', handleMouseMoveResizeNorthSouthTop);
               document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties({...appProperties,top:Number((element.style.top).substring(0, element.style.top.length - 2))});
+              
+              setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  top:Number((element.style.top).substring(0, element.style.top.length - 2))
+                }));
             }
             document.addEventListener('mouseup', handleMouseUp);
 
@@ -188,7 +213,11 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
             const handleMouseUp = () => {
               document.removeEventListener('mousemove', handleMouseMoveResizeNorthSouthBottom);
               document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
+              
+              setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
+                }));
             }
             document.addEventListener('mouseup', handleMouseUp);
           }
@@ -205,8 +234,11 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
           const handleMouseUp = () => {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseup', handleMouseUp);
-            setAppProperties({width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)});
-          }
+            
+            setAppProperties(prev => ({
+                  ...prev,  // keep all existing properties like fullScreen and active
+                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                }));
+                      }
 
           document.addEventListener('mouseup', handleMouseUp);
         }
@@ -215,7 +247,7 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
   
     return (
       <div
-        ref={elementRef}
+        ref={ref}
         onMouseDown={handleMouseDown}
         onTouchMove={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -225,6 +257,6 @@ function DraggableApplication({ children, appProperties, setAppProperties}) {
         {children}
       </div>
     );
-  }
+  });
 
 export default DraggableApplication;
