@@ -11,7 +11,6 @@ function PhoneApps({setApp1Visible,setProjectsVisible}) {
         <div className='ApplicationsPhone'>
         <AppsButtonPhone title='LinkedIn' source={Image} alternative='LinkedIn logo' loading="lazy" link="https://www.linkedin.com/in/kyryloposty/"/>
         <AppsButtonPhone title='GitHub' source={Image1}  alternative='GitHub logo' loading="lazy" link="https://github.com/Kyrylo234"/>
-        <AppsButtonPhone title='CSPPT' source={CSPPTLogo}  alternative='GitHub logo' loading="lazy" link={"https://github.com/Kyrylo234/CSPPT"}/>
         <AppsButtonPhone title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy" link={setApp1Visible}/>
         <AppsButtonPhone title='CV' source={LancasterLogo}  alternative='GitHub logo' loading="lazy"/>
         <AppsButtonPhone title='Projects' source={Notepad}  alternative='GitHub logo' loading="lazy" link={setProjectsVisible}/>
