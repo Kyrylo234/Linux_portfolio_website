@@ -174,21 +174,6 @@ body{
   background-color:#2C2C2C;
 }
 
-#active{
-  border-color: #393939;
-  background-color: #ffa200;
-  border-width: 1px;
-  border-style: solid;
-  height:30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#active:hover{
-  background-color: #d48703;
-}
-
 .Task{
   width: 60px;
   height: 60px;
@@ -317,11 +302,6 @@ body{
   text-align: center;
 }
 
-.Inline{
-
-}
-
-
 .MinMaxCloseButton{
   border-radius: 50%;
 }
@@ -333,4 +313,79 @@ body{
   border: black;
   border-width: 2px;
   border-style: solid;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* App.css */
+.PhoneContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* fill viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.HomeButton {
+  position: fixed;         /* stays in place relative to viewport */
+  bottom: 20px;            /* distance from bottom */
+  left: 50%;               /* center horizontally */
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+
+  background-color: #222;  /* example color */
+  border-radius: 50%;      /* makes it a circle */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.Circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #444, #111); /* dark gradient */
+  border: 2px solid #222;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.6),
+              2px 2px 5px rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.Circle:active {
+  transform: scale(0.95);
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8),
+              -2px -2px 5px rgba(100,100,100,0.2);
+}
+
+.Square {
+  width: 20px;
+  height: 20px;     /* make equal to width */
+  background: #888;
+  border-radius: 4px; /* optional: softer corners */
+}
+
+.ApplicationOptionsOption.active{
+  border-color: #393939;
+  background-color: #ffa200;
+  border-width: 1px;
+  border-style: solid;
+  height:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ApplicationOptionsOption.active:hover{
+  background-color: #d48703;
 }

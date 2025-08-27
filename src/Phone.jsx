@@ -26,8 +26,8 @@ function Phone() {
   }; 
 
     return (
-      <div style={{overscrollBehavior: "none", overflow: 'hidden' }}>
-        {desktopVisible && (
+    <div className="PhoneContainer">
+      {desktopVisible && (
             <PhoneApps loading="lazy" setApp1Visible={toggleDesktopVisibility} setProjectsVisible={toggleProjectsVisible}/>
         )}
         {app1Visible && (
@@ -38,8 +38,8 @@ function Phone() {
         )}
         <TopBar/>
         <HomeButton setApp1Visible={returnHome}/>
-      </div>
-    )
+    </div>
+  );
   }
   
   export default Phone

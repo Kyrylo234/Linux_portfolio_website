@@ -1,56 +1,71 @@
-import DraggableApplication from "./DraggableApplication"
-import ApplicationTopBar from "./ApplicationTopBar"
-import React, {useRef, useState } from 'react';
+import DraggableApplication from "./DraggableApplication";
+import ApplicationTopBar from "./ApplicationTopBar";
+import React, { useRef, useState } from "react";
 import AboutMe from "./AboutMe.jsx";
-import Volunteering from './Volunteering.jsx'
+import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
 
-function RunningApplication({ toggleVisibility, appProperties, setAppProperties, close }) {
+function RunningApplication({ id, title, onClose, onToggleVisibility, onFullScreen }) {
   const [content, setContent] = useState(<AboutMe />);
-  const appContainerRef = useRef(null); // ref for the container div
+  const [activePage, setActivePage] = useState("about");
+  const [appProperties, setAppProperties] = useState({
+    width: 500,
+    height: 500,
+    left: 200,
+    top: 100,
+    active: 0
+  });
 
-  const setFullScreen = () => {
+  const appContainerRef = useRef(null);
+
+  // forward fullscreen requests to parent
+  const handleFullScreen = () => {
     if (document.fullscreenElement) {
-        document.exitFullscreen();
-    }else{
+      document.exitFullscreen();
+    } else {
       appContainerRef.current?.requestFullscreen?.();
     }
+    onFullScreen?.(id);
   };
 
-  const educationFunction = (event) => {
-    setContent(<Education />);
-    setActive(event);
+  const handleClick = (page) => {
+    setActivePage(page);
+    if (page === "about") setContent(<AboutMe />);
+    if (page === "education") setContent(<Education />);
+    if (page === "volunteering") setContent(<Volunteering />);
   };
-
-  const aboutMeFunction = (event) => {
-    setContent(<AboutMe />);
-    setActive(event);
-  };
-
-  const volunteeringFunction = (event) => {
-    setContent(<Volunteering />);
-    setActive(event);
-  };
-
-  function setActive(event) {
-    const active = document.getElementById("active");
-    if (active) active.removeAttribute("id");
-    event.currentTarget.setAttribute("id", "active");
-  }
 
   return (
     <div className="RunningApplicationWrapper">
-      <DraggableApplication appProperties={appProperties} setAppProperties={setAppProperties} ref={appContainerRef}>
-        <ApplicationTopBar toggleVisibility={toggleVisibility} close={close} setFullScreen={setFullScreen} />
+      <DraggableApplication
+        appProperties={appProperties}
+        setAppProperties={setAppProperties}
+        ref={appContainerRef}
+      >
+        <ApplicationTopBar
+          toggleVisibility={() => onToggleVisibility?.(id)}
+          close={() => onClose?.(id)}
+          setFullScreen={handleFullScreen}
+          title={title}
+        />
         <div className="RunningApplication">
           <div className="applicationOptions">
-            <div className="ApplicationOptionsOption" onClick={aboutMeFunction} id="active">
+            <div
+              className={`ApplicationOptionsOption ${activePage === "about" ? "active" : ""}`}
+              onClick={() => handleClick("about")}
+            >
               <h5>About Me</h5>
             </div>
-            <div className="ApplicationOptionsOption" onClick={educationFunction}>
+            <div
+              className={`ApplicationOptionsOption ${activePage === "education" ? "active" : ""}`}
+              onClick={() => handleClick("education")}
+            >
               <h5>Education</h5>
             </div>
-            <div className="ApplicationOptionsOption" onClick={volunteeringFunction}>
+            <div
+              className={`ApplicationOptionsOption ${activePage === "volunteering" ? "active" : ""}`}
+              onClick={() => handleClick("volunteering")}
+            >
               <h5>Volunteering</h5>
             </div>
           </div>

@@ -4,42 +4,57 @@ import TopBar from './TopBar.jsx';
 import TaskBar from './TaskBar.jsx';
 import React, { useRef, useState } from 'react';
 import RunningApplication from './RunningApplication.jsx';
+import RunningApplicationProjects from './RunningApplicationProjects';
+
 function DesktopApp() { 
-    const [isVisible, setIsVisible] = useState(true);
-    const [appProperties, setAppProperties] = useState({width:500, height:500, left:100, top:100, active:0});
-    const applicationRef = useRef();
+  const applicationRef = useRef(null);
 
-    const toggleVisibility = () => {
-        closeApp();
-        if(isVisible){
-          applicationRef.current.setInactive();
-        }else{
-          applicationRef.current.setActive();
-        }
-    }; 
+  const [windows, setWindows] = useState([
+    { id: "aboutMe", title: "About Me", visible: true, component: RunningApplication, props: {} },
+    { id: "projects", title: "Projects", visible: true, component: RunningApplicationProjects, props: {} }
+  ]);
 
-    const close = () => {
-      closeApp();
-      applicationRef.current.setInactive();
-      setAppProperties({width:500, height:500, left:100, top:100, active:0})
-  }; 
+  // toggle window visibility
+  const toggleVisibility = (id, forceValue = null) => {
+    setWindows(prev =>
+      prev.map(win =>
+        win.id === id
+          ? { ...win, visible: forceValue !== null ? forceValue : !win.visible }
+          : win
+      )
+    );
+  };
 
-  const closeApp = () => {
-    setIsVisible(!isVisible);
-  }; 
-  
+  // close window
+  const close = (id) => {
+    setWindows(prev =>
+      prev.map(win =>
+        win.id === id ? { ...win, visible: false } : win
+      )
+    );
+  };
 
+  return (
+    <div className='App'>
+      <TaskBar windows={windows} toggleVisibility={() => toggleVisibility("aboutMe")}  ref={applicationRef}/>
+      <TopBar/>
 
-    return (
-      <div className='App'>
-        <TaskBar toggleVisibility={toggleVisibility} ref={applicationRef}/>
-        <TopBar/>
-        <Application toggleVisibility={toggleVisibility} />
-        {isVisible && (
-            <RunningApplication toggleVisibility={toggleVisibility} close={close}loading="lazy" appProperties={appProperties} setAppProperties={setAppProperties}/>
-        )}
+      <Application toggleVisibility={() => toggleVisibility("aboutMe")} />
+
+      {windows.map(win =>
+        win.visible && (
+          <win.component
+            key={win.id}
+            id={win.id}
+            title={win.title}
+            onClose={close}
+            onToggleVisibility={toggleVisibility}
+            onFullScreen={(id) => console.log("Fullscreen requested for", id)}
+          />
+        )
+      )}
     </div>
-    )
-  }
-  
-  export default DesktopApp
+  );
+}
+
+export default DesktopApp;

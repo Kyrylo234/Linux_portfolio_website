@@ -24,28 +24,21 @@ export default function Carousel({ images , imgStyle, imgAlt}) {
   }, [images]);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        display: "flex",
-        overflowX: "auto",   // allows swipe
-        scrollSnapType: "x mandatory",
-        scrollBehavior: "smooth",
-        scrollbarWidth: "none",
-        msOverflowStyle: "none",
-        flex: "0 0 100%", 
-        justifyContent: "center", 
-        alignItems: "center", 
-        scrollSnapAlign: "center" 
-      }}
-    >
+    <div style={{ display: "flex", overflowX: "auto", scrollSnapType: "x mandatory" }}>
       {images.map((src, i) => (
-        <img
+        <div
           key={i}
-          src={src}
-          alt={`carousel-${i}`}
-          style={imgStyle}
-        />
+          style={{
+            flex: "0 0 100%",      // each slide takes full width
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            scrollSnapAlign: "center",
+            overflow: "hidden",   // ✅ clip any overflow
+          }}
+        >
+          <img src={src} alt="" style={imgStyle} />
+        </div>
       ))}
     </div>
   );
