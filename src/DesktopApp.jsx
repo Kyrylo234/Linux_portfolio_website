@@ -31,8 +31,7 @@ function DesktopApp() {
 
 
     return (
-      <>
-        <div className='App'>
+      <div className='App'>
         <TaskBar toggleVisibility={toggleVisibility} ref={applicationRef}/>
         <TopBar/>
         <Application toggleVisibility={toggleVisibility} />
@@ -40,7 +39,6 @@ function DesktopApp() {
             <RunningApplication toggleVisibility={toggleVisibility} close={close}loading="lazy" appProperties={appProperties} setAppProperties={setAppProperties}/>
         )}
     </div>
-      </>
     )
   }
   

@@ -1,10 +1,10 @@
 import RandomColorDiv from "./RandomColorDiv";
 import Carousel from "./Carousel";
-function Project({source, elements, title}) {  
+function Project({source, elements, title, link}) {  
     return (
       <div style={{ margin: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <div style={{marginTop:'20px'}}>
-          <h4 style={{marginBottom: "5px"}}>{title}</h4>
+          <h4 style={{marginBottom: "5px"}}><a href={link} style={{ color: "inherit", textDecoration: "underline" }}>{title}</a></h4>
           <Carousel images={source} imgStyle={{             
             maxHeight: "70vh", maxWidth: "90vw", height: "auto", width: "auto" ,              
             paddingTop:'10px',   

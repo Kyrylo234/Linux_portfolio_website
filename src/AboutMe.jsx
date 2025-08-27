@@ -11,7 +11,7 @@ function AboutMe() {
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3>Personal Profile</h3>
         <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-        <h5>A passionate and hardworking Computer Science graduate from Lancaster University, seeking a software engineering role to apply and improve my skills in a practical environment whilst contribution positively to the organisation.</h5>
+        <h5>Hey i'm Kyrylo. Here you can check out what projects I have been working on and what I do in my spare time.</h5>
         </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
