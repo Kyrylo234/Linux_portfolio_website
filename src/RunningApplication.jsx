@@ -10,18 +10,11 @@ function RunningApplication({ toggleVisibility, appProperties, setAppProperties,
   const appContainerRef = useRef(null); // ref for the container div
 
   const setFullScreen = () => {
-    console.log("DesktopApp appProperties:", appProperties);
-    if (appProperties.fullScreen) {
-      document.exitFullscreen?.();
-    } else {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    }else{
       appContainerRef.current?.requestFullscreen?.();
     }
-
-    // Update state so React knows we are in fullscreen
-    setAppProperties(prev => ({
-      ...prev,
-      fullScreen: !prev.fullScreen
-    }));
   };
 
   const educationFunction = (event) => {
