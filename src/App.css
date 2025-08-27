@@ -86,12 +86,20 @@ body{
   margin-right: 5px;
 }
 
-.App{
-  top:0;
-  border:0;
-  margin:0;
-  width:100%;
-  height:100%;
+.App {
+  width: 100%;
+  max-width: 100%;      /* prevent children from being wider */
+  height: 100vh;
+  overflow-x: hidden;   /* prevents horizontal scroll */
+  overflow-y: hidden;     /* allow vertical scroll */
+  position: relative;   /* for absolutely positioned children */
+  box-sizing: border-box;
+}
+
+/* Make sure children don’t escape */
+.App > * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 #root {
@@ -326,7 +334,6 @@ code {
   min-height: 100vh;      /* covers viewport + grows with content */
   height: 100%;            /* fallback */
   overflow: hidden;
-  background-color: #222;  /* app background */
   position: relative;
 }
 
