@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function Carousel({ images }) {
+export default function Carousel({ images , imgStyle, imgAlt}) {
   const containerRef = useRef(null);
   const indexRef = useRef(0);
 
@@ -9,7 +9,6 @@ export default function Carousel({ images }) {
       if (containerRef.current) {
         const container = containerRef.current;
         const child = container.children[indexRef.current];
-
         if (child) {
           container.scrollTo({
             left: child.offsetLeft,
@@ -34,6 +33,10 @@ export default function Carousel({ images }) {
         scrollBehavior: "smooth",
         scrollbarWidth: "none",
         msOverflowStyle: "none",
+        flex: "0 0 100%", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        scrollSnapAlign: "center" 
       }}
     >
       {images.map((src, i) => (
@@ -41,13 +44,7 @@ export default function Carousel({ images }) {
           key={i}
           src={src}
           alt={`carousel-${i}`}
-          style={{             
-            width: '100%',              
-            height:'auto',              
-            paddingTop:'10px',   
-            scrollSnapAlign: "start", 
-            objectFit: "contain",         
-            flex: "0 0 100%"}}
+          style={imgStyle}
         />
       ))}
     </div>

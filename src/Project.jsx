@@ -1,14 +1,23 @@
 import RandomColorDiv from "./RandomColorDiv";
-function Project({source, elements}) {  
+import Carousel from "./Carousel";
+function Project({source, elements, title}) {  
     return (
-      <>
-      <div style={{marginTop:'20px'}}>
-        <img src={source} style={{width:'90vw', height:'auto'}} alt=""></img>
-        {elements.map((text, i) => (
-        <RandomColorDiv key={i} text={text}/>
-      ))}
+      <div style={{ margin: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
+        <div style={{marginTop:'20px'}}>
+          <h4 style={{marginBottom: "5px"}}>{title}</h4>
+          <Carousel images={source} imgStyle={{             
+            maxHeight: "70vh", maxWidth: "90vw", height: "auto", width: "auto" ,              
+            paddingTop:'10px',   
+            scrollSnapAlign: "start", 
+            objectFit: "contain",         
+            flex: "0 0 100%"}}/>  
+          <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
+            {elements.map((text, i) => (
+              <RandomColorDiv key={i} text={text}/>
+            ))}
+          </div>
+        </div>
       </div>
-      </>
     )
   }
   
