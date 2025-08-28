@@ -1,262 +1,214 @@
 import React, { forwardRef } from "react";
 
-const DraggableApplication = forwardRef(({ children, appProperties, setAppProperties }, ref) => {    
+const EDGE_THRESHOLD = 10;
 
-    const handleMouseMove = event =>{
-      const element = ref.current;
-      const handleMouseOff = event =>{
-        document.body.style.cursor = 'auto';
-        document.removeEventListener('mouseout', handleMouseOff);
-      }
+const TEXT_TAGS = new Set([
+  "p","span","a","h1","h2","h3","h4","h5","h6",
+  "label","small","em","strong","code","pre",
+  "li","blockquote","mark","i","b","u","s"
+]);
 
-      document.addEventListener('mouseout', handleMouseOff);
-      
-      const target = event.nativeEvent.target;
-      const current = event.currentTarget; // the element with the handler
-
-      if (current.classList.contains("DraggableApplication") && target === current) {
-        if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
-          if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left
-            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-              document.body.style.cursor = 'nwse-resize';
-            }else{ //bottom
-              document.body.style.cursor = 'nesw-resize';
-            }
-          }else{ //right
-            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-              document.body.style.cursor = 'nesw-resize';
-            }else{ //bottom
-              document.body.style.cursor = 'nwse-resize';
-            }
-          }
-        }else if(event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)){
-          //resize on the sides
-          document.body.style.cursor = 'ew-resize';
-
-        }else if(event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10)){
-          //resize
-          document.body.style.cursor = 'ns-resize';
-        }else{ //Move the application around
-          document.body.style.cursor = 'move';
-        }
-      } else {
-        if (event.target.classList.contains("ApplicationOptionsOption") || (event.target.closest(".ApplicationOptionsOption") && event.target.tagName.toLowerCase() === "h5")) {
-          document.body.style.cursor = "pointer";
-        } else {
-          document.body.style.cursor = "move";
-        }
-      }
-
-      
-    }
-  
-    const handleMouseDown = (event) => {
-        const element = ref.current;
-
-        const initialX = event.pageX;
-        const initialY = event.pageY;
-        const initialWidth = element.clientWidth;
-        const initialHeight = element.clientHeight;
-        const startX = event.pageX - element.offsetLeft;
-        const startY = event.pageY - element.offsetTop;
-
-        const handleMouseMoveResizeTopLeft = (moveEvent) => {
-          element.style.width = `${initialWidth + initialX - moveEvent.pageX}px`;
-          element.style.height = `${initialHeight + initialY - moveEvent.pageY}px`;
-          element.style.left = `${moveEvent.pageX - startX}px`;
-          element.style.top = `${moveEvent.pageY - startY}px`;
-        };
-
-        const handleMouseMoveResizeTopRight = (moveEvent) => {
-          element.style.width = `${initialWidth + moveEvent.pageX - initialX}px`;
-          element.style.height = `${initialHeight + initialY - moveEvent.pageY}px`;
-          element.style.top = `${moveEvent.pageY - startY}px`;
-        };
-
-        const handleMouseMoveResizeBottomLeft = (moveEvent) => {
-          element.style.width = `${initialWidth - moveEvent.pageX + initialX}px`;
-          element.style.height = `${initialHeight + moveEvent.pageY - initialY}px`;
-          element.style.left = `${moveEvent.pageX - startX}px`;
-        };
-
-        const handleMouseMoveResizeBottomRight = (moveEvent) => {
-          element.style.width = `${initialWidth + moveEvent.pageX - initialX}px`;
-          element.style.height = `${initialHeight + moveEvent.pageY - initialY}px`;
-        };
-
-        const handleMouseMoveResizeEastWestLeft = (moveEvent) => {
-          element.style.width = `${initialWidth + initialX - moveEvent.pageX}px`;
-          element.style.left = `${moveEvent.pageX - startX}px`;
-        };
-
-        const handleMouseMoveResizeEastWestRight = (moveEvent) => {
-          element.style.width = `${initialWidth + moveEvent.pageX - initialX}px`;
-        };
-
-        const handleMouseMoveResizeNorthSouthTop = (moveEvent) => {
-          element.style.height = `${initialHeight - moveEvent.pageY + initialY}px`;
-          element.style.top = `${moveEvent.pageY - startY}px`;
-        };
-
-        const handleMouseMoveResizeNorthSouthBottom = (moveEvent) => {
-          element.style.height = `${initialHeight + moveEvent.pageY - initialY}px`;
-        };
-
-        
-        if (!event.target.classList.contains("ApplicationOptionsOption") || !(event.target.closest(".ApplicationOptionsOption") && event.target.tagName.toLowerCase() === "h5")) {
-          if((event.nativeEvent.offsetX<10 || event.nativeEvent.offsetX> (element.clientWidth-10)) && (event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10))){ //If corners
-          if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left
-            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-              document.addEventListener('mousemove', handleMouseMoveResizeTopLeft);
-
-            
-              const handleMouseUp = () => {
-                document.removeEventListener('mousemove', handleMouseMoveResizeTopLeft);
-                document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width: parseInt(element.style.width),
-                  height: parseInt(element.style.height),
-                  left: parseInt(element.style.left),
-                  top: parseInt(element.style.top)
-                }));
-              }
-              document.addEventListener('mouseup', handleMouseUp);
-            }else{ //bottom
-              document.addEventListener('mousemove', handleMouseMoveResizeBottomLeft);
-              
-              const handleMouseUp = () => {
-                document.removeEventListener('mousemove', handleMouseMoveResizeBottomLeft);
-                document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
-                }));
-              }
-              document.addEventListener('mouseup', handleMouseUp);
-            }
-          }else{ //right
-            if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //top
-              document.addEventListener('mousemove', handleMouseMoveResizeTopRight);
-              
-              const handleMouseUp = () => {
-                document.removeEventListener('mousemove', handleMouseMoveResizeTopRight);
-                document.removeEventListener('mouseup', handleMouseUp);
-                setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                
-                }));
-              }
-              document.addEventListener('mouseup', handleMouseUp);
-            }else{ //bottom
-              document.addEventListener('mousemove', handleMouseMoveResizeBottomRight);
-              
-              const handleMouseUp = () => {
-                document.removeEventListener('mousemove', handleMouseMoveResizeBottomRight);
-                document.removeEventListener('mouseup', handleMouseUp);
-                
-                setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                 width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
-                }));
-              }
-              document.addEventListener('mouseup', handleMouseUp);
-            }
-          }
-        }else if(event.nativeEvent.offsetX<5 || event.nativeEvent.offsetX> (element.clientWidth-5)){
-          //resize on the sides
-          if(event.nativeEvent.offsetX<(element.clientWidth/2)){ //left side
-            document.addEventListener('mousemove', handleMouseMoveResizeEastWestLeft);
-              
-            const handleMouseUp = () => {
-              document.removeEventListener('mousemove', handleMouseMoveResizeEastWestLeft);
-              document.removeEventListener('mouseup', handleMouseUp);
-              setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                 width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
-                }));
-            }
-            document.addEventListener('mouseup', handleMouseUp);
-
-          }else{ //Right side
-              document.addEventListener('mousemove', handleMouseMoveResizeEastWestRight);
-              
-            const handleMouseUp = () => {
-              document.removeEventListener('mousemove', handleMouseMoveResizeEastWestRight);
-              document.removeEventListener('mouseup', handleMouseUp);
-              
-              setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                }));
-            }
-            document.addEventListener('mouseup', handleMouseUp);
-          }
-        }else if(event.nativeEvent.offsetY<10 || event.nativeEvent.offsetY> (element.clientHeight-10)){
-          //resize
-
-          if(event.nativeEvent.offsetY<(element.clientHeight/2)){ //Top
-            document.addEventListener('mousemove', handleMouseMoveResizeNorthSouthTop);
-            const handleMouseUp = () => {
-              document.removeEventListener('mousemove', handleMouseMoveResizeNorthSouthTop);
-              document.removeEventListener('mouseup', handleMouseUp);
-              
-              setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  top:Number((element.style.top).substring(0, element.style.top.length - 2))
-                }));
-            }
-            document.addEventListener('mouseup', handleMouseUp);
-
-          }else{ //Bottom
-              document.addEventListener('mousemove', handleMouseMoveResizeNorthSouthBottom);
-
-            const handleMouseUp = () => {
-              document.removeEventListener('mousemove', handleMouseMoveResizeNorthSouthBottom);
-              document.removeEventListener('mouseup', handleMouseUp);
-              
-              setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)
-                }));
-            }
-            document.addEventListener('mouseup', handleMouseUp);
-          }
-        }else{ //Move the application around
-
-          const handleMouseMove = (moveEvent) => {
-            element.style.left = `${moveEvent.pageX - startX}px`;
-            element.style.top = `${moveEvent.pageY - startY}px`;
-          };
-          
-          document.addEventListener('mousemove', handleMouseMove);
-          
-
-          const handleMouseUp = () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-            
-            setAppProperties(prev => ({
-                  ...prev,  // keep all existing properties like fullScreen and active
-                  width:(element.style.width).substring(0, element.style.width.length - 2), height:(element.style.height).substring(0, element.style.height.length - 2), left:(element.style.left).substring(0, element.style.left.length - 2), top:(element.style.top).substring(0, element.style.top.length - 2)                }));
-                      }
-
-          document.addEventListener('mouseup', handleMouseUp);
-        }
-        }
+const DraggableApplication = forwardRef(
+  ({ children, appProperties, setAppProperties }, ref) => {
+    // ---- Helpers ----
+    const updateAppProperties = (element) => {
+      setAppProperties((prev) => ({
+        ...prev,
+        width: parseInt(element.style.width),
+        height: parseInt(element.style.height),
+        left: parseInt(element.style.left),
+        top: parseInt(element.style.top),
+      }));
     };
-  
+
+    const getClientCoords = (event) => {
+      if (event.touches && event.touches.length > 0) {
+        return { x: event.touches[0].pageX, y: event.touches[0].pageY };
+      }
+      return { x: event.pageX, y: event.pageY };
+    };
+
+    const getActionAtPosition = (element, x, y) => {
+      const rect = element.getBoundingClientRect();
+      const nearLeft = x - rect.left < EDGE_THRESHOLD;
+      const nearRight = rect.right - x < EDGE_THRESHOLD;
+      const nearTop = y - rect.top < EDGE_THRESHOLD;
+      const nearBottom = rect.bottom - y < EDGE_THRESHOLD;
+
+      if ((nearLeft || nearRight) && (nearTop || nearBottom)) {
+        if (nearLeft && nearTop) return "resize-tl";
+        if (nearLeft && nearBottom) return "resize-bl";
+        if (nearRight && nearTop) return "resize-tr";
+        if (nearRight && nearBottom) return "resize-br";
+      } else if (nearLeft) return "resize-l";
+      else if (nearRight) return "resize-r";
+      else if (nearTop) return "resize-t";
+      else if (nearBottom) return "resize-b";
+
+      return "drag";
+    };
+
+    const getCursorForAction = (action) => {
+      switch (action) {
+        case "resize-tl":
+        case "resize-br":
+          return "nwse-resize";
+        case "resize-tr":
+        case "resize-bl":
+          return "nesw-resize";
+        case "resize-l":
+        case "resize-r":
+          return "ew-resize";
+        case "resize-t":
+        case "resize-b":
+          return "ns-resize";
+        case "drag":
+          return "move";
+        default:
+          return "default";
+      }
+    };
+
+    const addHandler = (moveHandler) => {
+      const element = ref.current;
+
+      const handleMove = (e) => moveHandler(getClientCoords(e));
+      const handleUp = () => {
+        document.removeEventListener("mousemove", handleMove);
+        document.removeEventListener("mouseup", handleUp);
+        document.removeEventListener("touchmove", handleMove);
+        document.removeEventListener("touchend", handleUp);
+        updateAppProperties(element);
+        document.body.style.cursor = "default"; // reset after finishing
+      };
+
+      document.addEventListener("mousemove", handleMove);
+      document.addEventListener("mouseup", handleUp);
+      document.addEventListener("touchmove", handleMove, { passive: false });
+      document.addEventListener("touchend", handleUp);
+    };
+
+    // ---- Exclusion checker ----
+    const isInvalidTarget = (target) => {
+      if (target?.nodeType === Node.TEXT_NODE) return true;
+
+      const el = target?.nodeType === Node.ELEMENT_NODE ? target : target?.parentElement;
+      if (!el) return false;
+
+      if (
+        el.closest(".ApplicationsOptionsoption") ||
+        el.closest(".no-drag") ||
+        el.closest("[data-no-drag]")
+      ) return true;
+
+      const tag = el.tagName?.toLowerCase();
+      if (TEXT_TAGS.has(tag)) return true;
+
+      return false;
+    };
+
+    // ---- Cursor feedback ----
+    const handleMouseMove = (event) => {
+      const element = ref.current;
+      const target = event.nativeEvent.target;
+      const current = event.currentTarget;
+
+      if (current.contains(target) && !isInvalidTarget(target)) {
+        const { x, y } = getClientCoords(event);
+        const action = getActionAtPosition(element, x, y);
+        document.body.style.cursor = getCursorForAction(action);
+      } else {
+        document.body.style.cursor = "default";
+      }
+    };
+
+    // Reset cursor when leaving container
+    const handleMouseLeave = () => {
+      document.body.style.cursor = "default";
+    };
+
+    // ---- Mouse/Touch Down ----
+    const handleDown = (event) => {
+      const element = ref.current;
+      const target = event.nativeEvent.target;
+      const current = event.currentTarget;
+
+      if (!current.contains(target) || isInvalidTarget(target)) return;
+
+      event.preventDefault();
+
+      const { x: initialX, y: initialY } = getClientCoords(event);
+      const initialWidth = element.clientWidth;
+      const initialHeight = element.clientHeight;
+      const startX = initialX - element.offsetLeft;
+      const startY = initialY - element.offsetTop;
+
+      const action = getActionAtPosition(element, initialX, initialY);
+
+      const handlers = {
+        "resize-tl": ({ x, y }) => {
+          element.style.width = `${initialWidth + initialX - x}px`;
+          element.style.height = `${initialHeight + initialY - y}px`;
+          element.style.left = `${x - startX}px`;
+          element.style.top = `${y - startY}px`;
+        },
+        "resize-tr": ({ x, y }) => {
+          element.style.width = `${initialWidth + x - initialX}px`;
+          element.style.height = `${initialHeight + initialY - y}px`;
+          element.style.top = `${y - startY}px`;
+        },
+        "resize-bl": ({ x, y }) => {
+          element.style.width = `${initialWidth - x + initialX}px`;
+          element.style.height = `${initialHeight + y - initialY}px`;
+          element.style.left = `${x - startX}px`;
+        },
+        "resize-br": ({ x, y }) => {
+          element.style.width = `${initialWidth + x - initialX}px`;
+          element.style.height = `${initialHeight + y - initialY}px`;
+        },
+        "resize-l": ({ x }) => {
+          element.style.width = `${initialWidth + initialX - x}px`;
+          element.style.left = `${x - startX}px`;
+        },
+        "resize-r": ({ x }) => {
+          element.style.width = `${initialWidth + x - initialX}px`;
+        },
+        "resize-t": ({ y }) => {
+          element.style.height = `${initialHeight - y + initialY}px`;
+          element.style.top = `${y - startY}px`;
+        },
+        "resize-b": ({ y }) => {
+          element.style.height = `${initialHeight + y - initialY}px`;
+        },
+        drag: ({ x, y }) => {
+          element.style.left = `${x - startX}px`;
+          element.style.top = `${y - startY}px`;
+        },
+      };
+
+      addHandler(handlers[action]);
+    };
+
     return (
       <div
         ref={ref}
-        onMouseDown={handleMouseDown}
-        onTouchMove={handleMouseDown}
+        onMouseDown={handleDown}
+        onTouchStart={handleDown}
         onMouseMove={handleMouseMove}
-        className='DraggableApplication'
-        style={{ position: 'absolute', width: appProperties.width+'px', height: appProperties.height+'px', left:appProperties.left+'px', top:appProperties.top+'px'}}
+        onMouseLeave={handleMouseLeave}
+        className="DraggableApplication"
+        style={{
+          position: "absolute",
+          width: appProperties.width + "px",
+          height: appProperties.height + "px",
+          left: appProperties.left + "px",
+          top: appProperties.top + "px",
+        }}
       >
         {children}
       </div>
     );
-  });
+  }
+);
 
 export default DraggableApplication;

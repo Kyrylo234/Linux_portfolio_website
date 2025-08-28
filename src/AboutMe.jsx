@@ -32,6 +32,7 @@ function AboutMe() {
         <RandomColorDiv text="Swing(Java)"/>
         <RandomColorDiv text="Flutter(Dart)"/>
         <RandomColorDiv text="Git"/>
+        <RandomColorDiv text="Drift"/>
         </div>
         <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Languages</h4>
