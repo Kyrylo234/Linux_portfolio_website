@@ -4,6 +4,14 @@ img {
   height:14px;
 }
 
+html, body {
+  overscroll-behavior: none;  /* Prevent rubber-band on all browsers */
+  overflow: hidden;           /* Prevent scrolling entirely */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body{
   background-image: url("./desktop.jpeg");
   font-family: sans-serif;
@@ -282,6 +290,8 @@ body{
   text-align: center;
   width: 100vw;
   min-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .AboutMeDiv{
@@ -330,11 +340,11 @@ code {
 
 /* App.css */
 .PhoneContainer {
-  width: 100vw;
-  min-height: 100vh;      /* covers viewport + grows with content */
-  height: 100%;            /* fallback */
-  overflow: hidden;
-  position: relative;
+  height: 100vh;  
+  width: 100vw;                /* Fill screen */
+  overflow-y: auto;               /* Enable scroll only here */
+  overscroll-behavior: contain;   /* Prevent rubber-band on iOS/Android */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .HomeButton {
