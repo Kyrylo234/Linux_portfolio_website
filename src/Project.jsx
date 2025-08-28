@@ -3,8 +3,14 @@ import Carousel from "./Carousel";
 function Project({source, elements, title, link}) {  
     return (
       <div style={{ margin: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
-        <div style={{marginTop:'20px'}}>
-          <h4 style={{marginBottom: "5px"}}><a href={link} style={{ color: "inherit", textDecoration: "underline" }}>{title}</a></h4>
+        <div style={{ margin: "0"}}>
+          <div style={{ marginTop: "5px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
+            <h4 style={{marginBottom: "2px", marginTop: "0"}}><a href={link} style={{ color: "inherit", textDecoration: "underline" }}>{title}</a></h4>
+
+            {elements.map((text, i) => (
+              <RandomColorDiv key={i} text={text}/>
+            ))}
+          </div>
           <Carousel
   images={source}
   imgStyle={{
@@ -17,11 +23,6 @@ function Project({source, elements, title, link}) {
     paddingTop: "10px",
   }}
 />
-          <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-            {elements.map((text, i) => (
-              <RandomColorDiv key={i} text={text}/>
-            ))}
-          </div>
         </div>
       </div>
     )

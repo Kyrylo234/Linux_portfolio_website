@@ -42,7 +42,7 @@ function RunningApplicationProjects({ id, title, onClose, onToggleVisibility, on
 
   const handleClick = (page) => {
     setActivePage(page);
-    if (page === "Project1") setContent(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
+    if (page === "Project1") setContent(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "HTML/CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
     if (page === "Project2") setContent(<Project source={[carApp1, carApp2, carApp3, carApp4]} elements={["Dart", "Flutter (Dart)", "Drift"]} title={"Car Service Tracking App"}/>);
     if (page === "Project3") setContent(<Project source={[CSPPT]} elements={["Java", "Swing (Java)", "Teamwork", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"}/>);
     if (page === "Project4") setContent(<Project source={[Database]} elements={["PHP", "HTML/CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"}/>);
