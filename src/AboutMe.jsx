@@ -1,5 +1,7 @@
 import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
 import RandomColorDiv from './RandomColorDiv';
+import ProfilePic from "./ProfilePic"
+import Pic from './assets/ProfilePic.PNG'
 function AboutMe() {
   function copyFunction(event){
     navigator.clipboard.writeText("kyrylop2004@gmail.com");
@@ -10,6 +12,7 @@ function AboutMe() {
         <h2>About Me</h2>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3>Personal Profile</h3>
+        <ProfilePic src={Pic}/>
         <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
         <h5>Hey i'm Kyrylo. Here you can check out what projects I have been working on and what I do in my spare time.</h5>
         </div>
@@ -93,5 +96,4 @@ function AboutMe() {
       </div>
     );
   }
-  
-  export default AboutMe;
+export default AboutMe;
