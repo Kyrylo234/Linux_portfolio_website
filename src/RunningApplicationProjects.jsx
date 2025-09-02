@@ -1,10 +1,6 @@
 import DraggableApplication from "./DraggableApplication";
 import ApplicationTopBar from "./ApplicationTopBar";
 import React, { useRef, useState } from "react";
-import AboutMe from "./AboutMe.jsx";
-import Volunteering from "./Volunteering.jsx";
-import Education from "./Education.jsx";
-import ProjectsApplication from './ProjectsApplication.jsx'
 import Project from "./Project"
 import Website from"./assets/website1.png"
 import Website2 from"./assets/website2.png"
@@ -17,7 +13,7 @@ import carApp2 from "./assets/carApp2.png"
 import carApp3 from "./assets/carApp3.png"
 import carApp4 from "./assets/carApp4.png"
 
-function RunningApplicationProjects({ id, title, onClose, onToggleVisibility, onFullScreen }) {
+function RunningApplicationProjects({ id, title, onClose, onToggleVisibility}) {
     const [content, setContent] = useState(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
     const [activePage, setActivePage] = useState("Project1");
     const [appProperties, setAppProperties] = useState({
@@ -37,7 +33,6 @@ function RunningApplicationProjects({ id, title, onClose, onToggleVisibility, on
         } else {
         appContainerRef.current?.requestFullscreen?.();
         }
-        onFullScreen?.(id);
     };
 
   const handleClick = (page) => {

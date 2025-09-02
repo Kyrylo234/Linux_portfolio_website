@@ -60,7 +60,6 @@ function DesktopApp() {
             title={win.title}
             onClose={() => toggleVisibility(win.id, false)}
             onToggleVisibility={toggleVisibility}
-            onFullScreen={(id) => console.log("Fullscreen requested for", id)}
           />
         )
       )}

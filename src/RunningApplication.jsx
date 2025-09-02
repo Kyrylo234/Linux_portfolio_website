@@ -5,7 +5,7 @@ import AboutMe from "./AboutMe.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
 
-function RunningApplication({ id, title, onClose, onToggleVisibility, onFullScreen }) {
+function RunningApplication({ id, title, onClose, onToggleVisibility}) {
   const [content, setContent] = useState(<AboutMe />);
   const [activePage, setActivePage] = useState("about");
   const [appProperties, setAppProperties] = useState({
@@ -25,7 +25,6 @@ function RunningApplication({ id, title, onClose, onToggleVisibility, onFullScre
     } else {
       appContainerRef.current?.requestFullscreen?.();
     }
-    onFullScreen?.(id);
   };
 
   const handleClick = (page) => {
