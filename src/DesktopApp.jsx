@@ -23,6 +23,12 @@ function DesktopApp() {
           : win
       )
     );
+    const targetWin = windows.find(w => w.id === id);
+    if (targetWin?.visible) {
+      applicationRef.current?.setInactive?.();
+    } else {
+      applicationRef.current?.setActive?.();
+    }
   };
 
   // close window
@@ -32,6 +38,7 @@ function DesktopApp() {
         win.id === id ? { ...win, visible: false } : win
       )
     );
+    applicationRef.current?.setInactive?.();
   };
 
   return (

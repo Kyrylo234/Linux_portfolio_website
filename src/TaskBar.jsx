@@ -13,11 +13,9 @@ const TaskBar = forwardRef(({toggleVisibility, windows}, ref) => {
         useImperativeHandle(ref,() => ({
           setActive(){
             setColour({backgroundColor: "rgb(184, 129, 175)"})
-            console.log(buttonColour)
           },
           setInactive(){
             setColour({backgroundColor: "rgba(0,0,0,0)"})
-            console.log(buttonColour)
           }
         }));
     return (
@@ -27,7 +25,7 @@ const TaskBar = forwardRef(({toggleVisibility, windows}, ref) => {
                 <TaskBarButton source="https://github.com/Kyrylo234" image={Image1} alt="GitHub Logo"/>
                 <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={CSPPTLogo} alt="CSPPT Logo"/>
                 <TaskBarButtonActive source="https://github.com/Kyrylo234/CSPPT" image={NotePad} alt="NotePad" toggleVisibility={toggleVisibility} buttonColour={buttonColour}/>
-                <div className='Task'><img src={LancasterLogo} alt="lancaster Univeresity Logo" loading="lazy"></img></div>
+                <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={LancasterLogo} alt="lancaster Univeresity Logo"/>
             </div>
             <img src={More} alt="More" className='Bottom' loading="lazy"></img>
         </div>
