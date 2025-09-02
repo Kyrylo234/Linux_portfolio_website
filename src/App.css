@@ -13,7 +13,7 @@ html, body {
 }
 
 body{
-  background-image: url("./desktop.jpeg");
+  background-image: url("./assets/desktop.jpeg");
   font-family: sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;

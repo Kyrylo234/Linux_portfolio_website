@@ -1,4 +1,3 @@
-import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
 import RandomColorDiv from './RandomColorDiv';
 import ProfilePic from "./ProfilePic"
 import Pic from './assets/ProfilePic.PNG'
@@ -81,7 +80,7 @@ function AboutMe() {
         }}>Copy</button>
   </div>
 
-  <a href={CV} download="cv" style={{ textDecoration: "none" }}>
+  <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" }}>
     <button
       style={{
         padding: "8px 14px",
