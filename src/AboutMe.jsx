@@ -1,10 +1,44 @@
 import RandomColorDiv from './RandomColorDiv';
 import ProfilePic from "./ProfilePic"
 import Pic from './assets/ProfilePic.PNG'
+import RandomColorDivOnlyText from './RandomColorDivOnlyText';
+import SQLSVG from "./SQLSVG"
+import JSSVG from "./JSSVG"
+import ReactSVG from "./ReactSVG"
+import HTMLSVG from "./HTMLSVG"
+import CSSSVG from "./CSSSVG"
+import GitSVG from "./GitSVG"
+import JavaSVG from "./JavaSVG"
+import PHPSVG from "./PHPSVG"
+import DartSVG from "./DartSVG"
+import DriftSVG from "./DriftSVG"
+import FlutterSVG from "./FlutterSVG"
+import PythonSVG from "./PythonSVG"
+import CLogo from './CLogo.jsx'
 function AboutMe() {
+  const programming = [
+    <JavaSVG />,
+    <JSSVG />,
+    <PythonSVG/>,
+    <DartSVG />,
+    <CLogo />,
+    <HTMLSVG />,
+    <CSSSVG />,
+    <SQLSVG />,
+    <PHPSVG />,
+  ];
+
+  const tech = [
+    <ReactSVG />,
+    <GitSVG />,
+    <DriftSVG />,
+    <FlutterSVG />,
+  ];
+  
   function copyFunction(event){
     navigator.clipboard.writeText("kyrylop2004@gmail.com");
   }
+  
 
     return (
       <div className="fiftyPix">
@@ -20,36 +54,34 @@ function AboutMe() {
         <h3 style={{margin: "10px 0" }}>Skills</h3>
         <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Programming</h4>
-        <RandomColorDiv text="Java"/>
-        <RandomColorDiv text="JavaScript"/>
-        <RandomColorDiv text="Python"/>
-        <RandomColorDiv text="C"/>
-        <RandomColorDiv text="Dart"/>
-        <RandomColorDiv text="SQL"/>
-        <RandomColorDiv text="HTML/CSS"/>
+        <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+            {programming.map((svg, i) => (
+              <RandomColorDiv key={i} text={svg} />
+            ))}
+          </div>
         </div>
         <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Tech</h4>
-        <RandomColorDiv text="React.js"/>
-        <RandomColorDiv text="Swing(Java)"/>
-        <RandomColorDiv text="Flutter(Dart)"/>
-        <RandomColorDiv text="Git"/>
-        <RandomColorDiv text="Drift"/>
+        <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+            {tech.map((svg, i) => (
+              <RandomColorDiv key={i} text={svg} />
+            ))}
+          </div>
         </div>
         <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Languages</h4>
-        <RandomColorDiv text="English"/>
-        <RandomColorDiv text="Ukrainian"/>
-        <RandomColorDiv text="Russian"/>
+        <RandomColorDivOnlyText text="English"/>
+        <RandomColorDivOnlyText text="Ukrainian"/>
+        <RandomColorDivOnlyText text="Russian"/>
         </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h4 style={{margin: "5px 0" }}>Hobbies</h4>
-        <RandomColorDiv text="Volleyball"/>
-        <RandomColorDiv text="Fitness"/>
-        <RandomColorDiv text="Video Production"/>
-        <RandomColorDiv text="Travelling"/>
-        <RandomColorDiv text="Cars"/>
+        <RandomColorDivOnlyText text="Volleyball"/>
+        <RandomColorDivOnlyText text="Fitness"/>
+        <RandomColorDivOnlyText text="Video Production"/>
+        <RandomColorDivOnlyText text="Travelling"/>
+        <RandomColorDivOnlyText text="Cars"/>
         </div>
         
         <div style={{ 

@@ -17,7 +17,7 @@ function Application({toggleVisibility}){
           <AppsButton title='GitHub' source={GitHub}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
         <DraggableComponent className="DraggableOne" source={() => toggleVisibility("projects")} order={2}>
-          <AppsButton title='Portfolio' source={Linux}  alternative='GitHub logo' loading="lazy"/>
+          <AppsButton title='Projects' source={Linux}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
         <DraggableComponent className="DraggableOne" source={() => toggleVisibility("aboutMe")} order={3}>
           <AppsButton title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy"/>

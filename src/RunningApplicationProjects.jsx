@@ -13,6 +13,18 @@ import carApp2 from "./assets/carApp2.png"
 import carApp3 from "./assets/carApp3.png"
 import carApp4 from "./assets/carApp4.png"
 
+import SQLSVG from "./SQLSVG"
+import JSSVG from "./JSSVG"
+import ReactSVG from "./ReactSVG"
+import HTMLSVG from "./HTMLSVG"
+import CSSSVG from "./CSSSVG"
+import GitSVG from "./GitSVG"
+import JavaSVG from "./JavaSVG"
+import PHPSVG from "./PHPSVG"
+import DartSVG from "./DartSVG"
+import DriftSVG from "./DriftSVG"
+import FlutterSVG from "./FlutterSVG"
+
 function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility}) {
     const appContainerRef = useRef(null);
   
@@ -28,13 +40,13 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
     const getContent = () => {
     switch (appWindow.content) {
       case "Project1":
-        return <Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "HTML/CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>;
+        return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>;
       case "Project2":
-        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={["Dart", "Flutter (Dart)", "Drift"]} title={"Car Service Tracking App"}/>;
+        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} title={"Car Service Tracking App"}/>;
       case "Project3":
-        return <Project source={[CSPPT]} elements={["Java", "Swing (Java)", "Teamwork", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"}/>;
+        return <Project source={[CSPPT]} elements={[<JavaSVG/>,  <GitSVG/>]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"}/>;
       case "Project4":
-        return <Project source={[Database]} elements={["PHP", "HTML/CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"}/>
+        return <Project source={[Database]} elements={[<PHPSVG/>, <HTMLSVG/>, <CSSSVG/>, <SQLSVG/>]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"}/>
       default:
         return null;
     }
