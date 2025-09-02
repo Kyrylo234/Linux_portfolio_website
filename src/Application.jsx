@@ -2,11 +2,11 @@ import AppsButton from './AppsButton.jsx';
 import Image from './assets/LinkedIn.png';
 import Image1 from './assets/GitHub.png';
 import CSPPTLogo from './assets/csppt_logo.png'
-import LancasterLogo from './assets/Lancaster.png';
-import Notepad from './assets/Notepad.svg'
+import Notepad from './assets/notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';
 import CV from './assets/Kyrylo_Postupalenko_CV.pdf'
-import Linux from './assets/LinuxUbuntuLogo.png'
+import Linux from './assets/ubuntu.svg'
+import cv from './assets/cv.svg';
 
 function Application({toggleVisibility}){
   return (
@@ -29,7 +29,7 @@ function Application({toggleVisibility}){
         </DraggableComponent>
         <DraggableComponent className="DraggableOne" order={5}>
           <a href={CV} download="Kyrylo_Postupalenko_CV" draggable="false">
-            <AppsButton title='CV' source={LancasterLogo}  alternative='GitHub logo' loading="lazy"/>
+            <AppsButton title='CV' source={cv}  alternative='GitHub logo' loading="lazy"/>
           </a>
         </DraggableComponent>
       </div>

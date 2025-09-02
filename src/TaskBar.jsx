@@ -12,7 +12,6 @@ function TaskBar({toggleVisibility, windows}){
                 <TaskBarButton source="https://www.linkedin.com/in/kyryloposty/" image={Image} alt="LinkedIn Logo"/>
                 <TaskBarButton source="https://github.com/Kyrylo234" image={Image1} alt="GitHub Logo"/>
                 <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={CSPPTLogo} alt="CSPPT Logo"/>
-                <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={LancasterLogo} alt="lancaster Univeresity Logo"/>
                   {windows.map(win => (
                     <TaskBarButtonActive
                       key={win.id}

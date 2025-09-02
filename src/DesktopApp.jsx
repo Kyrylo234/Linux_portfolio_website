@@ -5,9 +5,10 @@ import TaskBar from './TaskBar.jsx';
 import React, {useState } from 'react';
 import RunningApplication from './RunningApplication.jsx';
 import RunningApplicationProjects from './RunningApplicationProjects';
-import NotePad from './assets/Notepad.svg'
-import Linux from './assets/LinuxUbuntuLogo.png'
+import NotePad from './assets/notepad.svg'
+import Linux from './assets/ubuntu.svg'
 import CV from './CV.jsx';
+import cvImage from './assets/cv.svg'
 
 
 function DesktopApp() { 
@@ -41,7 +42,7 @@ function DesktopApp() {
       visible: true, 
       component: CV, 
       style: { backgroundColor: "rgb(184, 129, 175)" },
-      image: Linux, 
+      image: cvImage, 
       alt:"CV",
       width: 500,
       height: 500,
