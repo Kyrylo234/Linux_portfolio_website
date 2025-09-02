@@ -2,30 +2,27 @@ import Image from './assets/LinkedIn.png';
 import Image1 from './assets/GitHub.png';
 import CSPPTLogo from './assets/csppt_logo.png'
 import LancasterLogo from './assets/Lancaster.png';
-import NotePad from './assets/Notepad.svg'
 import More from './assets/More.png'
 import TaskBarButton from './TaskBarButton.jsx';
-import { forwardRef, useState } from 'react';
-import React, { useImperativeHandle} from 'react';
+import { forwardRef } from 'react';
 import TaskBarButtonActive from './TaskBarButtonActive.jsx';
 const TaskBar = forwardRef(({toggleVisibility, windows}, ref) => {
-        const [buttonColour, setColour] = useState({backgroundColor: "rgb(184, 129, 175)"})
-        useImperativeHandle(ref,() => ({
-          setActive(){
-            setColour({backgroundColor: "rgb(184, 129, 175)"})
-          },
-          setInactive(){
-            setColour({backgroundColor: "rgba(0,0,0,0)"})
-          }
-        }));
     return (
         <div className='TaskBar'>   
             <div className='Tasks'>
                 <TaskBarButton source="https://www.linkedin.com/in/kyryloposty/" image={Image} alt="LinkedIn Logo"/>
                 <TaskBarButton source="https://github.com/Kyrylo234" image={Image1} alt="GitHub Logo"/>
                 <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={CSPPTLogo} alt="CSPPT Logo"/>
-                <TaskBarButtonActive source="https://github.com/Kyrylo234/CSPPT" image={NotePad} alt="NotePad" toggleVisibility={toggleVisibility} buttonColour={buttonColour}/>
                 <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={LancasterLogo} alt="lancaster Univeresity Logo"/>
+                  {windows.map(win => (
+                    <TaskBarButtonActive
+                      key={win.id}
+                      image={win.image}
+                      alt={win.title}
+                      toggleVisibility={() => toggleVisibility(win.id)}
+                      style={win.style}
+                    />
+                ))}
             </div>
             <img src={More} alt="More" className='Bottom' loading="lazy"></img>
         </div>

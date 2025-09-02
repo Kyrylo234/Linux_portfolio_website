@@ -5,30 +5,38 @@ import TaskBar from './TaskBar.jsx';
 import React, { useRef, useState } from 'react';
 import RunningApplication from './RunningApplication.jsx';
 import RunningApplicationProjects from './RunningApplicationProjects';
+import NotePad from './assets/Notepad.svg'
+import Linux from './assets/LinuxUbuntuLogo.png'
+
+
 
 function DesktopApp() { 
   const applicationRef = useRef(null);
 
   const [windows, setWindows] = useState([
-    { id: "aboutMe", title: "About Me", visible: true, component: RunningApplication, props: {} },
-    { id: "projects", title: "Projects", visible: true, component: RunningApplicationProjects, props: {} }
+    { id: "aboutMe", title: "About Me", visible: true, component: RunningApplication, style: { backgroundColor: "rgb(184, 129, 175)" }, image: NotePad, alt:"LinkedIn logo"},
+    { id: "projects", title: "Projects", visible: true, component: RunningApplicationProjects, style: { backgroundColor: "rgb(184, 129, 175)" },  image: Linux, alt:"Linux Ubuntu logo" }
   ]);
 
   // toggle window visibility
   const toggleVisibility = (id, forceValue = null) => {
     setWindows(prev =>
-      prev.map(win =>
-        win.id === id
-          ? { ...win, visible: forceValue !== null ? forceValue : !win.visible }
-          : win
-      )
+      prev.map(win => {
+        if (win.id === id) {
+          const newVisible = forceValue !== null ? forceValue : !win.visible;
+          return {
+            ...win,
+            visible: newVisible,
+            style: {
+              backgroundColor: newVisible
+                ? "rgb(184, 129, 175)" // active color
+                : "rgb(0, 0, 0, 0)" // inactive color
+            }
+          };
+        }
+        return win;
+      })
     );
-    const targetWin = windows.find(w => w.id === id);
-    if (targetWin?.visible) {
-      applicationRef.current?.setInactive?.();
-    } else {
-      applicationRef.current?.setActive?.();
-    }
   };
 
   // close window
@@ -43,7 +51,7 @@ function DesktopApp() {
 
   return (
     <div className='App'>
-      <TaskBar windows={windows} toggleVisibility={() => toggleVisibility("aboutMe")}  ref={applicationRef}/>
+      <TaskBar windows={windows} toggleVisibility={toggleVisibility}  ref={applicationRef}/>
       <TopBar/>
 
       <Application toggleVisibility={() => toggleVisibility("aboutMe")} />

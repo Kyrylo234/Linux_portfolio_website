@@ -1,6 +1,6 @@
-function TaskBarButtonActive({image, alt, toggleVisibility, buttonColour}) {
+function TaskBarButtonActive({image, alt, toggleVisibility, style}) {
     return (
-        <div className='Task' onClick={toggleVisibility} style={buttonColour}><img src={image} alt={alt} loading="lazy"></img></div>
+        <div className='Task' onClick={toggleVisibility} style={style}><img src={image} alt={alt} loading="lazy"></img></div>
     );
   }
   
