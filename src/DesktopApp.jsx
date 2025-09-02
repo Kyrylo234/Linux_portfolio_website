@@ -10,7 +10,6 @@ import Linux from './assets/ubuntu.svg'
 import CV from './CV.jsx';
 import cvImage from './assets/cv.svg'
 
-
 function DesktopApp() { 
   const [windows, setWindows] = useState([
     { id: "aboutMe", 
@@ -47,8 +46,7 @@ function DesktopApp() {
       width: 500,
       height: 500,
       left: 200,
-      top: 400, 
-      content: "Project1"}
+      top: 400}
   ]);
 
   // toggle window visibility

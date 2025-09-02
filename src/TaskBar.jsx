@@ -1,23 +1,33 @@
 import LinkedIn from './assets/LinkedIn.png';
 import GitHub from './assets/github.svg';
-import CSPPTLogo from './assets/csppt_logo.png'
 import More from './assets/More.png'
 import TaskBarButton from './TaskBarButton.jsx';
-import TaskBarButtonActive from './TaskBarButtonActive.jsx';
 function TaskBar({toggleVisibility, windows}){
     return (
         <div className='TaskBar'>   
             <div className='Tasks'>
-                <TaskBarButton source="https://www.linkedin.com/in/kyryloposty/" image={LinkedIn} alt="LinkedIn Logo"/>
-                <TaskBarButton source="https://github.com/Kyrylo234" image={GitHub} alt="GitHub Logo"/>
-                <TaskBarButton source="https://github.com/Kyrylo234/CSPPT" image={CSPPTLogo} alt="CSPPT Logo"/>
+              <TaskBarButton
+                type="link"
+                source="https://www.linkedin.com/in/kyryloposty/"
+                image={LinkedIn}
+                alt="LinkedIn Logo"
+                tooltip="LinkedIn"
+              />
+              <TaskBarButton
+                type="link"
+                source="https://github.com/Kyrylo234"
+                image={GitHub}
+                alt="GitHub Logo"
+                tooltip="GitHub"
+              />
                   {windows.map(win => (
-                    <TaskBarButtonActive
+                    <TaskBarButton
                       key={win.id}
                       image={win.image}
                       alt={win.title}
                       toggleVisibility={() => toggleVisibility(win.id)}
                       style={win.style}
+                      tooltip={win.title}
                     />
                 ))}
             </div>

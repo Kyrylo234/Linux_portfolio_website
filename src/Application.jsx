@@ -1,7 +1,6 @@
 import AppsButton from './AppsButton.jsx';
 import LinkedIn from './assets/LinkedIn.png';
 import GitHub from './assets/github.svg';
-import CSPPTLogo from './assets/csppt_logo.png'
 import Notepad from './assets/notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';
 import Linux from './assets/ubuntu.svg'
@@ -17,16 +16,13 @@ function Application({toggleVisibility}){
         <DraggableComponent className="DraggableOne" source={"https://github.com/Kyrylo234"} order={1}>
           <AppsButton title='GitHub' source={GitHub}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={"https://github.com/Kyrylo234/CSPPT"} order={2}>
-          <AppsButton title='CSPPT' source={CSPPTLogo}  alternative='GitHub logo' loading="lazy"/>
-        </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("projects")} order={3}>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("projects")} order={2}>
           <AppsButton title='Portfolio' source={Linux}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("aboutMe")} order={4}>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("aboutMe")} order={3}>
           <AppsButton title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("cv")} order={5}>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("cv")} order={4}>
           <AppsButton title='CV' source={cv}  alternative='CV' loading="lazy"/>
         </DraggableComponent>
       </div>
