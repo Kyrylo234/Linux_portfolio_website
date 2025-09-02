@@ -9,7 +9,6 @@ import NotePad from './assets/Notepad.svg'
 import Linux from './assets/LinuxUbuntuLogo.png'
 
 
-
 function DesktopApp() { 
   const applicationRef = useRef(null);
 
@@ -22,8 +21,9 @@ function DesktopApp() {
       image: NotePad, alt:"LinkedIn logo", 
       width: 500,
       height: 500,
-      left: 200,
-      top: 100 },
+      left: 150,
+      top: 50, 
+      content: "about"},
     { id: "projects", 
       title: "Projects", 
       visible: true, 
@@ -32,14 +32,10 @@ function DesktopApp() {
       image: Linux, alt:"Linux Ubuntu logo",
       width: 500,
       height: 500,
-      left: 200,
-      top: 100 }
+      left: 700,
+      top: 200, 
+      content: "website"}
   ]);
-
-  const windowRefs = {
-    aboutMe: useRef(null),
-    projects: useRef(null)
-  };
 
   // toggle window visibility
   const toggleVisibility = (id, forceValue = null) => {

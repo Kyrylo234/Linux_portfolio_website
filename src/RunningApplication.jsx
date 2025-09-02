@@ -9,10 +9,20 @@ import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
 
 function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility }) {
-  const [content, setContent] = useState(<AboutMe />);
-  const [activePage, setActivePage] = useState("about");
-
   const appContainerRef = useRef(null);
+
+  const getContent = () => {
+    switch (appWindow.content) {
+      case "about":
+        return <AboutMe />;
+      case "education":
+        return <Education />;
+      case "volunteering":
+        return <Volunteering />;
+      default:
+        return null;
+    }
+  };
 
   // forward fullscreen requests to parent
   const handleFullScreen = () => {
@@ -24,10 +34,13 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
   };
 
   const handleClick = (page) => {
-    setActivePage(page);
-    if (page === "about") setContent(<AboutMe />);
-    if (page === "education") setContent(<Education />);
-    if (page === "volunteering") setContent(<Volunteering />);
+    setWindows((prev) =>
+      prev.map((w) =>
+        w.id === appWindow.id
+          ? { ...w, content: page }
+          : w
+      )
+    );
   };
 
   return (
@@ -47,7 +60,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
           <div className="applicationOptions">
             <div
               className={`ApplicationOptionsOption ${
-                activePage === "about" ? "active" : ""
+                appWindow.content === "about" ? "active" : ""
               }`}
               onClick={() => handleClick("about")}
             >
@@ -55,7 +68,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
             </div>
             <div
               className={`ApplicationOptionsOption ${
-                activePage === "education" ? "active" : ""
+                appWindow.content === "education" ? "active" : ""
               }`}
               onClick={() => handleClick("education")}
             >
@@ -63,7 +76,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
             </div>
             <div
               className={`ApplicationOptionsOption ${
-                activePage === "volunteering" ? "active" : ""
+                appWindow.content === "volunteering" ? "active" : ""
               }`}
               onClick={() => handleClick("volunteering")}
             >
@@ -78,7 +91,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
               msOverflowStyle: "none" // IE/Edge
             }}
           >
-            {content}
+            {getContent()}
           </div>
         </div>
       </DraggableApplication>

@@ -1,6 +1,6 @@
 import DraggableApplication from "./DraggableApplication";
 import ApplicationTopBar from "./ApplicationTopBar";
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import Project from "./Project"
 import Website from"./assets/website1.png"
 import Website2 from"./assets/website2.png"
@@ -14,9 +14,6 @@ import carApp3 from "./assets/carApp3.png"
 import carApp4 from "./assets/carApp4.png"
 
 function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility}) {
-    const [content, setContent] = useState(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
-    const [activePage, setActivePage] = useState("Project1");
-
     const appContainerRef = useRef(null);
   
     // forward fullscreen requests to parent
@@ -28,13 +25,33 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
         }
     };
 
-  const handleClick = (page) => {
-    setActivePage(page);
-    if (page === "Project1") setContent(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "HTML/CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
-    if (page === "Project2") setContent(<Project source={[carApp1, carApp2, carApp3, carApp4]} elements={["Dart", "Flutter (Dart)", "Drift"]} title={"Car Service Tracking App"}/>);
-    if (page === "Project3") setContent(<Project source={[CSPPT]} elements={["Java", "Swing (Java)", "Teamwork", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"}/>);
-    if (page === "Project4") setContent(<Project source={[Database]} elements={["PHP", "HTML/CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"}/>);
-};
+    const getContent = () => {
+    switch (appWindow.content) {
+      case "Project1":
+        return <Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "HTML/CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>;
+      case "Project2":
+        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={["Dart", "Flutter (Dart)", "Drift"]} title={"Car Service Tracking App"}/>;
+      case "Project3":
+        return <Project source={[CSPPT]} elements={["Java", "Swing (Java)", "Teamwork", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"}/>;
+      case "Project4":
+        return <Project source={[Database]} elements={["PHP", "HTML/CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"}/>
+      default:
+        return null;
+    }
+  };
+
+    const handleClick = (page) => {
+        setWindows((prev) =>
+            prev.map((w) =>
+                w.id === appWindow.id
+                ? { ...w, content: page }
+                : w
+            )
+        );
+    };
+
+
+
   return (
     <div className="RunningApplicationWrapper">
             <DraggableApplication
@@ -51,25 +68,25 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
             <div className="RunningApplication">
             <div className="applicationOptions">
                 <div
-                className={`ApplicationOptionsOption ${activePage === "Project1" ? "active" : ""}`}
+                className={`ApplicationOptionsOption ${appWindow.content === "Project1" ? "active" : ""}`}
                 onClick={() => handleClick("Project1")}
                 >
                 <h5>Portfolio Website</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${activePage === "Project2" ? "active" : ""}`}
+                className={`ApplicationOptionsOption ${appWindow.content === "Project2" ? "active" : ""}`}
                 onClick={() => handleClick("Project2")}
                 >
                 <h5>Car Service Tracking</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${activePage === "Project3" ? "active" : ""}`}
+                className={`ApplicationOptionsOption ${appWindow.content === "Project3" ? "active" : ""}`}
                 onClick={() => handleClick("Project3")}
                 >
                 <h5>CSPPT</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${activePage === "Project4" ? "active" : ""}`}
+                className={`ApplicationOptionsOption ${appWindow.content === "Project4" ? "active" : ""}`}
                 onClick={() => handleClick("Project4")}
                 >
                 <h5>Books Read Tracker</h5>
@@ -83,7 +100,7 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
                 msOverflowStyle: "none", // IE/Edge
                 }}
             >
-                {content}
+                {getContent()}
             </div>
             </div>
         </DraggableApplication>
