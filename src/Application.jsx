@@ -21,16 +21,14 @@ function Application({toggleVisibility}){
         <DraggableComponent className="DraggableOne" source={"https://github.com/Kyrylo234/CSPPT"} order={2}>
           <AppsButton title='CSPPT' source={CSPPTLogo}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={"https://github.com/Kyrylo234/Linux_portfolio_website"} order={3}>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("projects")} order={3}>
           <AppsButton title='Portfolio' source={Linux}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" source={toggleVisibility} order={4}>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("aboutMe")} order={4}>
           <AppsButton title='About Me' source={Notepad}  alternative='GitHub logo' loading="lazy"/>
         </DraggableComponent>
-        <DraggableComponent className="DraggableOne" order={5}>
-          <a href={CV} download="Kyrylo_Postupalenko_CV" draggable="false">
-            <AppsButton title='CV' source={cv}  alternative='GitHub logo' loading="lazy"/>
-          </a>
+        <DraggableComponent className="DraggableOne" source={() => toggleVisibility("cv")} order={5}>
+          <AppsButton title='CV' source={cv}  alternative='CV' loading="lazy"/>
         </DraggableComponent>
       </div>
       </>

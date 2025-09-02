@@ -82,7 +82,7 @@ function DesktopApp() {
     <div className='App'>
       <TaskBar windows={windows} toggleVisibility={toggleVisibility}/>
       <TopBar/>
-      <Application toggleVisibility={() => toggleVisibility("aboutMe")} />
+      <Application toggleVisibility={toggleVisibility} />
       {windows.map((win) =>
         win.visible && (
           <win.component

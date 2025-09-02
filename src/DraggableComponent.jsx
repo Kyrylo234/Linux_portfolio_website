@@ -26,15 +26,14 @@ function DraggableComponent({ children, source, order}) {
     };
 
     const handleClick = () => {
-        if(isDragging === false){
-            if(typeof source === 'function'){
-              source()
-            }else{
-              window.open(source, '_blank').focus();
-            }
-            
-        }
-        setDragging(false);
+      if(isDragging === false){
+        if(typeof source === 'function'){
+          source()
+        }else{
+          window.open(source, '_blank').focus();
+        } 
+      }
+      setDragging(false);
     };
 
     const handleMouseOver = () => {
