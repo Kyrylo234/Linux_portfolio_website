@@ -20,33 +20,29 @@ function DesktopApp() {
 
   // toggle window visibility
   const toggleVisibility = (id, forceValue = null) => {
-    setWindows(prev =>
-      prev.map(win => {
-        if (win.id === id) {
-          const newVisible = forceValue !== null ? forceValue : !win.visible;
-          return {
-            ...win,
-            visible: newVisible,
-            style: {
-              backgroundColor: newVisible
-                ? "rgb(184, 129, 175)" // active color
-                : "rgb(0, 0, 0, 0)" // inactive color
-            }
-          };
-        }
-        return win;
-      })
-    );
-  };
+    setWindows(prev => {
+      const index = prev.findIndex(win => win.id === id);
+      if (index === -1) return prev; // nothing to update
 
-  // close window
-  const close = (id) => {
-    setWindows(prev =>
-      prev.map(win =>
-        win.id === id ? { ...win, visible: false } : win
-      )
-    );
-    applicationRef.current?.setInactive?.();
+      const target = prev[index];
+      const newVisible = forceValue !== null ? forceValue : !target.visible;
+
+      // clone the array
+      const updated = [...prev];
+
+      // update only the changed window
+      updated[index] = {
+        ...target,
+        visible: newVisible,
+        style: {
+          backgroundColor: newVisible
+            ? "rgb(184, 129, 175)" // active color
+            : "rgba(0, 0, 0, 0)"   // inactive color
+        }
+      };
+
+      return updated;
+    });
   };
 
   return (
@@ -62,7 +58,7 @@ function DesktopApp() {
             key={win.id}
             id={win.id}
             title={win.title}
-            onClose={close}
+            onClose={() => toggleVisibility(win.id, false)}
             onToggleVisibility={toggleVisibility}
             onFullScreen={(id) => console.log("Fullscreen requested for", id)}
           />

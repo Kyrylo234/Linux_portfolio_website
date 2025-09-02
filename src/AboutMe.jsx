@@ -14,7 +14,7 @@ function AboutMe() {
         <h3>Personal Profile</h3>
         <ProfilePic src={Pic}/>
         <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-        <h5>Hey i'm Kyrylo. Here you can check out what projects I have been working on and what I do in my spare time.</h5>
+        <h5>Hey I'm Kyrylo. Here you can check out the projects I'm working on and my hobbies.</h5>
         </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
