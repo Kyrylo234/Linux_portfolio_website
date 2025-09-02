@@ -1,8 +1,6 @@
-import React from 'react';
 import AppsButtonPhone from './AppsButtonPhone.jsx';
 import Image from './assets/LinkedIn.png';
 import Image1 from './assets/GitHub.png';
-import CSPPTLogo from './assets/csppt_logo.png'
 import LancasterLogo from './assets/Lancaster.png';
 import Notepad from './assets/Notepad.svg'
 function PhoneApps({setApp1Visible,setProjectsVisible}) {  

@@ -7,6 +7,7 @@ import RunningApplication from './RunningApplication.jsx';
 import RunningApplicationProjects from './RunningApplicationProjects';
 import NotePad from './assets/Notepad.svg'
 import Linux from './assets/LinuxUbuntuLogo.png'
+import CV from './CV.jsx';
 
 
 function DesktopApp() { 
@@ -16,7 +17,8 @@ function DesktopApp() {
       visible: true, 
       component: RunningApplication, 
       style: { backgroundColor: "rgb(184, 129, 175)" }, 
-      image: NotePad, alt:"LinkedIn logo", 
+      image: NotePad, 
+      alt:"LinkedIn logo", 
       width: 500,
       height: 500,
       left: 150,
@@ -27,11 +29,24 @@ function DesktopApp() {
       visible: true, 
       component: RunningApplicationProjects, 
       style: { backgroundColor: "rgb(184, 129, 175)" },
-      image: Linux, alt:"Linux Ubuntu logo",
+      image: Linux, 
+      alt:"Linux Ubuntu logo",
       width: 500,
       height: 500,
       left: 700,
       top: 200, 
+      content: "Project1"},
+      { id: "cv", 
+      title: "CV", 
+      visible: true, 
+      component: CV, 
+      style: { backgroundColor: "rgb(184, 129, 175)" },
+      image: Linux, 
+      alt:"CV",
+      width: 500,
+      height: 500,
+      left: 200,
+      top: 400, 
       content: "Project1"}
   ]);
 
