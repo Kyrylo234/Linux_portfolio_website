@@ -2,7 +2,7 @@ import './App.css';
 import Application from './Application.jsx'
 import TopBar from './TopBar.jsx';
 import TaskBar from './TaskBar.jsx';
-import React, { useRef, useState } from 'react';
+import React, {useState } from 'react';
 import RunningApplication from './RunningApplication.jsx';
 import RunningApplicationProjects from './RunningApplicationProjects';
 import NotePad from './assets/Notepad.svg'
@@ -10,8 +10,6 @@ import Linux from './assets/LinuxUbuntuLogo.png'
 
 
 function DesktopApp() { 
-  const applicationRef = useRef(null);
-
   const [windows, setWindows] = useState([
     { id: "aboutMe", 
       title: "About Me", 
@@ -34,7 +32,7 @@ function DesktopApp() {
       height: 500,
       left: 700,
       top: 200, 
-      content: "website"}
+      content: "Project1"}
   ]);
 
   // toggle window visibility
@@ -66,7 +64,7 @@ function DesktopApp() {
 
   return (
     <div className='App'>
-      <TaskBar windows={windows} toggleVisibility={toggleVisibility}  ref={applicationRef}/>
+      <TaskBar windows={windows} toggleVisibility={toggleVisibility}/>
       <TopBar/>
       <Application toggleVisibility={() => toggleVisibility("aboutMe")} />
       {windows.map((win) =>

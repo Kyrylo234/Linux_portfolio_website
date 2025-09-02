@@ -4,9 +4,8 @@ import CSPPTLogo from './assets/csppt_logo.png'
 import LancasterLogo from './assets/Lancaster.png';
 import More from './assets/More.png'
 import TaskBarButton from './TaskBarButton.jsx';
-import { forwardRef } from 'react';
 import TaskBarButtonActive from './TaskBarButtonActive.jsx';
-const TaskBar = forwardRef(({toggleVisibility, windows}, ref) => {
+function TaskBar({toggleVisibility, windows}){
     return (
         <div className='TaskBar'>   
             <div className='Tasks'>
@@ -27,6 +26,5 @@ const TaskBar = forwardRef(({toggleVisibility, windows}, ref) => {
             <img src={More} alt="More" className='Bottom' loading="lazy"></img>
         </div>
     );
-  });
-  
+  }
   export default TaskBar;

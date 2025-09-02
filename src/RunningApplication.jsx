@@ -1,9 +1,6 @@
 import DraggableApplication from "./DraggableApplication";
 import ApplicationTopBar from "./ApplicationTopBar";
-import React, {
-  useRef,
-  useState
-} from "react";
+import React, {useRef,} from "react";
 import AboutMe from "./AboutMe.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
