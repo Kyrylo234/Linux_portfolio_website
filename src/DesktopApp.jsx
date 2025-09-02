@@ -14,9 +14,32 @@ function DesktopApp() {
   const applicationRef = useRef(null);
 
   const [windows, setWindows] = useState([
-    { id: "aboutMe", title: "About Me", visible: true, component: RunningApplication, style: { backgroundColor: "rgb(184, 129, 175)" }, image: NotePad, alt:"LinkedIn logo"},
-    { id: "projects", title: "Projects", visible: true, component: RunningApplicationProjects, style: { backgroundColor: "rgb(184, 129, 175)" },  image: Linux, alt:"Linux Ubuntu logo" }
+    { id: "aboutMe", 
+      title: "About Me", 
+      visible: true, 
+      component: RunningApplication, 
+      style: { backgroundColor: "rgb(184, 129, 175)" }, 
+      image: NotePad, alt:"LinkedIn logo", 
+      width: 500,
+      height: 500,
+      left: 200,
+      top: 100 },
+    { id: "projects", 
+      title: "Projects", 
+      visible: true, 
+      component: RunningApplicationProjects, 
+      style: { backgroundColor: "rgb(184, 129, 175)" },
+      image: Linux, alt:"Linux Ubuntu logo",
+      width: 500,
+      height: 500,
+      left: 200,
+      top: 100 }
   ]);
+
+  const windowRefs = {
+    aboutMe: useRef(null),
+    projects: useRef(null)
+  };
 
   // toggle window visibility
   const toggleVisibility = (id, forceValue = null) => {
@@ -49,17 +72,15 @@ function DesktopApp() {
     <div className='App'>
       <TaskBar windows={windows} toggleVisibility={toggleVisibility}  ref={applicationRef}/>
       <TopBar/>
-
       <Application toggleVisibility={() => toggleVisibility("aboutMe")} />
-
-      {windows.map(win =>
+      {windows.map((win) =>
         win.visible && (
           <win.component
             key={win.id}
-            id={win.id}
-            title={win.title}
+            appWindow={win}
+            setWindows={setWindows}
             onClose={() => toggleVisibility(win.id, false)}
-            onToggleVisibility={toggleVisibility}
+            onToggleVisibility={() => toggleVisibility(win.id)}
           />
         )
       )}

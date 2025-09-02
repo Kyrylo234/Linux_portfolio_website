@@ -1,20 +1,16 @@
 import DraggableApplication from "./DraggableApplication";
 import ApplicationTopBar from "./ApplicationTopBar";
-import React, { useRef, useState } from "react";
+import React, {
+  useRef,
+  useState
+} from "react";
 import AboutMe from "./AboutMe.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
 
-function RunningApplication({ id, title, onClose, onToggleVisibility}) {
+function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility }) {
   const [content, setContent] = useState(<AboutMe />);
   const [activePage, setActivePage] = useState("about");
-  const [appProperties, setAppProperties] = useState({
-    width: 500,
-    height: 500,
-    left: 200,
-    top: 100,
-    active: 0
-  });
 
   const appContainerRef = useRef(null);
 
@@ -37,32 +33,38 @@ function RunningApplication({ id, title, onClose, onToggleVisibility}) {
   return (
     <div className="RunningApplicationWrapper">
       <DraggableApplication
-        appProperties={appProperties}
-        setAppProperties={setAppProperties}
+        window={appWindow}
+        setWindows={setWindows}
         ref={appContainerRef}
       >
         <ApplicationTopBar
-          toggleVisibility={() => onToggleVisibility?.(id)}
-          close={() => onClose?.(id)}
+          toggleVisibility={() => onToggleVisibility?.(appWindow.id)}
+          close={() => onClose?.(appWindow.id)}
           setFullScreen={handleFullScreen}
-          title={title}
+          title={appWindow.title}
         />
         <div className="RunningApplication">
           <div className="applicationOptions">
             <div
-              className={`ApplicationOptionsOption ${activePage === "about" ? "active" : ""}`}
+              className={`ApplicationOptionsOption ${
+                activePage === "about" ? "active" : ""
+              }`}
               onClick={() => handleClick("about")}
             >
               <h5>About Me</h5>
             </div>
             <div
-              className={`ApplicationOptionsOption ${activePage === "education" ? "active" : ""}`}
+              className={`ApplicationOptionsOption ${
+                activePage === "education" ? "active" : ""
+              }`}
               onClick={() => handleClick("education")}
             >
               <h5>Education</h5>
             </div>
             <div
-              className={`ApplicationOptionsOption ${activePage === "volunteering" ? "active" : ""}`}
+              className={`ApplicationOptionsOption ${
+                activePage === "volunteering" ? "active" : ""
+              }`}
               onClick={() => handleClick("volunteering")}
             >
               <h5>Volunteering</h5>
@@ -73,7 +75,7 @@ function RunningApplication({ id, title, onClose, onToggleVisibility}) {
             style={{
               overflow: "scroll",
               scrollbarWidth: "none", // Firefox
-              msOverflowStyle: "none", // IE/Edge
+              msOverflowStyle: "none" // IE/Edge
             }}
           >
             {content}
@@ -83,5 +85,4 @@ function RunningApplication({ id, title, onClose, onToggleVisibility}) {
     </div>
   );
 }
-
 export default RunningApplication;

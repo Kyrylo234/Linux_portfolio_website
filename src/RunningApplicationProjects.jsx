@@ -13,16 +13,9 @@ import carApp2 from "./assets/carApp2.png"
 import carApp3 from "./assets/carApp3.png"
 import carApp4 from "./assets/carApp4.png"
 
-function RunningApplicationProjects({ id, title, onClose, onToggleVisibility}) {
+function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility}) {
     const [content, setContent] = useState(<Project source={[Website, Website2, Website3, Website4]} elements={["JavaScript", "React.js", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>);
     const [activePage, setActivePage] = useState("Project1");
-    const [appProperties, setAppProperties] = useState({
-        width: 500,
-        height: 500,
-        left: 500,
-        top: 300,
-        active: 0
-    });
 
     const appContainerRef = useRef(null);
   
@@ -45,15 +38,15 @@ function RunningApplicationProjects({ id, title, onClose, onToggleVisibility}) {
   return (
     <div className="RunningApplicationWrapper">
             <DraggableApplication
-                appProperties={appProperties}
-                setAppProperties={setAppProperties}
+                window={appWindow}
+                setWindows={setWindows}
                 ref={appContainerRef}
             >
             <ApplicationTopBar
-                toggleVisibility={() => onToggleVisibility?.(id)}
-                close={() => onClose?.(id)}
+                toggleVisibility={() => onToggleVisibility?.(appWindow.id)}
+                close={() => onClose?.(appWindow.id)}
                 setFullScreen={handleFullScreen}
-                title={title}
+                title={appWindow.title}
             />
             <div className="RunningApplication">
             <div className="applicationOptions">

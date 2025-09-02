@@ -9,16 +9,22 @@ const TEXT_TAGS = new Set([
 ]);
 
 const DraggableApplication = forwardRef(
-  ({ children, appProperties, setAppProperties }, ref) => {
+  ({ window, setWindows, children }, ref) => {
     // ---- Helpers ----
-    const updateAppProperties = (element) => {
-      setAppProperties((prev) => ({
-        ...prev,
-        width: parseInt(element.style.width),
-        height: parseInt(element.style.height),
-        left: parseInt(element.style.left),
-        top: parseInt(element.style.top),
-      }));
+    const updateWindowProperties = (element) => {
+      setWindows((prev) =>
+        prev.map((w) =>
+          w.id === window.id
+            ? {
+                ...w,
+                width: parseInt(element.style.width),
+                height: parseInt(element.style.height),
+                left: parseInt(element.style.left),
+                top: parseInt(element.style.top),
+              }
+            : w
+        )
+      );
     };
 
     const getClientCoords = (event) => {
@@ -78,8 +84,8 @@ const DraggableApplication = forwardRef(
         document.removeEventListener("mouseup", handleUp);
         document.removeEventListener("touchmove", handleMove);
         document.removeEventListener("touchend", handleUp);
-        updateAppProperties(element);
-        document.body.style.cursor = "default"; // reset after finishing
+        updateWindowProperties(element);
+        document.body.style.cursor = "default";
       };
 
       document.addEventListener("mousemove", handleMove);
@@ -122,7 +128,6 @@ const DraggableApplication = forwardRef(
       }
     };
 
-    // Reset cursor when leaving container
     const handleMouseLeave = () => {
       document.body.style.cursor = "default";
     };
@@ -199,10 +204,10 @@ const DraggableApplication = forwardRef(
         className="DraggableApplication"
         style={{
           position: "absolute",
-          width: appProperties.width + "px",
-          height: appProperties.height + "px",
-          left: appProperties.left + "px",
-          top: appProperties.top + "px",
+          width: window.width + "px",
+          height: window.height + "px",
+          left: window.left + "px",
+          top: window.top + "px",
         }}
       >
         {children}
