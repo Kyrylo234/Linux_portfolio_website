@@ -1,7 +1,7 @@
 import RandomColorDiv from "./RandomColorDiv";
 import Carousel from "./Carousel";
 
-function Project({ source, elements, title, link }) {
+function Project({ source, elements, title, link, desc }) {
   return (
     <div
       style={{
@@ -15,12 +15,12 @@ function Project({ source, elements, title, link }) {
         <div
           style={{
             marginTop: "5px",
-            padding: "5px",
+            padding: "10px",
             border: "1px solid #ddd",
             borderRadius: "8px",
           }}
         >
-          <h4 style={{ marginBottom: "2px", marginTop: "0" }}>
+          <h4 style={{ marginBottom: "4px", marginTop: "0" }}>
             <a
               href={link}
               style={{ color: "inherit", textDecoration: "underline" }}
@@ -28,6 +28,20 @@ function Project({ source, elements, title, link }) {
               {title}
             </a>
           </h4>
+
+          {desc && (
+            <p
+              style={{
+                margin: "8px 0 12px 0",
+                fontSize: "0.9rem",
+                lineHeight: "1.5",
+                color: "#eee", // closer to white
+                fontWeight: "300",
+              }}
+            >
+              {desc}
+            </p>
+          )}
 
           <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
             {elements.map((text, i) => (
