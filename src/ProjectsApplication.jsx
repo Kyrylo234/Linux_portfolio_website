@@ -23,7 +23,7 @@ import FlutterSVG from "./FlutterSVG"
 
 function ProjectsApplication() {  
       return (
-        <div className="PhoneApplication" style={{paddingTop:"20px", paddingBottom:"60px"}}>§
+        <div className="PhoneApplication" style={{paddingTop:"20px", paddingBottom:"60px"}}>
           <h2>Projects</h2>
           <Project source={[Website, Website2, Website3, Website4]} elements={[<ReactSVG/>, <JSSVG/>, <HTMLSVG/>, <CSSSVG/>, <GitSVG/>]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"}/>
           <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} title={"Car Service Tracking App"}/>
