@@ -17,13 +17,28 @@ function Volunteering() {
       <h1 style={{ marginTop: "0"}}>Volunteering</h1>
       <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
       <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Help Deliver Aid To Ukraine</h3>
-      <Carousel images={[Image, packing, packing2]} imgStyle={{             
-            maxHeight: "70vh", maxWidth: "90vw", height: "auto", width: "auto" ,              
-            paddingTop:'10px',   
-            scrollSnapAlign: "start", 
-            objectFit: "contain",         
-            flex: "0 0 100%"}}/>     
-      <h5>I coordinated and was part of a team of volunteers who were tasked with packing and loading humanitarian aid onto the lorries. Additionally, I helped raise funds by running the charity's social media.</h5> 
+      <p
+        style={{
+          margin: "8px 0 12px 0",
+          fontSize: "0.9rem",
+          lineHeight: "1.5",
+          color: "#eee", // closer to white
+          fontWeight: "300",
+        }}
+      >{"I coordinated and was part of a team of volunteers who were tasked with packing and loading humanitarian aid onto the lorries. Additionally, I helped raise funds by running the charity's social media."}</p>
+      <Carousel
+        images={[Image, packing, packing2]}
+        imgStyle={{
+          maxHeight: "70vh",  // don’t exceed 70% of viewport height
+          maxWidth: "90vw",   // don’t exceed 90% of viewport width
+          width: "100%",      // fill container width
+          height: "100%",     // fill container height
+          paddingTop: "10px",
+          scrollSnapAlign: "start",
+          objectFit: "contain", // scale down without cropping
+          flex: "0 0 100%",
+        }}
+      />   
       <h4 style={{ marginBottom: "0"}}>Instagram:</h4>
       <div style={{ 
               display: "flex", 
@@ -52,14 +67,30 @@ function Volunteering() {
       </div>
       <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Ukro-Saxons</h3>
-        <Carousel images={[truckImage, truckImage2, truckImage3]} imgStyle={{             
-            maxHeight: "70vh", maxWidth: "90vw", height: "auto", width: "auto" ,              
-            paddingTop:'10px',   
-            scrollSnapAlign: "start", 
-            objectFit: "contain",         
-            flex: "0 0 100%"}}/>     
-        <h5>Helping to deliver 4x4’s packed with humanitarian aid to Ukraine.</h5> 
-
+        <p
+              style={{
+                margin: "8px 0 12px 0",
+                fontSize: "0.9rem",
+                lineHeight: "1.5",
+                color: "#eee", // closer to white
+                fontWeight: "300",
+              }}
+            >
+              {"Helping to deliver 4x4’s packed with humanitarian aid to Ukraine."}
+            </p>
+        <Carousel
+        images={[truckImage, truckImage2, truckImage3]}
+        imgStyle={{
+          maxHeight: "70vh",  // don’t exceed 70% of viewport height
+          maxWidth: "90vw",   // don’t exceed 90% of viewport width
+          width: "100%",      // fill container width
+          height: "100%",     // fill container height
+          paddingTop: "10px",
+          scrollSnapAlign: "start",
+          objectFit: "contain", // scale down without cropping
+          flex: "0 0 100%",
+        }}
+      />    
       </div>
 
     </div>
