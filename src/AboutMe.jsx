@@ -44,11 +44,19 @@ function AboutMe() {
       <div className="fiftyPix">
         <h2>About Me</h2>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
-        <h3>Personal Profile</h3>
-        <ProfilePic src={Pic}/>
-        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-        <h5>Hey I'm Kyrylo. Here you can check out the projects I'm working on and my hobbies.</h5>
-        </div>
+          <h3>Personal Profile</h3>
+          <ProfilePic src={Pic}/>
+          <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
+            <p
+              style={{
+                margin: "8px 0 12px 0",
+                fontSize: "0.9rem",
+                lineHeight: "1.5",
+                color: "#eee", // closer to white
+                fontWeight: "300",
+              }}
+            >Hey I'm Kyrylo. Here you can check out the projects I'm working on and my hobbies.</p>
+            </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3 style={{margin: "10px 0" }}>Skills</h3>
