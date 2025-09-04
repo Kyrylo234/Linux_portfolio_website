@@ -43,7 +43,7 @@ function Project({ source, elements, title, link, desc }) {
             </p>
           )}
 
-          <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "5px", flexWrap: "wrap",justifyContent: "center", alignItems: "center" }}>
             {elements.map((text, i) => (
               <RandomColorDiv key={i} text={text} />
             ))}
