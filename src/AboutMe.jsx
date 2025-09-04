@@ -59,41 +59,41 @@ function AboutMe() {
             </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
-        <h3 style={{margin: "10px 0" }}>Skills</h3>
-        <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-          <h4 style={{margin: "5px 0" }}>Programming</h4>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-              {programming.map((svg, i) => (
-                <RandomColorDiv key={i} text={svg} />
-              ))}
-            </div>
-          </div>
-        </div>
-        <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
-          <h4 style={{margin: "5px 0" }}>Tech</h4>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-              {tech.map((svg, i) => (
-                <RandomColorDiv key={i} text={svg} />
-              ))}
+          <h3 style={{margin: "10px 0" }}>Skills</h3>
+          <div style={{ marginTop: "10px",padding: "16px",border: "1px solid #ddd", borderRadius: "8px" }}>
+            <h4 style={{margin: "5px 0" }}>Programming</h4>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+                {programming.map((svg, i) => (
+                  <RandomColorDiv key={i} text={svg} />
+                ))}
               </div>
             </div>
-        </div>
-        <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
-        <h4 style={{margin: "5px 0" }}>Languages</h4>
-        <RandomColorDivOnlyText text="English"/>
-        <RandomColorDivOnlyText text="Ukrainian"/>
-        <RandomColorDivOnlyText text="Russian"/>
-        </div>
+          </div>
+          <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
+            <h4 style={{margin: "5px 0" }}>Tech</h4>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+                {tech.map((svg, i) => (
+                  <RandomColorDiv key={i} text={svg} />
+                ))}
+                </div>
+              </div>
+          </div>
+          <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
+            <h4 style={{margin: "5px 0" }}>Languages</h4>
+            <RandomColorDivOnlyText text="English"/>
+            <RandomColorDivOnlyText text="Ukrainian"/>
+            <RandomColorDivOnlyText text="Russian"/>
+          </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
-        <h4 style={{margin: "5px 0" }}>Hobbies</h4>
-        <RandomColorDivOnlyText text="Volleyball"/>
-        <RandomColorDivOnlyText text="Fitness"/>
-        <RandomColorDivOnlyText text="Video Production"/>
-        <RandomColorDivOnlyText text="Travelling"/>
-        <RandomColorDivOnlyText text="Cars"/>
+          <h4 style={{margin: "5px 0" }}>Hobbies</h4>
+          <RandomColorDivOnlyText text="Volleyball"/>
+          <RandomColorDivOnlyText text="Fitness"/>
+          <RandomColorDivOnlyText text="Video Production"/>
+          <RandomColorDivOnlyText text="Travelling"/>
+          <RandomColorDivOnlyText text="Cars"/>
         </div>
         
         <div style={{ 
