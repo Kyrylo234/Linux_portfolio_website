@@ -437,3 +437,11 @@ code {
   visibility: visible;
   opacity: 1;
 }
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
+}

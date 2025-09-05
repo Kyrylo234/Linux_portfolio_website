@@ -100,58 +100,82 @@ function AboutMe() {
           <RandomColorDivOnlyText text="Cars"/>
         </div>
         
-        <div style={{ 
-          marginTop: "10px",
-          padding: "5px",
-          border: "2px solid #dddddd8e",
-          borderRadius: "8px",
-          textAlign: "center"
-        }}>
-          <h3 style={{ margin: "0 0 16px", fontSize: "20px", fontWeight: "600" }}>Contact Me</h3>
+        <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
+  <h3 style={{ margin: "0 0 20px", fontSize: "22px", fontWeight: "600" }}>
+    Contact Me
+  </h3>
 
-          <div style={{ 
-            display: "flex", 
-            justifyContent: "center",
-            alignItems: "center", 
-            gap: "8px", 
-            marginBottom: "16px" 
-          }}>
-            <h5 style={{ margin: 0, fontSize: "16px" }}>Kyrylop2004@gmail.com</h5>
-            <button 
-              onMouseDown={copyFunction}
-              style={{
-                padding: "6px 12px",
-                borderRadius: "6px",
-                border: "none",
-                backgroundColor: "#008080",
-                color: "white",
-                cursor: "pointer"
-            }}>Copy</button>
-          </div>
+  <div style={{ 
+    display: "flex", 
+    justifyContent: "center",
+    alignItems: "center", 
+    gap: "10px", 
+    marginBottom: "20px" 
+  }}>
+    <h5 style={{ margin: 0, fontSize: "16px" }}>Kyrylop2004@gmail.com</h5>
+    <button 
+      onMouseDown={copyFunction}
+      style={{
+        padding: "6px 12px",
+        borderRadius: "6px",
+        border: "none",
+        backgroundColor: "#008080",
+        color: "white",
+        cursor: "pointer"
+      }}
+    >
+      Copy
+    </button>
+  </div>
 
-          <div>
-             <a href="https://www.linkedin.com/in/kyryloposty/" target="_blank" rel="noopener noreferrer" style={{ marginRight: "10px" }}>
-              <img src={LinkedIn} alt="LinkedIn" style={{ width: "30px", height: "30px", verticalAlign: "middle" }} loading="lazy"/>
-            </a>
-            <a href="https://github.com/Kyrylo234" target="_blank" rel="noopener noreferrer" style={{ marginRight: "10px" }}>
-              <img src={GitHub} alt="GitHub" style={{ width: "30px", height: "30px", verticalAlign: "middle" }} loading="lazy"/>
-            </a>
-          </div>
+  <div style={{
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "24px",
+  marginBottom: "20px"
+}}>
+  <a
+    href="https://www.linkedin.com/in/kyryloposty/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="social-link"
+  >
+    <img src={LinkedIn} alt="LinkedIn" loading="lazy" className="social-icon" />
+  </a>
 
-         
+  <a
+    href="https://github.com/Kyrylo234"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="social-link"
+  >
+    <img src={GitHub} alt="GitHub" loading="lazy" className="social-icon" />
+  </a>
+</div>
 
-          <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" , marginTop: "16px", display: "inline-block" }}>
-            <button
-              style={{
-                padding: "8px 14px",
-                borderRadius: "6px",
-                border: "none",
-                backgroundColor: "#444",
-                color: "white",
-                cursor: "pointer"
-            }}>Download my CV</button>
-          </a>
-        </div>
+  {/* CV button */}
+  <a 
+    href="/assets/Kyrylo_Postupalenko_CV.pdf" 
+    download="cv" 
+    style={{ textDecoration: "none" }}
+  >
+    <button
+      style={{
+        padding: "10px 16px",
+        borderRadius: "6px",
+        border: "none",
+        backgroundColor: "#444",
+        color: "white",
+        cursor: "pointer"
+      }}
+    >
+      Download my CV
+    </button>
+  </a>
+</div>
       </div>
     );
   }
