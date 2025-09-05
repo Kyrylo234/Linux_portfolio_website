@@ -15,6 +15,10 @@ import DriftSVG from "./DriftSVG"
 import FlutterSVG from "./FlutterSVG"
 import PythonSVG from "./PythonSVG"
 import CLogo from './CLogo.jsx'
+import LinkedIn from './assets/linkedIn.svg';
+import GitHub from './assets/github.svg';
+
+
 function AboutMe() {
   const programming = [
     <JavaSVG />,
@@ -101,12 +105,13 @@ function AboutMe() {
           padding: "5px",
           border: "2px solid #dddddd8e",
           borderRadius: "8px",
-          textAlign: "center"  // center-aligns text like <h3>
+          textAlign: "center"
         }}>
           <h3 style={{ margin: "0 0 16px", fontSize: "20px", fontWeight: "600" }}>Contact Me</h3>
+
           <div style={{ 
             display: "flex", 
-            justifyContent: "center", // center horizontally
+            justifyContent: "center",
             alignItems: "center", 
             gap: "8px", 
             marginBottom: "16px" 
@@ -123,7 +128,19 @@ function AboutMe() {
                 cursor: "pointer"
             }}>Copy</button>
           </div>
-          <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" }}>
+
+          <div>
+             <a href="https://www.linkedin.com/in/kyryloposty/" target="_blank" rel="noopener noreferrer" style={{ marginRight: "10px" }}>
+              <img src={LinkedIn} alt="LinkedIn" style={{ width: "30px", height: "30px", verticalAlign: "middle" }} loading="lazy"/>
+            </a>
+            <a href="https://github.com/Kyrylo234" target="_blank" rel="noopener noreferrer" style={{ marginRight: "10px" }}>
+              <img src={GitHub} alt="GitHub" style={{ width: "30px", height: "30px", verticalAlign: "middle" }} loading="lazy"/>
+            </a>
+          </div>
+
+         
+
+          <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" , marginTop: "16px", display: "inline-block" }}>
             <button
               style={{
                 padding: "8px 14px",
