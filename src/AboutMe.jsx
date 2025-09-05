@@ -104,38 +104,37 @@ function AboutMe() {
           textAlign: "center"  // center-aligns text like <h3>
         }}>
           <h3 style={{ margin: "0 0 16px", fontSize: "20px", fontWeight: "600" }}>Contact Me</h3>
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "center", // center horizontally
-        alignItems: "center", 
-        gap: "8px", 
-        marginBottom: "16px" 
-      }}>
-        <h5 style={{ margin: 0, fontSize: "16px" }}>Kyrylop2004@gmail.com</h5>
-        <button 
-          onMouseDown={copyFunction}
-          style={{
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: "none",
-            backgroundColor: "#008080",
-            color: "white",
-            cursor: "pointer"
-        }}>Copy</button>
-  </div>
-
-  <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" }}>
-    <button
-      style={{
-        padding: "8px 14px",
-        borderRadius: "6px",
-        border: "none",
-        backgroundColor: "#444",
-        color: "white",
-        cursor: "pointer"
-    }}>Download my CV</button>
-  </a>
-</div>
+          <div style={{ 
+            display: "flex", 
+            justifyContent: "center", // center horizontally
+            alignItems: "center", 
+            gap: "8px", 
+            marginBottom: "16px" 
+          }}>
+            <h5 style={{ margin: 0, fontSize: "16px" }}>Kyrylop2004@gmail.com</h5>
+            <button 
+              onMouseDown={copyFunction}
+              style={{
+                padding: "6px 12px",
+                borderRadius: "6px",
+                border: "none",
+                backgroundColor: "#008080",
+                color: "white",
+                cursor: "pointer"
+            }}>Copy</button>
+          </div>
+          <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" }}>
+            <button
+              style={{
+                padding: "8px 14px",
+                borderRadius: "6px",
+                border: "none",
+                backgroundColor: "#444",
+                color: "white",
+                cursor: "pointer"
+            }}>Download my CV</button>
+          </a>
+        </div>
       </div>
     );
   }

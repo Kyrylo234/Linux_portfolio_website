@@ -1,5 +1,5 @@
 import AppsButton from './AppsButton.jsx';
-import LinkedIn from './assets/LinkedIn.png';
+import LinkedIn from './assets/linkedIn.svg';
 import GitHub from './assets/github.svg';
 import Notepad from './assets/notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';

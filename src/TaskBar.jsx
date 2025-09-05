@@ -1,4 +1,4 @@
-import LinkedIn from './assets/LinkedIn.png';
+import LinkedIn from './assets/linkedIn.svg';
 import GitHub from './assets/github.svg';
 import More from './assets/More.png'
 import TaskBarButton from './TaskBarButton.jsx';

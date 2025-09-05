@@ -1,5 +1,5 @@
 import AppsButtonPhone from './AppsButtonPhone.jsx';
-import LinkedIn from './assets/LinkedIn.png';
+import LinkedIn from './assets/linkedIn.svg';
 import GitHub from './assets/github.svg';
 import cv from './assets/cv.svg';
 import Notepad from './assets/notepad.svg'
