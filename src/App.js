@@ -1,10 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback} from 'react';
 import './App.css';
 import DesktopApp from './DesktopApp.jsx';
 import Phone from './Phone.jsx';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 function App() {
   const [content, changeContent] = useState(<DesktopApp />);
+
+    const customInit = useCallback(async (engine) => {
+      await loadFull(engine);
+    }, []);
+
+    const options = {
+      fullScreen: { enable: true },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 200 },
+        color: { value: "#98119bff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.8, random: { enable: true, minimumValue: 0.4 } },
+        size: { value: 4, random: { enable: true, minimumValue: 2 } },
+        move: {
+          direction: "bottom",
+          enable: true,
+          speed: 2,
+          outModes: { default: "out" },
+        },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: false },
+          onClick: { enable: false },
+        },
+      },
+    };
 
   const handleResize = () => {
     if (window.innerWidth < 768) {
@@ -27,7 +57,7 @@ function App() {
     };
   }, []); // ✅ safe to leave [] because handleResize doesn’t depend on props/state
 
-  return <div>{content}</div>;
+  return <div><Particles options={options} init={customInit} />{content}</div>;
 }
 
 export default App;
