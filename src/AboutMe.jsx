@@ -21,22 +21,22 @@ import GitHub from './assets/github.svg';
 
 function AboutMe() {
   const programming = [
-    <JavaSVG />,
-    <JSSVG />,
-    <PythonSVG/>,
-    <DartSVG />,
-    <CLogo />,
-    <HTMLSVG />,
-    <CSSSVG />,
-    <SQLSVG />,
-    <PHPSVG />,
+    { name: "Java", icon: <JavaSVG /> },
+    { name: "JavaScript", icon: <JSSVG /> },
+    { name: "Python", icon: <PythonSVG /> },
+    { name: "Dart", icon: <DartSVG /> },
+    { name: "C", icon: <CLogo /> },
+    { name: "HTML", icon: <HTMLSVG /> },
+    { name: "CSS", icon: <CSSSVG /> },
+    { name: "SQL", icon: <SQLSVG /> },
+    { name: "PHP", icon: <PHPSVG /> },
   ];
 
   const tech = [
-    <ReactSVG />,
-    <GitSVG />,
-    <DriftSVG />,
-    <FlutterSVG />,
+    { name: "React.js", icon: <ReactSVG /> },
+    { name: "Git", icon: <GitSVG /> },
+    { name: "Drift", icon: <DriftSVG /> },
+    { name: "Flutter", icon: <FlutterSVG />}
   ];
   
   function copyFunction(event){
@@ -69,7 +69,14 @@ function AboutMe() {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
                 {programming.map((svg, i) => (
-                  <RandomColorDiv key={i} text={svg} />
+                  <div><RandomColorDiv key={i} text={svg.icon} />
+                  <p style={{
+                    margin: "8px 0 12px 0",
+                    fontSize: "0.75rem",
+                    lineHeight: "1.5",
+                    color: "#eee", // closer to white
+                    fontWeight: "300",
+                  }}>{svg.name}</p></div>
                 ))}
               </div>
             </div>
@@ -79,7 +86,14 @@ function AboutMe() {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
                 {tech.map((svg, i) => (
-                  <RandomColorDiv key={i} text={svg} />
+                  <div><RandomColorDiv key={i} text={svg.icon} />
+                  <p style={{
+                    margin: "8px 0 12px 0",
+                    fontSize: "0.75rem",
+                    lineHeight: "1.5",
+                    color: "#eee", // closer to white
+                    fontWeight: "300",
+                  }}>{svg.name}</p></div>
                 ))}
                 </div>
               </div>
