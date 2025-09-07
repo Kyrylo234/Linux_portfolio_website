@@ -40,7 +40,7 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
     const getContent = () => {
     switch (appWindow.content) {
       case "Project1":
-        return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} elementsNames={["Reac.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"This portfolio site was my hands-on project for learning JavaScript and React, styled after the Ubuntu desktop I used at Lancaster University."}/>;
+        return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} elementsNames={["React.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"This portfolio site was my hands-on project for learning JavaScript and React, styled after the Ubuntu desktop I used at Lancaster University."}/>;
       case "Project2":
         return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Car Service Tracking App"} desc={"I built this app to track car maintenance, completed services, and fuel efficiency. It’s built with Flutter (Dart) and uses Drift for a lightweight local database."}/>;
       case "Project3":

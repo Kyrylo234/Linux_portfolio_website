@@ -24,12 +24,15 @@ body{
   height:100vh;
 }
 
-.Application{
+.Application {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;      /* centers vertically if height is fixed */
+  align-items: center;          /* centers horizontally */
   flex-direction: column;
+  text-align: center;
   border-radius: 5px;
+  width: 70px;                 
+  height: 70px;                
 }
 
 .Application h5{
