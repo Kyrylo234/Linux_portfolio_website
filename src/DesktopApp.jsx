@@ -9,6 +9,8 @@ import NotePad from './assets/notepad.svg'
 import Linux from './assets/ubuntu.svg'
 import CV from './CV.jsx';
 import cvImage from './assets/cv.svg'
+import RunningTetrisApplication from './RunningFallingBlocksApplication.jsx';
+import Game from './assets/game.svg'
 
 function DesktopApp() { 
   const [windows, setWindows] = useState([
@@ -49,18 +51,27 @@ function DesktopApp() {
       height: 500,
       left: 200,
       top: 400,
+      order: 3},
+    { id: "fallingBlocks", 
+      title: "Falling Code", 
+      visible: true, 
+      component: RunningTetrisApplication, 
+      style: { backgroundColor: "rgb(184, 129, 175)" },
+      image: Game, 
+      alt:"Falling Blocks Code Game",
+      width: 500,
+      height: 500,
+      left: 200,
+      top: 400,
       order: 3}
   ]);
 
   const bringToFront = (id) => {
     setWindows((prev) => {
       const sorted = [...prev].sort((a, b) => a.order - b.order);
-
       const targetIndex = sorted.findIndex((w) => w.id === id);
       const target = sorted.splice(targetIndex, 1)[0];
-
       sorted.push(target);
-
       return sorted.map((win, index) => ({ ...win, order: index + 1 }));
     });
   };
