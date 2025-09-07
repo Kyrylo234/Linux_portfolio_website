@@ -40,13 +40,13 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
     const getContent = () => {
     switch (appWindow.content) {
       case "Project1":
-        return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"This portfolio site was my hands-on project for learning JavaScript and React, styled after the Ubuntu desktop I used at Lancaster University."}/>;
+        return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} elementsNames={["Reac.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"This portfolio site was my hands-on project for learning JavaScript and React, styled after the Ubuntu desktop I used at Lancaster University."}/>;
       case "Project2":
-        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} title={"Car Service Tracking App"} desc={"I built this app to track car maintenance, completed services, and fuel efficiency. It’s built with Flutter (Dart) and uses Drift for a lightweight local database."}/>;
+        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Car Service Tracking App"} desc={"I built this app to track car maintenance, completed services, and fuel efficiency. It’s built with Flutter (Dart) and uses Drift for a lightweight local database."}/>;
       case "Project3":
-        return <Project source={[CSPPT]} elements={[<JavaSVG/>,  <GitSVG/>]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"As a university group project, we built a PowerPoint-style app for computer scientists using Java and the Swing library."}/>;
+        return <Project source={[CSPPT]} elements={[<JavaSVG/>,  <GitSVG/>]} elementsNames={["Java", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"As a university group project, we built a PowerPoint-style app for computer scientists using Java and the Swing library."}/>;
       case "Project4":
-        return <Project source={[Database]} elements={[<PHPSVG/>, <HTMLSVG/>, <CSSSVG/>, <SQLSVG/>]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"} desc={"Using PHP and MySQL a website was created to store the books a person has read."}/>
+        return <Project source={[Database]} elements={[<PHPSVG/>, <HTMLSVG/>, <CSSSVG/>, <SQLSVG/>]} elementsNames={["PHP", "HTML", "CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"} desc={"Using PHP and MySQL a website was created to store the books a person has read."}/>
       default:
         return null;
     }
