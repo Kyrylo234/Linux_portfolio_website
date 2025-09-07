@@ -1,3 +1,4 @@
+import AppsButton from './AppsButton.jsx';
 function AppsButtonPhone({title, source, alternative, link}) {  
   const handleClick = () => {
     if(typeof link === 'function'){
@@ -5,20 +6,12 @@ function AppsButtonPhone({title, source, alternative, link}) {
     }else{
       window.open(link, '_blank').focus();
     }
-};
+  };
     
-    return (
-      <div className='item'>
-        <div className="Application"  onClick={handleClick}>
-        <img
-            className="AppLogo"
-            src={source}
-            alt={alternative}
-        />
-        <h5>{title}</h5>
-        </div>
-      </div>
-    )
-  }
-  
-  export default AppsButtonPhone
+  return (
+    <div className='item'>
+      <AppsButton title={title} source={source}  alternative={alternative} onClick={handleClick}/>
+    </div>
+  );
+}
+export default AppsButtonPhone

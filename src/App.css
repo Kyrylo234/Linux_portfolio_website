@@ -25,6 +25,7 @@ body{
 }
 
 .Application {
+  all: unset;
   display: flex;
   justify-content: space-around;     /* centers vertically if height is fixed */
   align-items: center;          /* centers horizontally */
@@ -34,8 +35,6 @@ body{
   width: 70px;                 
   height: 70px;                
 }
-
-
 
 .Application h5{
   font-style: normal;

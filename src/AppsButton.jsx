@@ -1,16 +1,13 @@
-function AppsButton({title, source, alternative}) {  
-    
+function AppsButton({title, source, alternative, onClick}) {  
     return (
-      <>
-        <div className="Application">
+      <button className="Application" onClick={onClick}>
         <img
             className="AppLogo"
             src={source}
             alt={alternative}
         />
         <h5>{title}</h5>
-        </div>
-      </>
+      </button>
     )
   }
   
