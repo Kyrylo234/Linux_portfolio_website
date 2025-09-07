@@ -3,7 +3,7 @@ import DraggableApplication from "./DraggableApplication";
 import ApplicationTopBar from "./ApplicationTopBar";
 import React, {useRef,} from "react";
 
-function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility }) {
+function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
   const appContainerRef = useRef(null);
 
   // forward fullscreen requests to parent
@@ -16,7 +16,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
   };
 
   return (
-    <div className="RunningApplicationWrapper">
+    <div className="RunningApplicationWrapper" style={{ zIndex: appWindow.order, ...appWindow.style }} onMouseDown={onFocus}>
       <DraggableApplication
         window={appWindow}
         setWindows={setWindows}

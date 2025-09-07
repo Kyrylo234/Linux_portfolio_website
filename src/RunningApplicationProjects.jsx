@@ -25,7 +25,7 @@ import DartSVG from "./DartSVG"
 import DriftSVG from "./DriftSVG"
 import FlutterSVG from "./FlutterSVG"
 
-function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility}) {
+function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
   
     // forward fullscreen requests to parent
@@ -65,7 +65,7 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
 
 
   return (
-    <div className="RunningApplicationWrapper">
+    <div className="RunningApplicationWrapper" style={{ zIndex: appWindow.order, ...appWindow.style }} onMouseDown={onFocus}>
             <DraggableApplication
                 window={appWindow}
                 setWindows={setWindows}

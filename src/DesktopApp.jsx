@@ -23,7 +23,8 @@ function DesktopApp() {
       height: 500,
       left: 150,
       top: 50, 
-      content: "about"},
+      content: "about",
+      order: 1},
     { id: "projects", 
       title: "Projects", 
       visible: true, 
@@ -35,7 +36,8 @@ function DesktopApp() {
       height: 500,
       left: 700,
       top: 200, 
-      content: "Project1"},
+      content: "Project1",
+      order: 2},
     { id: "cv", 
       title: "CV", 
       visible: true, 
@@ -46,8 +48,22 @@ function DesktopApp() {
       width: 500,
       height: 500,
       left: 200,
-      top: 400}
+      top: 400,
+      order: 3}
   ]);
+
+  const bringToFront = (id) => {
+    setWindows((prev) => {
+      const sorted = [...prev].sort((a, b) => a.order - b.order);
+
+      const targetIndex = sorted.findIndex((w) => w.id === id);
+      const target = sorted.splice(targetIndex, 1)[0];
+
+      sorted.push(target);
+
+      return sorted.map((win, index) => ({ ...win, order: index + 1 }));
+    });
+  };
 
   // toggle window visibility
   const toggleVisibility = (id, forceValue = null) => {
@@ -89,6 +105,7 @@ function DesktopApp() {
             setWindows={setWindows}
             onClose={() => toggleVisibility(win.id, false)}
             onToggleVisibility={() => toggleVisibility(win.id)}
+            onFocus={() => bringToFront(win.id)}
           />
         )
       )}

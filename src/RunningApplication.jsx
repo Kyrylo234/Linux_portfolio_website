@@ -6,7 +6,7 @@ import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
 import Hobbies from "./Hobbies.jsx";
 
-function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility }) {
+function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
   const appContainerRef = useRef(null);
 
   const getContent = () => {
@@ -44,7 +44,7 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
   };
 
   return (
-    <div className="RunningApplicationWrapper">
+    <div className="RunningApplicationWrapper" style={{ zIndex: appWindow.order, ...appWindow.style }} onMouseDown={onFocus}>
       <DraggableApplication
         window={appWindow}
         setWindows={setWindows}
