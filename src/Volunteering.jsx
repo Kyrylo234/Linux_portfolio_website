@@ -18,15 +18,15 @@ function Volunteering() {
       <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
         <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Help Deliver Aid To Ukraine</h3>
         <div style={{ marginTop: "10px",padding: "5px",border: "1px solid #ddd", borderRadius: "8px" }}>
-            <p
-              style={{
-                margin: "8px 0 12px 0",
-                fontSize: "0.9rem",
-                lineHeight: "1.5",
-                color: "#eee", // closer to white
-                fontWeight: "300",
-              }}
-            >I coordinated and was part of a team of volunteers who were tasked with packing and loading humanitarian aid onto the lorries. Additionally, I helped raise funds by running the charity's social media.</p>
+          <p
+            style={{
+              margin: "8px 0 12px 0",
+              fontSize: "0.9rem",
+              lineHeight: "1.5",
+              color: "#eee", // closer to white
+              fontWeight: "300",
+            }}
+          >I coordinated and was part of a team of volunteers who were tasked with packing and loading humanitarian aid onto the lorries. Additionally, I helped raise funds by running the charity's social media.</p>
         </div>
       <Carousel
         images={[Image, packing, packing2]}
@@ -49,7 +49,7 @@ function Volunteering() {
               gap: "8px", 
               marginBottom: "16px" 
             }}>
-              <a  href="https://www.instagram.com/helpdeliveraidtoukraine/" style={{ textDecoration: "none", color: "inherit" }}>@helpdeliveraidtoukraine</a>
+              <a  href="https://www.instagram.com/helpdeliveraidtoukraine/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>@helpdeliveraidtoukraine</a>
               <button 
                 onMouseDown={copyFunction}
                 style={{

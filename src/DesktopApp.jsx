@@ -36,7 +36,7 @@ function DesktopApp() {
       left: 700,
       top: 200, 
       content: "Project1"},
-      { id: "cv", 
+    { id: "cv", 
       title: "CV", 
       visible: true, 
       component: CV, 

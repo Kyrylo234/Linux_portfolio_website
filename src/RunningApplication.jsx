@@ -4,6 +4,7 @@ import React, {useRef,} from "react";
 import AboutMe from "./AboutMe.jsx";
 import Volunteering from "./Volunteering.jsx";
 import Education from "./Education.jsx";
+import Hobbies from "./Hobbies.jsx";
 
 function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility }) {
   const appContainerRef = useRef(null);
@@ -16,6 +17,8 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
         return <Education />;
       case "volunteering":
         return <Volunteering />;
+      case "hobbies":
+        return <Hobbies />;
       default:
         return null;
     }
@@ -78,6 +81,14 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
               onClick={() => handleClick("volunteering")}
             >
               <h5>Volunteering</h5>
+            </div>
+            <div
+              className={`ApplicationOptionsOption ${
+                appWindow.content === "hobbies" ? "active" : ""
+              }`}
+              onClick={() => handleClick("hobbies")}
+            >
+              <h5>Hobbies</h5>
             </div>
           </div>
           <div

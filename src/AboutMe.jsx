@@ -74,7 +74,7 @@ function AboutMe() {
                     margin: "8px 0 12px 0",
                     fontSize: "0.75rem",
                     lineHeight: "1.5",
-                    color: "#eee", // closer to white
+                    color: "#eee",
                     fontWeight: "300",
                   }}>{svg.name}</p></div>
                 ))}
@@ -91,7 +91,7 @@ function AboutMe() {
                     margin: "8px 0 12px 0",
                     fontSize: "0.75rem",
                     lineHeight: "1.5",
-                    color: "#eee", // closer to white
+                    color: "#eee",
                     fontWeight: "300",
                   }}>{svg.name}</p></div>
                 ))}
