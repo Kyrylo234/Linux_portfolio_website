@@ -26,7 +26,7 @@ body{
 
 .Application {
   display: flex;
-  justify-content: center;      /* centers vertically if height is fixed */
+  justify-content: space-around;     /* centers vertically if height is fixed */
   align-items: center;          /* centers horizontally */
   flex-direction: column;
   text-align: center;
@@ -34,6 +34,8 @@ body{
   width: 70px;                 
   height: 70px;                
 }
+
+
 
 .Application h5{
   font-style: normal;
@@ -249,6 +251,9 @@ body{
 
 .item{
   flex-basis: 25%;
+  display: flex;              
+  justify-content: center;    
+  align-items: center;
 }
 
 

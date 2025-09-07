@@ -8,20 +8,16 @@ function AppsButtonPhone({title, source, alternative, link}) {
 };
     
     return (
-      <>
-        <div className='item' onClick={handleClick}>
-        <div className="Application">
+      <div className='item'>
+        <div className="Application"  onClick={handleClick}>
         <img
             className="AppLogo"
             src={source}
             alt={alternative}
-            width={50}
-            height={50}
         />
         <h5>{title}</h5>
         </div>
-        </div>
-      </>
+      </div>
     )
   }
   
