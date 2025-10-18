@@ -1,56 +1,44 @@
-import PhoneApps from "./PhoneApps"
-import TopBar from "./TopBar"
-import HomeButton from "./HomeButton"
-import React, { useState } from 'react';
-import PhoneApplication from "./PhoneApplication"
-import ProjectsApplication from "./ProjectsApplication"
+import React from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+
+import PhoneApps from "./PhoneApps";
+import TopBar from "./TopBar";
+import HomeButton from "./HomeButton";
+import PhoneApplication from "./PhoneApplication";
+import ProjectsApplication from "./ProjectsApplication";
 import CVApplication from "./CVApplication";
-function Phone() {  
-  const [desktopVisible, setDesktopVisible] = useState(true);
-  const [app1Visible, setApp1Visible] = useState(false);
-  const [projectsVisible, setProjectsVisible] = useState(false);
-  const [cvVisible, setCvVisible] = useState(false);
 
-  const toggleDesktopVisibility = () => {
-    setApp1Visible(true);
-    setDesktopVisible(false);
-  }; 
+function Phone() {
+  const navigate = useNavigate();
 
-  const returnHome = () => {
-    setApp1Visible(false);
-    setProjectsVisible(false);
-    setCvVisible(false);
-    setDesktopVisible(true);
-  }; 
+  // Navigation handlers
+  const goHome = () => navigate("/");
+  const goToAboutMe = () => navigate("/aboutme");
+  const goToProjects = () => navigate("/projects");
+  const goToCV = () => navigate("/cv");
 
-  const toggleProjectsVisible = () => {
-    setProjectsVisible(true);
-    setDesktopVisible(false);
-  }; 
-
-  const toggleCvVisible = () => {
-    setCvVisible(true);
-    setDesktopVisible(false);
-  }; 
-
-    return (
+  return (
     <div className="PhoneContainer">
-      {desktopVisible && (
-            <PhoneApps loading="lazy" setApp1Visible={toggleDesktopVisibility} setProjectsVisible={toggleProjectsVisible} setCvVisible={toggleCvVisible}/>
-        )}
-        {app1Visible && (
-            <PhoneApplication loading="lazy"/>
-        )}
-        {projectsVisible && (
-            <ProjectsApplication loading="lazy"/>
-        )}
-        {cvVisible && (
-            <CVApplication loading="lazy"/>
-        )}
-        <TopBar/>
-        <HomeButton setApp1Visible={returnHome}/>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PhoneApps
+              setApp1Visible={goToAboutMe}
+              setProjectsVisible={goToProjects}
+              setCvVisible={goToCV}
+            />
+          }
+        />
+        <Route path="/aboutme" element={<PhoneApplication />} />
+        <Route path="/projects" element={<ProjectsApplication />} />
+        <Route path="/cv" element={<CVApplication />} />
+      </Routes>
+
+      <TopBar />
+      <HomeButton setApp1Visible={goHome} />
     </div>
   );
-  }
-  
-  export default Phone
+}
+
+export default Phone;
