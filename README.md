@@ -1,19 +1,37 @@
-# Linux_portfolio_website
-- A website made to show my portfolio of projects.
-- Based on the screen size displays a Ubuntu desktop or an Iphone look
- 
- [Kyrylo.uk](https://kyrylo.uk)
+# [🐧Linux Portfolio Website (Click Me)](https://kyrylo.uk)
 
-### Stack used:
-- React.js
+- Depending on the screen size, it displays either a **Ubuntu-style desktop** or an **iPhone-style mobile interface**.
+- Contains:
+  - Falling Code game
+  - My CV as an Application
+  - About Me section
+  - Projects section
 
- ## Desktop Version:
- 
- <img src="/ImagesForGitHub/Desktop.png">
- <img src="/ImagesForGitHub/DesktopWithApp.png">
- 
- ## Phone Version:
- 
- <img src="/ImagesForGitHub/Phone.jpg" width="40%">
- <img src="/ImagesForGitHub/PhoneAboutMe.jpg" width="40%">
- <img src="/ImagesForGitHub/PhoneProjects.jpg" width="40%">
+---
+
+### 🧰 Tech Stack
+<p>
+  <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">
+</p>
+
+---
+
+## 💻 Desktop Version
+
+<p align="center">
+  <img src="/ImagesForGitHub/Desktop.png" width="90%">
+  <img src="/ImagesForGitHub/DesktopWithApp.png" width="90%">
+</p>
+
+---
+
+## 📱 Mobile Version
+
+<p align="center">
+  <img src="/ImagesForGitHub/Phone.jpg" width="30%">
+  <img src="/ImagesForGitHub/PhoneAboutMe.jpg" width="30%">
+  <img src="/ImagesForGitHub/PhoneProjects.jpg" width="30%">
+</p>
