@@ -30,7 +30,7 @@
 ## 📱 Mobile Version
 
 <p align="center">
-  <img src="/ImagesForGitHub/Phone.jpg" width="30%">
-  <img src="/ImagesForGitHub/PhoneAboutMe.jpg" width="30%">
-  <img src="/ImagesForGitHub/PhoneProjects.jpg" width="30%">
+  <img src="/ImagesForGitHub/Phone.jpeg" width="30%">
+  <img src="/ImagesForGitHub/PhoneAboutMe.jpeg" width="30%">
+  <img src="/ImagesForGitHub/PhoneProjects.jpeg" width="30%">
 </p>
