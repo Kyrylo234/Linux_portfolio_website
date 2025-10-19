@@ -23,7 +23,6 @@
 
 <p align="center">
   <img src="/ImagesForGitHub/Desktop.png" width="90%">
-  <img src="/ImagesForGitHub/DesktopWithApp.png" width="90%">
 </p>
 
 ---
