@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import Leaderboard from './Leaderboard'; // make sure this path is correct
 
 // Tetromino shapes as characters
 const TETROMINOES = {
@@ -20,14 +21,14 @@ const TETROMINOES = {
   ],
   Else: [
     [['E', 'L', 'S', 'E']],
-    [['E'], ['L'],['S'],['E'],],
+    [['E'], ['L'], ['S'], ['E']],
   ],
   PlusEquals: [
     [['+', '=']],
     [['+'], ['=']],
   ],
   CurlesBrackets: [
-    [['{', '}'],['{','}']]
+    [['{', '}'], ['{', '}']]
   ],
   If: [
     [['I', 'F']],
@@ -142,36 +143,73 @@ function FallingBlocks() {
   });
 
   return (
-    <div style={{ fontFamily: 'monospace', textAlign: 'center', marginTop: 10 }}>
-  <div>
-    <p style={{ margin: 0 }}>Lines of code: {score}</p>
-    {gameOver && <p style={{ color: 'red', margin: 0 }}>Game Over!</p>}
-  </div>
-  <div style={{ display: 'inline-block', lineHeight: 0 }}>
-    {displayGrid.map((row, y) => (
-      <div key={y} style={{ display: 'flex' }}>
-        {row.map((cell, x) => (
-          <div
-            key={x}
-            style={{
-              width: 20,
-              height: 20,
-              border: '1px solid  darkgreen',
-              boxSizing: 'border-box',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              fontSize: 16,
-              color: 'lime',
-            }}
-          >
-            {cell || ' '}
+    <div style={{ fontFamily: 'monospace', textAlign: 'center', marginTop: 10, position: 'relative' }}>
+      <div>
+        <p style={{ margin: 0 }}>Lines of code: {score}</p>
+        {gameOver && <p style={{ color: 'red', margin: 0 }}>Game Over!</p>}
+      </div>
+      <div style={{ display: 'inline-block', lineHeight: 0 }}>
+        {displayGrid.map((row, y) => (
+          <div key={y} style={{ display: 'flex' }}>
+            {row.map((cell, x) => (
+              <div
+                key={x}
+                style={{
+                  width: 20,
+                  height: 20,
+                  border: '1px solid  darkgreen',
+                  boxSizing: 'border-box',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  fontSize: 16,
+                  color: 'lime',
+                }}
+              >
+                {cell || ' '}
+              </div>
+            ))}
           </div>
         ))}
       </div>
-    ))}
-  </div>
-</div>
+
+      {/* Leaderboard Overlay when Game Over */}
+      {gameOver && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 1000,
+            flexDirection: 'column',
+            padding: '1rem',
+            color: '#fff',
+            boxSizing: 'border-box',
+            borderRadius: 8,
+          }}
+        >
+          <h2>Game Over!</h2>
+          <div
+            style={{
+              width: '80%',
+              maxHeight: '60%',
+              overflowY: 'auto',
+              backgroundColor: '#222',
+              padding: '1rem',
+              borderRadius: 8,
+            }}
+          >
+            <Leaderboard score={score}/>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
