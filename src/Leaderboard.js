@@ -8,7 +8,7 @@ const Leaderboard = ({ score: parentScore }) => {
 
   const usernameRef = useRef(null);
 
-  const API_URL = 'http://132.145.77.239:3000/scores';
+  const API_URL = 'https://api.kyrylo.uk/scores';
 
   useEffect(() => {
     if (!submitted) usernameRef.current?.focus();
