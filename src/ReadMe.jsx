@@ -26,7 +26,7 @@ function ReadMe({ title, link, desc }) {
     return () => resizeObserver.disconnect();
   }, []);
 
-  return ( // comment
+  return ( 
     <div
       ref={containerRef}
       style={{
@@ -38,6 +38,14 @@ function ReadMe({ title, link, desc }) {
         boxSizing: "border-box",
       }}
     >
+      <h4 style={{ marginBottom: "4px", marginTop: "0" }}>
+          <a
+            href={link}
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {title}
+          </a>
+        </h4>
       <div
         style={{
           marginTop: "5px",
@@ -46,15 +54,18 @@ function ReadMe({ title, link, desc }) {
           borderRadius: "8px",
         }}
       >
-        <h4 style={{ marginBottom: "4px", marginTop: "0" }}>
-          <a
-            href={link}
-            style={{ color: "inherit", textDecoration: "underline" }}
-          >
-            {title}
-          </a>
-        </h4>
+        <h5>Computer Science Graduate | Full-Stack & Mobile Developer</h5>
+        <br/>
 
+        <GitHubCalendar
+            username="Kyrylo234"
+            blockSize={blockSize}
+            blockMargin={blockMargin}
+            fontSize={Math.max(blockSize * 1.1, 10)}
+            color="#c0200bff" // not sure what it changes
+          />
+
+        <h5 style={{ textAlign: "left", marginTop: "0" }}><br/>🧠 About Me</h5>
         {desc && (
           <p
             style={{
@@ -64,11 +75,53 @@ function ReadMe({ title, link, desc }) {
               color: "#eee",
               fontWeight: "300",
               whiteSpace: "pre-line",
+              textAlign: "left"
             }}
           >
             {desc}
           </p>
         )}
+
+
+        <h5 style={{ textAlign: "left", marginTop: "0" }}>🧠 Languages & Tools</h5>
+
+
+        <p style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+          <img src="https://img.shields.io/badge/-C-00599C?style=flat&logo=c" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Flutter-02569B?style=flat&logo=flutter&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Dart-0175C2?style=flat&logo=dart&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Drift-FF6F61?style=flat&logo=sqlite&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-ESP32-008000?style=flat&logo=espressif&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+          <img src="https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+        </p>
+
+        <h5 style={{ textAlign: "left", marginTop: "0" }}><br/>⚙️ Currently Working On</h5>
+
+        <p
+            style={{
+              margin: "8px 0 12px 0",
+              fontSize: "0.9rem",
+              lineHeight: "1.5",
+              color: "#eee",
+              fontWeight: "300",
+              whiteSpace: "pre-line",
+              textAlign: "left"
+            }}
+          >🚗 ESP32 + Flutter IoT project: A mechanical chime that sounds when exceeding a GPS-set speed limit
+          <br/>📱 Vehicle Service Tracker: Polishing out the app
+          <br/>🧰 Improving and expanding my portfolio website
+          </p>
+
+
+          
 
         {/* Calendar wrapper at 80% width */}
         <div
@@ -80,13 +133,6 @@ function ReadMe({ title, link, desc }) {
             contentAlign: "center",
           }}
         >
-          <GitHubCalendar
-            username="Kyrylo234"
-            blockSize={blockSize}
-            blockMargin={blockMargin}
-            fontSize={Math.max(blockSize * 1.1, 10)}
-            color="#00FFAA"
-          />
         </div>
       </div>
     </div>
