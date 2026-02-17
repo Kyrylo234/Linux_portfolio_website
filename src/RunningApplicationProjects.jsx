@@ -41,7 +41,7 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
     const getContent = () => {
     switch (appWindow.content) {
       case "Project1":
-        return <ReadMe title={"👋 Hi, I'm Kyrylo"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234"} desc={"🎓 Computer Science Graduate from Lancaster University\n🚀 Passionate about software development, mobile apps, and IoT systems\n💡 Currently building an ESP32-powered speed chime controlled by a Flutter app"}/>;
+        return <ReadMe title={"👋 Hi, I'm Kyrylo"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234"} desc={"🚀 Passionate about startups and innovation in Edinburgh\n\n💡 Current Projects:\n- ESP32-powered mechanical chime inspired by the Toyota AE-86 “speeding chimer”\n- Controlled via a Flutter app\n- Showcased on a Three.js website for live demo and visualization"}/>;
       case "Project2":
         return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>,  <GitSVG/>]} elementsNames={["React.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"Portfolio website styled like either the Ubuntu Linux desktop or an iOS device, featuring a Falling Blocks game with persistent high scores. Built with React.js, Node.js, and SQLite3."}/>;
         case "Project3":
