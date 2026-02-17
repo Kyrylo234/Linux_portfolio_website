@@ -29,7 +29,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >Currectly restoring a Mazda RX 7 FC. Additionaly I am recording and editing videos.</p>
+          >I restored a Mazda RX 7 FC which has been off the road since 1997!</p>
         </div>
       <Carousel
         images={[one]}
@@ -76,7 +76,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >Here is some photos of some places I visited recently.</p>
+          >I like to travel and explore new places.</p>
         </div>
         <Carousel
         images={[travel1, travel2, travel3, travel4, travel5, travel6]}
@@ -103,7 +103,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >During my time at university I enjoyed playing volleyball recreationaly.</p>
+          >I enjoy playing volleyball and to workout.</p>
         </div>
         <Carousel
         images={[volleyball]}

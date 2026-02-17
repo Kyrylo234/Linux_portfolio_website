@@ -59,7 +59,7 @@ function AboutMe() {
                 color: "#eee", // closer to white
                 fontWeight: "300",
               }}
-            >Hey I'm Kyrylo. Here you can check out the projects I'm working on and my hobbies.</p>
+            >Hi I'm Kyrylo. Here are my favourite projects and hobbies.</p>
             </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
