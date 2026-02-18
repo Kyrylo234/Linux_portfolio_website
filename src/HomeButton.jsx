@@ -1,4 +1,3 @@
-import './App.css'
 function HomeButton({ setApp1Visible }) { 
   const handleClick = () => {
     setApp1Visible();

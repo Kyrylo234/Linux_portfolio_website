@@ -1,4 +1,3 @@
-import './App.css';
 import Application from './Application.jsx'
 import TopBar from './TopBar.jsx';
 import TaskBar from './TaskBar.jsx';

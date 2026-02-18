@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import './css/App.css'
 import DesktopApp from './DesktopApp.jsx';
 import Phone from './Phone.jsx';
 import Particles from "react-tsparticles";

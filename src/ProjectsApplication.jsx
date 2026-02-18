@@ -25,8 +25,12 @@ function ProjectsApplication() {
       return (
         <div className="PhoneApplication" style={{paddingTop:"20px", paddingBottom:"60px"}}>
           <h2>Projects</h2>
-          <Project source={[Website, Website2, Website3, Website4]} elements={[<ReactSVG/>, <JSSVG/>, <HTMLSVG/>, <CSSSVG/>, <GitSVG/>]} elementsNames={["React.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"This portfolio site was my hands-on project for learning JavaScript and React, styled after the Ubuntu desktop I used at Lancaster University."}/>
-          <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Car Service Tracking App"} desc={"I built this app to track car maintenance, completed services, and fuel efficiency. It’s built with Flutter (Dart) and uses Drift for a lightweight local database."}/>
+          <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"3D Touge Chimer Shop"} desc={"Interactive 3D shop showcasing my product, built with Three.js and using Stripe payment processing."}/>
+
+          <Project source={[Website, Website2, Website3, Website4]} elements={[<ReactSVG/>, <JSSVG/>, <HTMLSVG/>, <CSSSVG/>, <GitSVG/>]} elementsNames={["React.js", "JavaScript", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"Portfolio website inspired by Ubuntu Linux or an iOS device (based on your device), featuring a Falling Blocks game with persistent high scores. Built with React.js, Node.js, and SQLite3."}/>
+          
+          
+          
           <Project source={[CSPPT]} elements={[<JavaSVG/>, <GitSVG/>]} elementsNames={["Java", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"As a university group project, we built a PowerPoint-style app for computer scientists using Java and the Swing library."}/>
           <Project source={[Database]} elements={[<PHPSVG/>, <HTMLSVG/>, <CSSSVG/>, <SQLSVG/>]} elementsNames={["PHP", "HTML", "CSS", "SQL"]} title={"Database Of Books Read"} link={"https://github.com/Kyrylo234/Database-project"} desc={"Using PHP and MySQL a website was created to store the books a person has read."}/>
         </div>
