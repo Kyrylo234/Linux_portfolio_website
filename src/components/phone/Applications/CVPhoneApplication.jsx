@@ -1,5 +1,5 @@
-import PDFViewer from "./PDFViewer"
-function CVApplication() {  
+import PDFViewer from "../../../PDFViewer"
+function CVPhoneApplication() {  
       return (
         <div className="PhoneApplication" style={{paddingTop:"20px", paddingBottom:"60px"}}>
           <a href="/assets/Kyrylo_Postupalenko_CV.pdf" download="cv" style={{ textDecoration: "none" }}>
@@ -18,4 +18,4 @@ function CVApplication() {
       )
     }
     
-    export default CVApplication
+    export default CVPhoneApplication

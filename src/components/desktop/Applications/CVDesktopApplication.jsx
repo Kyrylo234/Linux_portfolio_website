@@ -1,9 +1,9 @@
-import PDFViewer from './PDFViewer';
-import DraggableApplication from "./DraggableApplication";
-import ApplicationTopBar from "./ApplicationTopBar";
+import PDFViewer from '../../../PDFViewer';
+import DraggableApplication from "../../../DraggableApplication";
+import ApplicationTopBar from "../../../ApplicationTopBar";
 import React, {useRef,} from "react";
 
-function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
+function CVDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
   const appContainerRef = useRef(null);
 
   // forward fullscreen requests to parent
@@ -55,4 +55,4 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
     </div>
   );
 }
-export default RunningApplication;
+export default CVDesktopApplication;

@@ -6,7 +6,7 @@ import AboutMeDesktopApplication from './Applications/AboutMeDesktopApplication.
 import ProjectsDesktopApplication from './Applications/ProjectsDesktopApplication.jsx';
 import NotePad from '../../assets/notepad.svg'
 import Linux from '../../assets/ubuntu.svg'
-import CV from '../../CV.jsx';
+import CVDesktopApplication from './Applications/CVDesktopApplication.jsx';
 import cvImage from '../../assets/cv.svg'
 import RunningTetrisApplication from './Applications/FallingBlocksDesktopApplication.jsx';
 import Game from '../../assets/game.svg'
@@ -42,7 +42,7 @@ function Desktop() {
     { id: "cv", 
       title: "CV", 
       visible: true, 
-      component: CV, 
+      component: CVDesktopApplication, 
       style: { backgroundColor: "rgb(184, 129, 175)" },
       image: cvImage, 
       alt:"CV",

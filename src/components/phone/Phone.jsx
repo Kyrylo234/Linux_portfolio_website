@@ -4,9 +4,9 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import PhoneApps from "../../PhoneApps";
 import TopBar from "../../TopBar";
 import HomeButton from "../../HomeButton";
-import PhoneApplication from "../../PhoneApplication";
-import ProjectsApplication from "../../ProjectsApplication";
-import CVApplication from "../../CVApplication";
+import AboutMePhoneApplication from "./Applications/AboutMePhoneApplication";
+import ProjectsPhoneApplication from "./Applications/ProjectsPhoneApplication";
+import CVPhoneApplication from "./Applications/CVPhoneApplication";
 
 function Phone() {
   const navigate = useNavigate();
@@ -30,9 +30,9 @@ function Phone() {
             />
           }
         />
-        <Route path="/aboutme" element={<PhoneApplication />} />
-        <Route path="/projects" element={<ProjectsApplication />} />
-        <Route path="/cv" element={<CVApplication />} />
+        <Route path="/aboutme" element={<AboutMePhoneApplication />} />
+        <Route path="/projects" element={<ProjectsPhoneApplication />} />
+        <Route path="/cv" element={<CVPhoneApplication />} />
       </Routes>
 
       <TopBar />

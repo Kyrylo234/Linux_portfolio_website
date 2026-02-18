@@ -1,8 +1,8 @@
-import AboutMe from "./AboutMe";
-import Education from "./Education";
-import Hobbies from "./Hobbies";
-import Volunteering from "./Volunteering";
-function PhoneApplication() {  
+import AboutMe from "../../../AboutMe";
+import Education from "../../../Education";
+import Hobbies from "../../../Hobbies";
+import Volunteering from "../../../Volunteering";
+function AboutMePhoneApplication() {  
       return (
         <>  
             <div className="PhoneApplication">
@@ -15,4 +15,4 @@ function PhoneApplication() {
       )
     }
     
-    export default PhoneApplication
+    export default AboutMePhoneApplication
