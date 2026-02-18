@@ -11,7 +11,7 @@ import FlutterSVG from "../../../FlutterSVG"
 
 function LinuxPortfolioWesbiteProject() {
     return (
-      <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"3D Touge Chimer Shop"} desc={"Interactive 3D shop showcasing my product, built with Three.js and using Stripe payment processing."}/>
+      <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Linux Portfolio Website"} desc={"A responsive portfolio website built with React and styled with CSS."}/>
     )
   }
 

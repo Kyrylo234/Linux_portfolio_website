@@ -21,9 +21,10 @@ import FlutterSVG from "../../../FlutterSVG"
 
 
 import ReadMeProject from "../../shared/Projects/ReadMeProject.jsx"
+import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx";
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx";
 
-function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
+function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
   
     // forward fullscreen requests to parent
@@ -40,9 +41,9 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
       case "Project1":
         return <ReadMeProject/>;
       case "Project2":
-          return <LinuxPortfolioWesbiteProject/>;
+          return <ThreeJSProject/>;
         case "Project3":
-        return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Car Service Tracking App"} desc={"A Flutter app to track vehicle maintenance and part replacements — using the Drift database."}/>;
+          return <LinuxPortfolioWesbiteProject/>;
       case "Project4":
         return <Project source={[CSPPT]} elements={[<JavaSVG/>,  <GitSVG/>]} elementsNames={["Java", "Git"]} title={"CSPPT"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"A presentation tool for computer scientists with live coding, UML diagrams, and an inbuilt terminal, created in Java Swing."}/>;
       case "Project5":
@@ -126,4 +127,4 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
   );
 }
 
-export default RunningApplicationProjects;
+export default ProjectsDesktopApplication;

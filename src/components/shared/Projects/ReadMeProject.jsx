@@ -1,4 +1,4 @@
-import ReadMe from "../../../ReadMe"
+import ReadMe from "../ReadMe"
 
 function ReadMeProject() {
     return (
