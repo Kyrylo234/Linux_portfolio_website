@@ -104,7 +104,7 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 className={`ApplicationOptionsOption ${appWindow.content === "Project2" ? "active" : ""}`}
                 onClick={() => handleClick("Project2")}
                 >
-                <h5>Portfolio Website</h5>
+                <h5>3D Touge Chimer Shop</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "Project3" ? "active" : ""}`}
