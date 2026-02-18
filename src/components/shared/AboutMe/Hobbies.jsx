@@ -1,11 +1,11 @@
 import car from '../../../assets/images/Hobbies/Cars/1.png'
 import car2 from '../../../assets/images/Hobbies/Cars/rx7.png'
-import travel1 from '../../../assets/2.png'
-import travel2 from '../../../assets/3.png'
-import travel3 from '../../../assets/4.png'
-import travel4 from '../../../assets/5.png'
-import travel5 from '../../../assets/6.png'
-import travel6 from '../../../assets/7.png'
+import travel1 from '../../../assets/images/Hobbies/Travelling/2.png'
+import travel2 from '../../../assets/images/Hobbies/Travelling/3.png'
+import travel3 from '../../../assets/images/Hobbies/Travelling/4.png'
+import travel4 from '../../../assets/images/Hobbies/Travelling/5.png'
+import travel5 from '../../../assets/images/Hobbies/Travelling/6.png'
+import travel6 from '../../../assets/images/Hobbies/Travelling/7.png'
 import volleyball from '../../../assets/8.png'
 
 
