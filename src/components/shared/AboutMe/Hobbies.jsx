@@ -6,7 +6,7 @@ import travel3 from '../../../assets/images/Hobbies/Travelling/4.png'
 import travel4 from '../../../assets/images/Hobbies/Travelling/5.png'
 import travel5 from '../../../assets/images/Hobbies/Travelling/6.png'
 import travel6 from '../../../assets/images/Hobbies/Travelling/7.png'
-import volleyball from '../../../assets/8.png'
+import volleyball from '../../../assets/images/Hobbies/Fitness/8.png'
 
 
 
