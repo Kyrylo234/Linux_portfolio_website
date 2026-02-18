@@ -1,4 +1,4 @@
-import Lancaster from "./assets/Lancaster.png"
+import Lancaster from "../../../assets/Lancaster.png"
 function Education() {
     return (
         <>

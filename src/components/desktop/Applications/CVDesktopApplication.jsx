@@ -1,4 +1,4 @@
-import PDFViewer from '../../../PDFViewer';
+import PDFViewer from '../../shared/PDFViewer';
 import DraggableApplication from "../../../DraggableApplication";
 import ApplicationTopBar from "../../../ApplicationTopBar";
 import React, {useRef,} from "react";

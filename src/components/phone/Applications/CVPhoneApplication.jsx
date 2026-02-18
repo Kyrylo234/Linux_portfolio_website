@@ -1,4 +1,4 @@
-import PDFViewer from "../../../PDFViewer"
+import PDFViewer from "../../shared/PDFViewer"
 function CVPhoneApplication() {  
       return (
         <div className="PhoneApplication" style={{paddingTop:"20px", paddingBottom:"60px"}}>

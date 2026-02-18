@@ -2,10 +2,6 @@ import DraggableApplication from "../../../DraggableApplication";
 import ApplicationTopBar from "../../../ApplicationTopBar";
 import React, { useRef} from "react";
 import Project from "../../../Project"
-import Website from"../../../assets/website1.png"
-import Website2 from"../../../assets/website2.png"
-import Website3 from"../../../assets/website3.png"
-import Website4 from"../../../assets/website4.png"
 import CSPPT from "../../../assets/CSPPT.png"
 import Database from "../../../assets/Database.jpeg"
 import carApp1 from "../../../assets/carApp1.png"
@@ -14,8 +10,6 @@ import carApp3 from "../../../assets/carApp3.png"
 import carApp4 from "../../../assets/carApp4.png"
 
 import SQLSVG from "../../../SQLSVG"
-import JSSVG from "../../../JSSVG"
-import ReactSVG from "../../../ReactSVG"
 import HTMLSVG from "../../../HTMLSVG"
 import CSSSVG from "../../../CSSSVG"
 import GitSVG from "../../../GitSVG"
@@ -24,7 +18,10 @@ import PHPSVG from "../../../PHPSVG"
 import DartSVG from "../../../DartSVG"
 import DriftSVG from "../../../DriftSVG"
 import FlutterSVG from "../../../FlutterSVG"
-import ReadMe from "../../../ReadMe";
+
+
+import ReadMeProject from "../../shared/Projects/ReadMeProject.jsx"
+import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx";
 
 function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
@@ -41,9 +38,9 @@ function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVi
     const getContent = () => {
     switch (appWindow.content) {
       case "Project1":
-        return <ReadMe title={"👋 Hi, I'm Kyrylo"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234"} desc={"🚀 Passionate about startups and innovation in Edinburgh\n\n💡 Current Projects:\n- ESP32-powered mechanical chime inspired by the Toyota AE-86 “speeding chimer”\n- Controlled via a Flutter app\n- Showcased on a Three.js website for live demo and visualization"}/>;
+        return <ReadMeProject/>;
       case "Project2":
-          return <Project source={[Website, Website2, Website3, Website4]} elements={[<JSSVG/>, <ReactSVG/>, <HTMLSVG/>, <CSSSVG/>, <GitSVG/>]} elementsNames={["JavaScript","React.js", "HTML", "CSS", "Git"]} title={"Portfolio Website"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"Portfolio website inspired by Ubuntu Linux or an iOS device (based on your device), featuring a Falling Blocks game with persistent high scores. Built with React.js, Node.js, and SQLite3."}/>;
+          return <LinuxPortfolioWesbiteProject/>;
         case "Project3":
         return <Project source={[carApp1, carApp2, carApp3, carApp4]} elements={[<DartSVG/>, <FlutterSVG/>, <DriftSVG/>]} elementsNames={["Dart", "Flutter", "Drift"]} title={"Car Service Tracking App"} desc={"A Flutter app to track vehicle maintenance and part replacements — using the Drift database."}/>;
       case "Project4":

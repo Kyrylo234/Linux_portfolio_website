@@ -1,7 +1,7 @@
-import AboutMe from "../../../AboutMe";
-import Education from "../../../Education";
-import Hobbies from "../../../Hobbies";
-import Volunteering from "../../../Volunteering";
+import AboutMe from "../../shared/AboutMe/AboutMe";
+import Education from "../../shared/AboutMe/Education";
+import Hobbies from "../../shared/AboutMe/Hobbies";
+import Volunteering from "../../shared/AboutMe/Volunteering";
 function AboutMePhoneApplication() {  
       return (
         <>  
