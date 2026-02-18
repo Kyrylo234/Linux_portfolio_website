@@ -1,8 +1,8 @@
 import AppsButtonPhone from './AppsButtonPhone.jsx';
-import LinkedIn from './assets/linkedIn.svg';
-import GitHub from './assets/github.svg';
-import cv from './assets/cv.svg';
-import Notepad from './assets/notepad.svg'
+import LinkedIn from './assets/appIcons/linkedIn.svg';
+import GitHub from './assets/appIcons/github.svg';
+import cv from './assets/appIcons/cv.svg';
+import Notepad from './assets/appIcons/notepad.svg'
 function PhoneApps({setApp1Visible,setProjectsVisible,setCvVisible}) {  
     return (
       <>

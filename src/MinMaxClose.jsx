@@ -1,6 +1,6 @@
-import Maximise from './assets/Maximise.png'
-import Minimise from './assets/minimise.png'
-import Close from './assets/Close.png'
+import Maximise from './assets/icons/Maximise.png'
+import Minimise from './assets/icons/minimise.png'
+import Close from './assets/icons/Close.png'
 function MinMaxClose({toggleVisibility, close, setFullScreen}) {
 
     return (

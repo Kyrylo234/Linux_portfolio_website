@@ -1,10 +1,10 @@
 import AppsButton from './AppsButton.jsx';
-import LinkedIn from './assets/linkedIn.svg';
-import GitHub from './assets/github.svg';
-import Notepad from './assets/notepad.svg'
+import LinkedIn from './assets/appIcons/linkedIn.svg';
+import GitHub from './assets/appIcons/github.svg';
+import Notepad from './assets/appIcons/notepad.svg'
 import DraggableComponent from './DraggableComponent.jsx';
-import Linux from './assets/ubuntu.svg'
-import cv from './assets/cv.svg';
+import Linux from './assets/appIcons/ubuntu.svg'
+import cv from './assets/appIcons/cv.svg';
 
 function Application({toggleVisibility}){
   return (

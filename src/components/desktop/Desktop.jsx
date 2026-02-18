@@ -4,12 +4,12 @@ import TaskBar from '../../TaskBar.jsx';
 import React, {useState } from 'react';
 import AboutMeDesktopApplication from './Applications/AboutMeDesktopApplication.jsx';
 import ProjectsDesktopApplication from './Applications/ProjectsDesktopApplication.jsx';
-import NotePad from '../../assets/notepad.svg'
-import Linux from '../../assets/ubuntu.svg'
+import NotePad from '../../assets/appIcons/notepad.svg'
+import Linux from '../../assets/appIcons/ubuntu.svg'
 import CVDesktopApplication from './Applications/CVDesktopApplication.jsx';
-import cvImage from '../../assets/cv.svg'
+import cvImage from '../../assets/appIcons/cv.svg'
 import RunningTetrisApplication from './Applications/FallingBlocksDesktopApplication.jsx';
-import Game from '../../assets/game.svg'
+import Game from '../../assets/appIcons/game.svg'
 
 function Desktop() { 
   const [windows, setWindows] = useState([

@@ -1,7 +1,7 @@
 import Clock from "./Clock.jsx";
-import Power from "./assets/power.png"
-import Volume from './assets/Volume.png'
-import Network from './assets/network.png'
+import Power from "./assets/icons/power.png"
+import Volume from './assets/icons/Volume.png'
+import Network from './assets/icons/network.png'
 function TopBar() {
     return (
         <div className='TopBar'>
