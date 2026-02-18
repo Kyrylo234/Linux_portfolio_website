@@ -1,4 +1,3 @@
-import RandomColorDiv from "./RandomColorDiv";
 import Carousel from "./Carousel";
 
 function Project({ source, elements, elementsNames, title, link, desc }) {
@@ -45,14 +44,7 @@ function Project({ source, elements, elementsNames, title, link, desc }) {
 
           <div style={{ display: "flex", gap: "5px", flexWrap: "wrap",justifyContent: "center", alignItems: "center" }}>
             {elements.map((text, i) => (
-              <div><RandomColorDiv key={i} text={text} />
-                <p style={{
-                  margin: "8px 0 12px 0",
-                  fontSize: "0.75rem",
-                  lineHeight: "1.5",
-                  color: "#eee", // closer to white
-                  fontWeight: "300",
-                }}>{elementsNames[i]}</p></div>              
+              <div>{text}</div>              
             ))}
           </div>
         </div>

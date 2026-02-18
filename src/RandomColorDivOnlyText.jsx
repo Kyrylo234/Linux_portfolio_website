@@ -31,11 +31,11 @@ function RandomColorDivOnlyText({ text }) {
       style={{
         backgroundColor: bgColor,
         display: "inline-block", // shrink-wrap around text
-        padding: "5px 10px",
+        padding: "2px 5px",
         margin: "2px",
         color: textColor, // 🔥 contrasting color
         fontWeight: "bold",
-        borderRadius: "20px",
+        borderRadius: "3px",
         textAlign: "center",
       }}
     >

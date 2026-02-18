@@ -1,12 +1,4 @@
-import Project from "../../../Project"
-import CSPPT from "../../../assets/CSPPT.png"
-import Database from "../../../assets/Database.jpeg"
-import SQLSVG from "../../../SQLSVG"
-import HTMLSVG from "../../../HTMLSVG"
-import CSSSVG from "../../../CSSSVG"
-import GitSVG from "../../../GitSVG"
-import JavaSVG from "../../../JavaSVG"
-import PHPSVG from "../../../PHPSVG"
+
 
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx"
 import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx"

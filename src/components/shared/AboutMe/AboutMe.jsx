@@ -1,43 +1,14 @@
-import RandomColorDiv from '../../../RandomColorDiv.jsx';
 import ProfilePic from "../../../ProfilePic"
 import Pic from '../../../assets/ProfilePic.PNG'
-import RandomColorDivOnlyText from '../../../RandomColorDivOnlyText';
-import SQLSVG from "../../../SQLSVG"
-import JSSVG from "../../../JSSVG"
-import ReactSVG from "../../../ReactSVG"
-import HTMLSVG from "../../../HTMLSVG"
-import CSSSVG from "../../../CSSSVG"
-import GitSVG from "../../../GitSVG"
-import JavaSVG from "../../../JavaSVG"
-import PHPSVG from "../../../PHPSVG"
-import DartSVG from "../../../DartSVG"
-import DriftSVG from "../../../DriftSVG"
-import FlutterSVG from "../../../FlutterSVG"
-import PythonSVG from "../../../PythonSVG"
-import CLogo from '../../../CLogo.jsx'
+
 import LinkedIn from '../../../assets/linkedIn.svg';
 import GitHub from '../../../assets/github.svg';
 
+import RandomColorDivOnlyText from "../../../RandomColorDivOnlyText"
+
 
 function AboutMe() {
-  const programming = [
-    { name: "Java", icon: <JavaSVG /> },
-    { name: "JavaScript", icon: <JSSVG /> },
-    { name: "Python", icon: <PythonSVG /> },
-    { name: "Dart", icon: <DartSVG /> },
-    { name: "C", icon: <CLogo /> },
-    { name: "HTML", icon: <HTMLSVG /> },
-    { name: "CSS", icon: <CSSSVG /> },
-    { name: "SQL", icon: <SQLSVG /> },
-    { name: "PHP", icon: <PHPSVG /> },
-  ];
 
-  const tech = [
-    { name: "React.js", icon: <ReactSVG /> },
-    { name: "Git", icon: <GitSVG /> },
-    { name: "Drift", icon: <DriftSVG /> },
-    { name: "Flutter", icon: <FlutterSVG />}
-  ];
   
   function copyFunction(event){
     navigator.clipboard.writeText("kyrylop2004@gmail.com");
@@ -59,42 +30,29 @@ function AboutMe() {
                 color: "#eee", // closer to white
                 fontWeight: "300",
               }}
-            >Hi I'm Kyrylo. Here are my favourite projects and hobbies.</p>
+            >Hi I'm Kyrylo. Here you can check out my favourite projects and hobbies.</p>
             </div>
         </div>
         <div style={{ marginTop: "10px",padding: "5px",border: "2px solid #dddddd8e", borderRadius: "8px" }}>
           <h3 style={{margin: "10px 0" }}>Skills</h3>
-          <div style={{ marginTop: "10px",padding: "16px",border: "1px solid #ddd", borderRadius: "8px" }}>
-            <h4 style={{margin: "5px 0" }}>Programming</h4>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-                {programming.map((svg, i) => (
-                  <div><RandomColorDiv key={i} text={svg.icon} />
-                  <p style={{
-                    margin: "8px 0 12px 0",
-                    fontSize: "0.75rem",
-                    lineHeight: "1.5",
-                    color: "#eee",
-                    fontWeight: "300",
-                  }}>{svg.name}</p></div>
-                ))}
-              </div>
-            </div>
-          </div>
           <div style={{ marginTop: "10px",padding: "16px", border: "1px solid #ddd", borderRadius: "8px" }}>
-            <h4 style={{margin: "5px 0" }}>Tech</h4>
+            <h4 style={{margin: "5px 0" }}>Recently Used Tech</h4>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-                {tech.map((svg, i) => (
-                  <div><RandomColorDiv key={i} text={svg.icon} />
-                  <p style={{
-                    margin: "8px 0 12px 0",
-                    fontSize: "0.75rem",
-                    lineHeight: "1.5",
-                    color: "#eee",
-                    fontWeight: "300",
-                  }}>{svg.name}</p></div>
-                ))}
+              <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>   
+                  <p style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Three.js-000000?style=flat&logo=three.js&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-C-00599C?style=flat&logo=c"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-ESP32-008000?style=flat&logo=espressif&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Flutter-02569B?style=flat&logo=flutter&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-Dart-0175C2?style=flat&logo=dart&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                    <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white"style={{ height: "20px", margin: "0px", width: "auto" }}/>
+                  </p>
                 </div>
               </div>
           </div>
