@@ -13,7 +13,7 @@ function ImageToSTL() {
       ,<img src="https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Trimesh-FF6600?style=flat&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Gradio-1DA1F2?style=flat&logo=gradio&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>]} 
-      title={"Image To STL Converter"} desc={"A tool that converts 2D images to 3D STL files using Python, Pillow, Trimesh, and Gradio."}/>
+      title={"Image To STL Converter"} link={"https://github.com/Kyrylo234/image_to_stl"} desc={"A tool that converts 2D images to 3D STL files using Python, Pillow, Trimesh, and Gradio."}/>
     )
   }
 

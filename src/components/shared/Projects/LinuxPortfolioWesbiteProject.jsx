@@ -15,7 +15,7 @@ function LinuxPortfolioWesbiteProject() {
       ,<img src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>]} 
-      elementsNames={["Dart", "Flutter", "Drift"]} title={"Linux Portfolio Website"} desc={"Portfolio website inspired by Ubuntu Linux or an iOS device (based on your device), featuring a Falling Blocks game with persistent high scores. Built with React.js, Node.js, and SQLite3."}/>
+      elementsNames={["Dart", "Flutter", "Drift"]} title={"Linux Portfolio Website"} link={"https://github.com/Kyrylo234/Linux_portfolio_website"} desc={"Portfolio website inspired by Ubuntu Linux or an iOS device (based on your device), featuring a Falling Blocks game with persistent high scores. Built with React.js, Node.js, and SQLite3."}/>
     )
   }
 

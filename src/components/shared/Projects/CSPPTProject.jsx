@@ -16,7 +16,7 @@ function CSPPTProject() {
       ,<img src="https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Trimesh-FF6600?style=flat&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Gradio-1DA1F2?style=flat&logo=gradio&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>]} 
-      title={"Computer Science PowerPoint"} desc={"A presentation tool for computer science students and developers, designed to go beyond traditional slides by integrating UML diagrams, a built-in command line, and live coding support — all inside your slides."}/>
+      title={"Computer Science PowerPoint"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"A presentation tool for computer science students and developers, designed to go beyond traditional slides by integrating UML diagrams, a built-in command line, and live coding support — all inside your slides."}/>
     )
   }
 
