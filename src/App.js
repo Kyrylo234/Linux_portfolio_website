@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './css/App.css'
-import DesktopApp from './DesktopApp.jsx';
-import Phone from './Phone.jsx';
+import DesktopApp from './components/desktop/Desktop.jsx';
+import Phone from './components/phone/Phone.jsx';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 

@@ -1,12 +1,12 @@
-import DraggableApplication from "./DraggableApplication";
-import ApplicationTopBar from "./ApplicationTopBar";
+import DraggableApplication from "../../../DraggableApplication.jsx";
+import ApplicationTopBar from "../../../ApplicationTopBar.jsx";
 import React, {useRef,} from "react";
-import AboutMe from "./AboutMe.jsx";
-import Volunteering from "./Volunteering.jsx";
-import Education from "./Education.jsx";
-import Hobbies from "./Hobbies.jsx";
+import AboutMe from "../../../AboutMe.jsx";
+import Volunteering from "../../../Volunteering.jsx";
+import Education from "../../../Education.jsx";
+import Hobbies from "../../../Hobbies.jsx";
 
-function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
+function AboutMeDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
   const appContainerRef = useRef(null);
 
   const getContent = () => {
@@ -106,4 +106,4 @@ function RunningApplication({ appWindow, setWindows, onClose, onToggleVisibility
     </div>
   );
 }
-export default RunningApplication;
+export default AboutMeDesktopApplication;

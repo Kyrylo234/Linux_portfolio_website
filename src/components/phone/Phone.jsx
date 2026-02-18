@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import PhoneApps from "./PhoneApps";
-import TopBar from "./TopBar";
-import HomeButton from "./HomeButton";
-import PhoneApplication from "./PhoneApplication";
-import ProjectsApplication from "./ProjectsApplication";
-import CVApplication from "./CVApplication";
+import PhoneApps from "../../PhoneApps";
+import TopBar from "../../TopBar";
+import HomeButton from "../../HomeButton";
+import PhoneApplication from "../../PhoneApplication";
+import ProjectsApplication from "../../ProjectsApplication";
+import CVApplication from "../../CVApplication";
 
 function Phone() {
   const navigate = useNavigate();

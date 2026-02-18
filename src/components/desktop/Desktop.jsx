@@ -1,17 +1,17 @@
-import Application from './Application.jsx'
-import TopBar from './TopBar.jsx';
-import TaskBar from './TaskBar.jsx';
+import Application from '../../Application.jsx'
+import TopBar from '../../TopBar.jsx';
+import TaskBar from '../../TaskBar.jsx';
 import React, {useState } from 'react';
-import RunningApplication from './RunningApplication.jsx';
-import RunningApplicationProjects from './RunningApplicationProjects';
-import NotePad from './assets/notepad.svg'
-import Linux from './assets/ubuntu.svg'
-import CV from './CV.jsx';
-import cvImage from './assets/cv.svg'
-import RunningTetrisApplication from './RunningFallingBlocksApplication.jsx';
-import Game from './assets/game.svg'
+import RunningApplication from './Applications/AboutMeDesktopApplication.jsx';
+import RunningApplicationProjects from '../../RunningApplicationProjects.jsx';
+import NotePad from '../../assets/notepad.svg'
+import Linux from '../../assets/ubuntu.svg'
+import CV from '../../CV.jsx';
+import cvImage from '../../assets/cv.svg'
+import RunningTetrisApplication from '../../RunningFallingBlocksApplication.jsx';
+import Game from '../../assets/game.svg'
 
-function DesktopApp() { 
+function Desktop() { 
   const [windows, setWindows] = useState([
     { id: "aboutMe", 
       title: "About Me", 
@@ -123,4 +123,4 @@ function DesktopApp() {
   );
 }
 
-export default DesktopApp;
+export default Desktop;
