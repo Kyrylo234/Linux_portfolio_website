@@ -4,7 +4,7 @@ import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWe
 import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx"
 import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx"
 import ReadMe from "../../shared/ReadMe.jsx"
-
+import CSPPTProject from "../../shared/Projects/CSPPTProject.jsx"
 function ProjectsPhoneApplication() {
   return (
     <div
@@ -21,8 +21,9 @@ function ProjectsPhoneApplication() {
       <h2>Projects</h2>
       <ReadMe title={"👋 Hi, I'm Kyrylo"} imgAlt={"Website demo"} link={"https://github.com/Kyrylo234"} desc={"🚀 Passionate about startups and innovation in Edinburgh\n\n💡 Current Projects:\n- ESP32-powered mechanical chime inspired by the Toyota AE-86 “speeding chimer”\n- Controlled via a Flutter app\n- Showcased on a Three.js website for live demo and visualization"}/>
       <ThreeJSProject />
+      <LinuxPortfolioWesbiteProject/>
       <ImageToSTL />
-      <LinuxPortfolioWesbiteProject />
+      <CSPPTProject/>
     </div>
   )
 }
