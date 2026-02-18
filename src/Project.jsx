@@ -1,6 +1,6 @@
 import Carousel from "./Carousel";
 
-function Project({ source, elements, elementsNames, title, link, desc }) {
+function Project({ source, elements, title, link, desc }) {
   return (
     <div
       style={{

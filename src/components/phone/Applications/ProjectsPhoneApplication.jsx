@@ -2,7 +2,7 @@
 
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx"
 import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx"
-import ImageToSTL from "../../shared/Projects/ImageToSTL.jsx"
+import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx"
 import ReadMe from "../../shared/ReadMe.jsx"
 
 function ProjectsPhoneApplication() {

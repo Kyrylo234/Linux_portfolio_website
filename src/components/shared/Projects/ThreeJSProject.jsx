@@ -1,6 +1,6 @@
 import Project from "../../../Project"
 
-import threeJS from "../../../assets/gif/threeJS.gif"
+import threeJS from "../../../assets/images/ThreeJSWebsite/threeJS.jpg"
 
 
 
