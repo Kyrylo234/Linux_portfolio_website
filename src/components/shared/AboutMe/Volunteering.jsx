@@ -1,9 +1,9 @@
-import Image from '../../../assets/IMG_8472.JPG'
-import truckImage from '../../../assets/IMG_5593.JPG'
-import truckImage2 from '../../../assets/truck2.JPG'
-import truckImage3 from '../../../assets/IMG_5576.JPG'
-import packing from '../../../assets/packing.png'
-import packing2 from '../../../assets/packing2.png'
+import Image from '../../../assets/images/Volunteering/HelpUkraine/IMG_8472.JPG'
+import truckImage from '../../../assets/images/Volunteering/UkroSaxons/IMG_5593.JPG'
+import truckImage2 from '../../../assets/images/Volunteering/UkroSaxons/truck2.JPG'
+import truckImage3 from '../../../assets/images/Volunteering/UkroSaxons/IMG_5576.JPG'
+import packing from '../../../assets/images/Volunteering/HelpUkraine/packing.png'
+import packing2 from '../../../assets/images/Volunteering/HelpUkraine/packing2.png'
 
 
 import Carousel from '../../../Carousel';
