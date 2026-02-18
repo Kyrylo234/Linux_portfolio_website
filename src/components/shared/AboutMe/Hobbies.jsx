@@ -1,4 +1,5 @@
-import one from '../../../assets/1.png'
+import car from '../../../assets/images/Hobbies/Cars/1.png'
+import car2 from '../../../assets/images/Hobbies/Cars/rx7.png'
 import travel1 from '../../../assets/2.png'
 import travel2 from '../../../assets/3.png'
 import travel3 from '../../../assets/4.png'
@@ -32,7 +33,7 @@ function Hobbies() {
           >I restored a Mazda RX 7 FC which has been off the road since 1997!</p>
         </div>
       <Carousel
-        images={[one]}
+        images={[car, car2]}
         imgStyle={{
           maxHeight: "70vh",  // don’t exceed 70% of viewport height
           maxWidth: "90vw",   // don’t exceed 90% of viewport width
