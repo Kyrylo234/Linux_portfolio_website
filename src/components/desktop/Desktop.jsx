@@ -2,13 +2,13 @@ import Application from '../../Application.jsx'
 import TopBar from '../../TopBar.jsx';
 import TaskBar from '../../TaskBar.jsx';
 import React, {useState } from 'react';
-import RunningApplication from './Applications/AboutMeDesktopApplication.jsx';
-import RunningApplicationProjects from '../../RunningApplicationProjects.jsx';
+import AboutMeDesktopApplication from './Applications/AboutMeDesktopApplication.jsx';
+import ProjectsDesktopApplication from './Applications/ProjectsDesktopApplication.jsx';
 import NotePad from '../../assets/notepad.svg'
 import Linux from '../../assets/ubuntu.svg'
 import CV from '../../CV.jsx';
 import cvImage from '../../assets/cv.svg'
-import RunningTetrisApplication from '../../RunningFallingBlocksApplication.jsx';
+import RunningTetrisApplication from './Applications/FallingBlocksDesktopApplication.jsx';
 import Game from '../../assets/game.svg'
 
 function Desktop() { 
@@ -16,7 +16,7 @@ function Desktop() {
     { id: "aboutMe", 
       title: "About Me", 
       visible: true, 
-      component: RunningApplication, 
+      component: AboutMeDesktopApplication, 
       style: { backgroundColor: "rgb(184, 129, 175)" }, 
       image: NotePad, 
       alt:"LinkedIn logo", 
@@ -29,7 +29,7 @@ function Desktop() {
     { id: "projects", 
       title: "Projects", 
       visible: true, 
-      component: RunningApplicationProjects, 
+      component: ProjectsDesktopApplication, 
       style: { backgroundColor: "rgb(184, 129, 175)" },
       image: Linux, 
       alt:"Linux Ubuntu logo",

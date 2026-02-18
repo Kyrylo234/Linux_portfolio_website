@@ -1,9 +1,9 @@
-import DraggableApplication from "./DraggableApplication.jsx";
-import ApplicationTopBar from "./ApplicationTopBar.jsx";
+import DraggableApplication from "../../../DraggableApplication.jsx";
+import ApplicationTopBar from "../../../ApplicationTopBar.jsx";
 import React, {useRef,} from "react";
-import Tetris from "./FallingBlocks.jsx";
+import Tetris from "../../../FallingBlocks.jsx";
 
-function RunningTetrisApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
+function FallingBlocksDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus }) {
   const appContainerRef = useRef(null);
 
   // forward fullscreen requests to parent
@@ -44,4 +44,4 @@ function RunningTetrisApplication({ appWindow, setWindows, onClose, onToggleVisi
     </div>
   );
 }
-export default RunningTetrisApplication;
+export default FallingBlocksDesktopApplication;

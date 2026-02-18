@@ -1,30 +1,30 @@
-import DraggableApplication from "./DraggableApplication";
-import ApplicationTopBar from "./ApplicationTopBar";
+import DraggableApplication from "../../../DraggableApplication";
+import ApplicationTopBar from "../../../ApplicationTopBar";
 import React, { useRef} from "react";
-import Project from "./Project"
-import Website from"./assets/website1.png"
-import Website2 from"./assets/website2.png"
-import Website3 from"./assets/website3.png"
-import Website4 from"./assets/website4.png"
-import CSPPT from "./assets/CSPPT.png"
-import Database from "./assets/Database.jpeg"
-import carApp1 from "./assets/carApp1.png"
-import carApp2 from "./assets/carApp2.png"
-import carApp3 from "./assets/carApp3.png"
-import carApp4 from "./assets/carApp4.png"
+import Project from "../../../Project"
+import Website from"../../../assets/website1.png"
+import Website2 from"../../../assets/website2.png"
+import Website3 from"../../../assets/website3.png"
+import Website4 from"../../../assets/website4.png"
+import CSPPT from "../../../assets/CSPPT.png"
+import Database from "../../../assets/Database.jpeg"
+import carApp1 from "../../../assets/carApp1.png"
+import carApp2 from "../../../assets/carApp2.png"
+import carApp3 from "../../../assets/carApp3.png"
+import carApp4 from "../../../assets/carApp4.png"
 
-import SQLSVG from "./SQLSVG"
-import JSSVG from "./JSSVG"
-import ReactSVG from "./ReactSVG"
-import HTMLSVG from "./HTMLSVG"
-import CSSSVG from "./CSSSVG"
-import GitSVG from "./GitSVG"
-import JavaSVG from "./JavaSVG"
-import PHPSVG from "./PHPSVG"
-import DartSVG from "./DartSVG"
-import DriftSVG from "./DriftSVG"
-import FlutterSVG from "./FlutterSVG"
-import ReadMe from "./ReadMe";
+import SQLSVG from "../../../SQLSVG"
+import JSSVG from "../../../JSSVG"
+import ReactSVG from "../../../ReactSVG"
+import HTMLSVG from "../../../HTMLSVG"
+import CSSSVG from "../../../CSSSVG"
+import GitSVG from "../../../GitSVG"
+import JavaSVG from "../../../JavaSVG"
+import PHPSVG from "../../../PHPSVG"
+import DartSVG from "../../../DartSVG"
+import DriftSVG from "../../../DriftSVG"
+import FlutterSVG from "../../../FlutterSVG"
+import ReadMe from "../../../ReadMe";
 
 function RunningApplicationProjects({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
