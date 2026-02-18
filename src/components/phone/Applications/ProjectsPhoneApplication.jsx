@@ -21,6 +21,7 @@ function ProjectsPhoneApplication() {
         paddingTop: "20px",
         paddingBottom: "60px",
         overflowY: "auto",
+        overflowX: "hidden",
         height: "100%",
         boxSizing: "border-box"
       }}
@@ -30,7 +31,6 @@ function ProjectsPhoneApplication() {
       <ThreeJSProject />
       <ImageToSTL />
       <LinuxPortfolioWesbiteProject />
-      ...
     </div>
   )
 }
