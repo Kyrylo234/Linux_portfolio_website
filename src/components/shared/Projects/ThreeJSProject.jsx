@@ -6,7 +6,7 @@ import threeJS from "../../../assets/images/ThreeJSWebsite/threeJS.jpg"
 
 function ThreeJSProject() {
     return (
-      <Project source={[threeJS]} elements={[    <img src="https://img.shields.io/badge/-Three.js-000000?style=flat&logo=three.js&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+      <Project source={[threeJS]} elements={[<img src="https://img.shields.io/badge/-Three.js-000000?style=flat&logo=three.js&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
     ,<img src="https://img.shields.io/badge/-Stripe-635BFF?style=flat&logo=stripe&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
     ,<img src="https://img.shields.io/badge/-Blender-F5792A?style=flat&logo=blender&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
     ,<img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>

@@ -37,7 +37,7 @@ function Desktop() {
       height: 500,
       left: 700,
       top: 200, 
-      content: "Project1",
+      content: "1",
       order: 2},
     { id: "cv", 
       title: "CV", 

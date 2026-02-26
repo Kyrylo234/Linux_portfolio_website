@@ -10,6 +10,7 @@ import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx";
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx";
 import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx";
 import CSPPTProject from "../../shared/Projects/CSPPTProject.jsx";
+import TougeChimerProject from "../../shared/Projects/TougeChimerProject.jsx";
 
 function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
@@ -25,15 +26,17 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
 
     const getContent = () => {
     switch (appWindow.content) {
-        case "Project1":
+        case "1":
             return <ReadMeProject/>;
-        case "Project2":
+        case "2":
             return <ThreeJSProject/>;
-        case "Project3":
+        case "3":
+            return <TougeChimerProject/>;
+        case "4":
             return <LinuxPortfolioWesbiteProject/>;
-        case "Project4":
+        case "5":
             return <ImageToSTL/>;
-        case "Project5":
+        case "6":
             return <CSPPTProject/>;
       default:
         return null;
@@ -68,32 +71,38 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
             <div className="RunningApplication">
             <div className="applicationOptions">
                 <div
-                className={`ApplicationOptionsOption ${appWindow.content === "Project1" ? "active" : ""}`}
-                onClick={() => handleClick("Project1")}
+                className={`ApplicationOptionsOption ${appWindow.content === "1" ? "active" : ""}`}
+                onClick={() => handleClick("1")}
                 >
                 <h5>Read Me</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${appWindow.content === "Project2" ? "active" : ""}`}
-                onClick={() => handleClick("Project2")}
+                className={`ApplicationOptionsOption ${appWindow.content === "2" ? "active" : ""}`}
+                onClick={() => handleClick("2")}
                 >
                 <h5>3D Touge Chimer Shop</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${appWindow.content === "Project3" ? "active" : ""}`}
-                onClick={() => handleClick("Project3")}
+                className={`ApplicationOptionsOption ${appWindow.content === "3" ? "active" : ""}`}
+                onClick={() => handleClick("3")}
+                >
+                <h5>Touge Chimer App</h5>
+                </div>
+                <div
+                className={`ApplicationOptionsOption ${appWindow.content === "4" ? "active" : ""}`}
+                onClick={() => handleClick("4")}
                 >
                 <h5>Linux Portfolio Website</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${appWindow.content === "Project4" ? "active" : ""}`}
-                onClick={() => handleClick("Project4")}
+                className={`ApplicationOptionsOption ${appWindow.content === "5" ? "active" : ""}`}
+                onClick={() => handleClick("5")}
                 >
                 <h5>Image To STL Converter</h5>
                 </div>
                 <div
-                className={`ApplicationOptionsOption ${appWindow.content === "Project5" ? "active" : ""}`}
-                onClick={() => handleClick("Project5")}
+                className={`ApplicationOptionsOption ${appWindow.content === "6" ? "active" : ""}`}
+                onClick={() => handleClick("6")}
                 >
                 <h5>CSPPT</h5>
                 </div>
