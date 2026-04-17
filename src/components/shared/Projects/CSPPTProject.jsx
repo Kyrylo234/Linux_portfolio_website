@@ -1,10 +1,10 @@
 import Project from "../../../Project"
 
-import Photo1 from "../../../assets/images/CSPPT/CSPPT.png"
-import Photo2 from "../../../assets/images/CSPPT/image2.png"
-import Photo3 from "../../../assets/images/CSPPT/image3.png"
-import Photo4 from "../../../assets/images/CSPPT/image4.png"
-import Photo5 from "../../../assets/images/CSPPT/image5.png"
+import Photo1 from "../../../assets/images/CSPPT/CSPPT.webp"
+import Photo2 from "../../../assets/images/CSPPT/image2.webp"
+import Photo3 from "../../../assets/images/CSPPT/image3.webp"
+import Photo4 from "../../../assets/images/CSPPT/image4.webp"
+import Photo5 from "../../../assets/images/CSPPT/image5.webp"
 
 
 

@@ -1,7 +1,7 @@
 import Project from "../../../Project"
 
-import Photo1 from "../../../assets/images/ImageToSTL/photo1.png"
-import Photo2 from "../../../assets/images/ImageToSTL/photo2.png"
+import Photo1 from "../../../assets/images/ImageToSTL/photo1.webp"
+import Photo2 from "../../../assets/images/ImageToSTL/photo2.webp"
 
 
 

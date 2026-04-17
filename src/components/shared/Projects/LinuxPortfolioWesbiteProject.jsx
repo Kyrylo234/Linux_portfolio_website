@@ -1,15 +1,13 @@
 import Project from "../../../Project"
 
-import Desktop from "../../../assets/images/PortfolioWebsite/Desktop.png"
-import Phone from "../../../assets/images/PortfolioWebsite/Phone.jpeg"
-import PhoneAboutMe from "../../../assets/images/PortfolioWebsite/PhoneAboutMe.jpeg"
-import PhoneProjects from "../../../assets/images/PortfolioWebsite/PhoneProjects.jpeg"
+import Desktop from "../../../assets/images/PortfolioWebsite/Desktop.webp"
+import Phone from "../../../assets/images/PortfolioWebsite/Phone.webp"
 
 
 
 function LinuxPortfolioWesbiteProject() {
     return (
-      <Project source={[Desktop, Phone, PhoneAboutMe, PhoneProjects]} elements={[<img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>
+      <Project source={[Desktop, Phone]} elements={[<img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>

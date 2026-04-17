@@ -80,19 +80,19 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 className={`ApplicationOptionsOption ${appWindow.content === "2" ? "active" : ""}`}
                 onClick={() => handleClick("2")}
                 >
-                <h5>3D Touge Chimer Shop</h5>
+                <h5>3D Web Store</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "3" ? "active" : ""}`}
                 onClick={() => handleClick("3")}
                 >
-                <h5>Touge Chimer App</h5>
+                <h5>Touge Chime App</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "4" ? "active" : ""}`}
                 onClick={() => handleClick("4")}
                 >
-                <h5>Linux Portfolio Website</h5>
+                <h5>Portfolio Website</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "5" ? "active" : ""}`}
