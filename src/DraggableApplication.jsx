@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState, useEffect  } from "react";
 
 const EDGE_THRESHOLD = 10;
 
@@ -10,6 +10,16 @@ const TEXT_TAGS = new Set([
 
 const DraggableApplication = forwardRef(
   ({ window, setWindows, children }, ref) => {
+    const [isFullscreen, setIsFullscreen] = useState(false);
+
+    useEffect(() => {
+      const handleFullscreenChange = () => {
+        setIsFullscreen(!!document.fullscreenElement);
+      };
+      document.addEventListener("fullscreenchange", handleFullscreenChange);
+      return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    }, []);
+
     // ---- Helpers ----
     const updateWindowProperties = (element) => {
       setWindows((prev) =>
@@ -204,10 +214,10 @@ const DraggableApplication = forwardRef(
         className="DraggableApplication"
         style={{
           position: "absolute",
-          width: window.width + "px",
-          height: window.height + "px",
-          left: window.left + "px",
-          top: window.top + "px",
+          width: isFullscreen ? "100vw" : window.width + "px",
+          height: isFullscreen ? "100vh" : window.height + "px",
+          left: isFullscreen ? "0" : window.left + "px",
+          top: isFullscreen ? "0" : window.top + "px",
         }}
       >
         {children}

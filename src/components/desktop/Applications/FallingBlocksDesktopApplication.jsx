@@ -34,7 +34,9 @@ function FallingBlocksDesktopApplication({ appWindow, setWindows, onClose, onTog
             style={{
               overflow: "scroll",
               scrollbarWidth: "none", // Firefox
-              msOverflowStyle: "none" // IE/Edge
+              msOverflowStyle: "none", // IE/Edge
+              height: "100%",        // add this
+              boxSizing: "border-box"
             }}
           >
             {<Tetris/>}
