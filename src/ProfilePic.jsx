@@ -13,6 +13,7 @@ function ProfilePic({ src }) {
         border: "4px solid #4A90E2",  // blue border
         boxShadow: "0 4px 10px rgba(0,0,0,0.2)", // soft shadow
         transition: "transform 0.3s, box-shadow 0.3s", // smooth hover
+        maxWidth: "200px",        // max size for larger screens
       }}
       className="profile-pic-container"
     >
