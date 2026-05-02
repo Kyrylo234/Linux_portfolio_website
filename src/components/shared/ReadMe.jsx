@@ -65,11 +65,10 @@ function ReadMe({ title, link, desc }) {
       >
         {/* Header */}
         <div style={sectionStyle}>
-          <h3 style={{ margin: "0 0 4px" }}>👋 Hi, I'm Kyrylo</h3>
           <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
             Incoming MSc Computer Science @ St Andrews · Maker of Touge Chime · Startup Enthusiast
           </p>
-          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
             <a href="https://kyrylo.uk/" target="_blank" rel="noopener noreferrer" style={linkStyle}>🌐 Portfolio</a>
             <span style={{ color: "#555" }}>|</span>
             <a href="https://www.linkedin.com/in/kyryloposty/" target="_blank" rel="noopener noreferrer" style={linkStyle}>💼 LinkedIn</a>

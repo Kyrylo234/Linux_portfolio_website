@@ -10,7 +10,8 @@ import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx";
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx";
 import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx";
 import CSPPTProject from "../../shared/Projects/CSPPTProject.jsx";
-import TougeChimerProject from "../../shared/Projects/TougeChimerProject.jsx";
+import PowerbanderApp from "../../shared/Projects/PowerbanderApp.jsx";
+import TougeChime from "../../shared/Projects/TougeChime.jsx";
 
 function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
@@ -31,13 +32,15 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
         case "2":
             return <ThreeJSProject/>;
         case "3":
-            return <TougeChimerProject/>;
+            return <PowerbanderApp/>;
         case "4":
             return <LinuxPortfolioWesbiteProject/>;
         case "5":
             return <ImageToSTL/>;
         case "6":
             return <CSPPTProject/>;
+        case "7":
+            return <TougeChime/>;
       default:
         return null;
     }
@@ -77,16 +80,22 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 <h5>Read Me</h5>
                 </div>
                 <div
+                className={`ApplicationOptionsOption ${appWindow.content === "7" ? "active" : ""}`}
+                onClick={() => handleClick("7")}
+                >
+                <h5>Touge Chime★</h5>
+                </div>
+                <div
                 className={`ApplicationOptionsOption ${appWindow.content === "2" ? "active" : ""}`}
                 onClick={() => handleClick("2")}
                 >
-                <h5>3D Web Store</h5>
+                <h5>3D Store★</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "3" ? "active" : ""}`}
                 onClick={() => handleClick("3")}
                 >
-                <h5>Touge Chime App</h5>
+                <h5>Powerbander App★</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "4" ? "active" : ""}`}
@@ -98,7 +107,7 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 className={`ApplicationOptionsOption ${appWindow.content === "5" ? "active" : ""}`}
                 onClick={() => handleClick("5")}
                 >
-                <h5>Image To STL Converter</h5>
+                <h5>Image-To-STL Converter</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "6" ? "active" : ""}`}
