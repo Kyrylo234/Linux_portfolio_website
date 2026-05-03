@@ -1,33 +1,58 @@
-name: Deploy React App to IONOS via SFTP
-
+name: Deploy React App to Pi4
 on:
   push:
-    branches: [ "main" ] # or "master"
-
+    branches: [ "main" ]
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies and build
+      - name: Install cloudflared
         run: |
-          npm install
-          CI=false npm run build   # prevent warnings from failing the build
+          curl -L https://github.com/cloudflare/cloudflared/releases/download/2024.11.0/cloudflared-linux-amd64 -o cloudflared
+          chmod +x cloudflared
+          sudo mv cloudflared /usr/local/bin/
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          port: 22
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local_path: build/*
-          remote_path: /
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          cat > ~/.ssh/config << EOF
+          Host ssh.powerbander.tech
+            StrictHostKeyChecking no
+            IdentityFile ~/.ssh/id_rsa
+            ProxyCommand cloudflared access tcp --hostname %h --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+          EOF
+          chmod 600 ~/.ssh/config
+
+      - name: Start Cloudflare tunnel
+        run: |
+          cloudflared access tcp \
+            --hostname ssh.powerbander.tech \
+            --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} \
+            --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }} \
+            --url localhost:2222 > /tmp/cloudflared.log 2>&1 &
+          for i in $(seq 1 15); do
+            nc -z localhost 2222 && break
+            sleep 1
+          done
+
+      - name: Deploy on Pi4
+        run: |
+          ssh -T \
+            -o StrictHostKeyChecking=no \
+            -p 2222 \
+            -i ~/.ssh/id_rsa \
+            ${{ secrets.SSH_USER }}@localhost << 'EOF'
+          set -e
+          cd ~/projects/Linux_portfolio_website
+          git pull origin main
+          docker build -t portfolio .
+          docker rm -f portfolio || true
+          docker run -d \
+            --name portfolio \
+            --restart unless-stopped \
+            -p 3001:80 \
+            portfolio
+          EOF
