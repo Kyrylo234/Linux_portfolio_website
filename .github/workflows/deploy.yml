@@ -1,7 +1,8 @@
 name: Deploy React App to Pi4
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,6 +12,7 @@ jobs:
           curl -L https://github.com/cloudflare/cloudflared/releases/download/2024.11.0/cloudflared-linux-amd64 -o cloudflared
           chmod +x cloudflared
           sudo mv cloudflared /usr/local/bin/
+          cloudflared --version
 
       - name: Setup SSH
         run: |
@@ -33,17 +35,15 @@ jobs:
             --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} \
             --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }} \
             --url localhost:2222 > /tmp/cloudflared.log 2>&1 &
-          for i in $(seq 1 30); do
-            nc -z localhost 2222 && echo "Tunnel ready" && break
-            echo "Waiting... $i"
-            sleep 2
+          for i in $(seq 1 15); do
+            nc -z localhost 2222 && break
+            sleep 1
           done
 
       - name: Deploy on Pi4
         run: |
-          ssh -tt \
+          ssh -T \
             -o StrictHostKeyChecking=no \
-            -o ServerAliveInterval=30 \
             -p 2222 \
             -i ~/.ssh/id_rsa \
             ${{ secrets.SSH_USER }}@localhost << 'EOF'
