@@ -54,15 +54,6 @@ function ReadMe({ title, link, desc }) {
           {title}
         </a>
       </h4>
-
-      <div
-        style={{
-          marginTop: "5px",
-          padding: "10px",
-          border: "1px solid #ddd",
-          borderRadius: "8px",
-        }}
-      >
         {/* Header */}
         <div style={sectionStyle}>
           <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
@@ -157,8 +148,6 @@ function ReadMe({ title, link, desc }) {
             />
           </div>
         </div>
-
-      </div>
     </div>
   );
 }
