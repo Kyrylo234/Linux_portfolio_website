@@ -33,15 +33,17 @@ jobs:
             --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} \
             --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }} \
             --url localhost:2222 > /tmp/cloudflared.log 2>&1 &
-          for i in $(seq 1 15); do
-            nc -z localhost 2222 && break
-            sleep 1
+          for i in $(seq 1 30); do
+            nc -z localhost 2222 && echo "Tunnel ready" && break
+            echo "Waiting... $i"
+            sleep 2
           done
 
       - name: Deploy on Pi4
         run: |
-          ssh -T \
+          ssh -tt \
             -o StrictHostKeyChecking=no \
+            -o ServerAliveInterval=30 \
             -p 2222 \
             -i ~/.ssh/id_rsa \
             ${{ secrets.SSH_USER }}@localhost << 'EOF'
