@@ -13,7 +13,7 @@ function PowerbanderApp() {
         ,<img src="https://img.shields.io/badge/-Bluetooth_LE-0082FC?style=flat&logo=bluetooth&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
         ,<img src="https://img.shields.io/badge/-Android-3DDC84?style=flat&logo=android&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
         ,<img src="https://img.shields.io/badge/-iOS-000000?style=flat&logo=apple&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>]}
-      title={"Powerbander App"} link={"https://github.com/Kyrylo234/PowerbanderApp"} desc={"An Bluetooth companion App to control the Touge Chime device, built with Flutter"}/>
+      title={"Powerbander App"} link={"https://apps.apple.com/us/app/powerbander/id6762231997"} desc={"An Bluetooth companion App to control the Touge Chime device, built with Flutter"}/>
     )
   }
 
