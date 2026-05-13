@@ -103,8 +103,8 @@ function ReadMe({ title, link, desc }) {
             📈 Building Touge Chime in public
           </p>
           <p style={{ display: "flex", flexWrap: "wrap", gap: "6px", margin: "10px 0 12px" }}>
-          <a href="https://instagram.com/power.bander" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/Instagram-@power.bander-E4405F?logo=instagram&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }} alt="Instagram" />
+          <a href="https://instagram.com/powerbander" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.shields.io/badge/Instagram-@powerbander-E4405F?logo=instagram&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }} alt="Instagram" />
           </a>
           <a href="https://www.tiktok.com/@powerbander" target="_blank" rel="noopener noreferrer">
             <img src="https://img.shields.io/badge/TikTok-@powerbander-000000?logo=tiktok&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }} alt="TikTok" />
