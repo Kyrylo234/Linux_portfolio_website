@@ -13,7 +13,6 @@ jobs:
           chmod +x cloudflared
           sudo mv cloudflared /usr/local/bin/
           cloudflared --version
-
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -27,22 +26,21 @@ jobs:
             ProxyCommand cloudflared access tcp --hostname %h --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
           EOF
           chmod 600 ~/.ssh/config
-
       - name: Deploy on Pi4
-      run: |
-        ssh -T \
-          -o StrictHostKeyChecking=no \
-          -o ConnectTimeout=10 \
-          -i ~/.ssh/id_rsa \
-          ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
-        set -e
-        cd ~/projects/Linux_portfolio_website
-        git pull origin main
-        docker build -t portfolio .
-        docker rm -f portfolio || true
-        docker run -d \
-          --name portfolio \
-          --restart unless-stopped \
-          -p 3001:80 \
-          portfolio
-        EOF
+        run: |
+          ssh -T \
+            -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=10 \
+            -i ~/.ssh/id_rsa \
+            ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
+          set -e
+          cd ~/projects/Linux_portfolio_website
+          git pull origin main
+          docker build -t portfolio .
+          docker rm -f portfolio || true
+          docker run -d \
+            --name portfolio \
+            --restart unless-stopped \
+            -p 3001:80 \
+            portfolio
+          EOF
