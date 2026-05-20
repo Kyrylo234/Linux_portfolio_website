@@ -28,33 +28,21 @@ jobs:
           EOF
           chmod 600 ~/.ssh/config
 
-      - name: Start Cloudflare tunnel
-        run: |
-          cloudflared access tcp \
-            --hostname ssh.powerbander.tech \
-            --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} \
-            --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }} \
-            --url localhost:2222 > /tmp/cloudflared.log 2>&1 &
-          for i in $(seq 1 15); do
-            nc -z localhost 2222 && break
-            sleep 1
-          done
-
       - name: Deploy on Pi4
-        run: |
-          ssh -T \
-            -o StrictHostKeyChecking=no \
-            -p 2222 \
-            -i ~/.ssh/id_rsa \
-            ${{ secrets.SSH_USER }}@localhost << 'EOF'
-          set -e
-          cd ~/projects/Linux_portfolio_website
-          git pull origin main
-          docker build -t portfolio .
-          docker rm -f portfolio || true
-          docker run -d \
-            --name portfolio \
-            --restart unless-stopped \
-            -p 3001:80 \
-            portfolio
-          EOF
+      run: |
+        ssh -T \
+          -o StrictHostKeyChecking=no \
+          -o ConnectTimeout=10 \
+          -i ~/.ssh/id_rsa \
+          ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
+        set -e
+        cd ~/projects/Linux_portfolio_website
+        git pull origin main
+        docker build -t portfolio .
+        docker rm -f portfolio || true
+        docker run -d \
+          --name portfolio \
+          --restart unless-stopped \
+          -p 3001:80 \
+          portfolio
+        EOF
