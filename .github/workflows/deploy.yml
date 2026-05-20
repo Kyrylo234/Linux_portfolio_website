@@ -23,14 +23,14 @@ jobs:
           Host ssh.powerbander.tech
             StrictHostKeyChecking no
             IdentityFile ~/.ssh/id_rsa
-            ProxyCommand cloudflared access tcp --hostname %h --service-token-id ${{ secrets.CF_ACCESS_CLIENT_ID }} --service-token-secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+            ProxyCommand cloudflared access ssh --hostname %h
           EOF
           chmod 600 ~/.ssh/config
       - name: Deploy on Pi4
         run: |
           ssh -T \
             -o StrictHostKeyChecking=no \
-            -o ConnectTimeout=10 \
+            -o ConnectTimeout=30 \
             -i ~/.ssh/id_rsa \
             ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
           set -e
