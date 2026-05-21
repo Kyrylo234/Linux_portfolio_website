@@ -35,6 +35,8 @@ function ReadMe({ title, link, desc }) {
     borderRadius: "8px",
     padding: "10px",
     marginBottom: "12px",
+    overflow: "hidden",
+    boxSizing: "border-box",
   };
 
   return (
@@ -121,9 +123,10 @@ function ReadMe({ title, link, desc }) {
           <div
             ref={calendarWrapperRef}
             style={{
-              width: "95%",
-              margin: "0 auto",
+              width: "100%",
               transition: "all 0.3s ease",
+              overflow: "hidden",
+              boxSizing: "border-box"
             }}
           >
             <GitHubCalendar

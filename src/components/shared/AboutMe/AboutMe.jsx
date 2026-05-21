@@ -1,5 +1,5 @@
 import ProfilePic from "../../../ProfilePic"
-import Pic from '../../../assets/ProfilePic.PNG'
+import Pic from '../../../assets/ProfilePic.webp'
 import LinkedIn from '../../../assets/appIcons/linkedIn.svg';
 import GitHub from '../../../assets/appIcons/github.svg';
 import RandomColorDivOnlyText from "../../../RandomColorDivOnlyText"

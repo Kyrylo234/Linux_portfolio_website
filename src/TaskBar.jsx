@@ -1,6 +1,6 @@
 import LinkedIn from './assets/appIcons/linkedIn.svg';
 import GitHub from './assets/appIcons/github.svg';
-import More from './assets/icons/More.png'
+import More from './assets/icons/More.webp'
 import TaskBarButton from './TaskBarButton.jsx';
 function TaskBar({toggleVisibility, windows}){
     return (

@@ -1,5 +1,5 @@
-import Lancaster from "../../../assets/Lancaster.png"
-import StAndrews from "../../../assets/stAndrews.png"
+import Lancaster from "../../../assets/Lancaster.webp"
+import StAndrews from "../../../assets/stAndrews.webp"
 function Education() {
     return (
         <>

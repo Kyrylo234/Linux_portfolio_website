@@ -1,12 +1,12 @@
-import car from '../../../assets/images/Hobbies/Cars/1.png'
-import car2 from '../../../assets/images/Hobbies/Cars/rx7.png'
-import travel1 from '../../../assets/images/Hobbies/Travelling/2.png'
-import travel2 from '../../../assets/images/Hobbies/Travelling/3.png'
-import travel3 from '../../../assets/images/Hobbies/Travelling/4.png'
-import travel4 from '../../../assets/images/Hobbies/Travelling/5.png'
-import travel5 from '../../../assets/images/Hobbies/Travelling/6.png'
-import travel6 from '../../../assets/images/Hobbies/Travelling/7.png'
-import volleyball from '../../../assets/images/Hobbies/Fitness/8.png'
+import car from '../../../assets/images/Hobbies/Cars/1.webp'
+import car2 from '../../../assets/images/Hobbies/Cars/rx7.webp'
+import travel1 from '../../../assets/images/Hobbies/Travelling/2.webp'
+import travel2 from '../../../assets/images/Hobbies/Travelling/3.webp'
+import travel3 from '../../../assets/images/Hobbies/Travelling/4.webp'
+import travel4 from '../../../assets/images/Hobbies/Travelling/5.webp'
+import travel5 from '../../../assets/images/Hobbies/Travelling/6.webp'
+import travel6 from '../../../assets/images/Hobbies/Travelling/7.webp'
+import volleyball from '../../../assets/images/Hobbies/Fitness/8.webp'
 
 
 

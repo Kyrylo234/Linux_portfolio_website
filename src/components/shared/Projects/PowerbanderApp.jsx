@@ -1,6 +1,6 @@
 import Project from "../../../Project"
 
-import Photo1 from "../../../assets/images/PowerbanderApp/TougeChimeApp.png"
+import Photo1 from "../../../assets/images/PowerbanderApp/TougeChimeApp.webp"
 
 
 
