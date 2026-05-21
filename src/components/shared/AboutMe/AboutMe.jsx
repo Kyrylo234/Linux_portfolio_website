@@ -62,18 +62,19 @@ function AboutMe() {
 
       {/* About */}
       <div style={sectionStyle}>
-        <h3 style={{ margin: "0 0 10px" }}>🧑‍🔧 About Me</h3>
-        <div style={cardStyle}>
-          <p style={{ margin: "0 0 6px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6" }}>
-            🚀 Passionate about startups in the UK — currently launching my first product
-          </p>
-          <p style={{ margin: "0 0 6px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6" }}>
-            📬 50+ email subscribers and growing · building in public
-          </p>
-          <p style={{ margin: "0", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6" }}>
-            📸 85k+ views in the last 30 days on Instagram alone
-          </p>
-        </div>
+        <h5 style={{ textAlign: "center", margin: "0 0 6px" }}>🧑‍🔧 About Me</h5>
+        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
+          🚀 Building PowerBander - a JDM-inspired hardware brand
+        </p>
+        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
+          🔔 Currently launching Touge Chime
+        </p>
+        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left"  }}>
+          📬 100+ email subscribers for batch 1
+        </p>
+        <p style={{ margin: "0", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left"  }}>
+          📸 450+ followers on Instagram with 150k+ organic views
+        </p>
       </div>
 
       {/* Current Projects */}
