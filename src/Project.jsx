@@ -6,8 +6,6 @@ function Project({ source, elements, title, link, desc }) {
       style={{
         margin: "10px",
         padding: "5px",
-        border: "2px solid #dddddd8e",
-        borderRadius: "8px",
       }}
     >
       <div style={{ margin: "0" }}>
@@ -15,18 +13,16 @@ function Project({ source, elements, title, link, desc }) {
           style={{
             marginTop: "5px",
             padding: "10px",
-            border: "1px solid #ddd",
-            borderRadius: "8px",
           }}
         >
-          <h4 style={{ marginBottom: "4px", marginTop: "0" }}>
+          <h2 style={{ marginBottom: "4px", marginTop: "0" }}>
             <a
               href={link}
               style={{ color: "inherit", textDecoration: "underline" }}
             >
               {title}
             </a>
-          </h4>
+          </h2>
 
           {desc && (
             <p
