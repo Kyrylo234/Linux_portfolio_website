@@ -12,8 +12,6 @@ function AboutMe() {
   const sectionStyle = {
     marginTop: "10px",
     padding: "12px",
-    border: "2px solid #dddddd8e",
-    borderRadius: "8px",
   };
 
   const cardStyle = {
@@ -44,9 +42,9 @@ function AboutMe() {
 
       {/* Header */}
       <div style={sectionStyle}>
-        <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap", flexDirection: "column" }}>
           <ProfilePic src={Pic} />
-          <div>
+          <div style={{alignItems: "center", gap: "16px", display: "flex", flexDirection: "column"}}>
             <h2 style={{ margin: "0 0 4px" }}>👋 Hi, I'm Kyrylo</h2>
             <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
               Incoming MSc Computer Science @ St Andrews · Maker of Touge Chime · Startup Enthusiast
@@ -64,57 +62,41 @@ function AboutMe() {
       <div style={sectionStyle}>
         <h5 style={{ textAlign: "center", margin: "0 0 6px" }}>🧑‍🔧 About Me</h5>
         <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
-          🚀 Building PowerBander - a JDM-inspired hardware brand
-        </p>
-        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
-          🔔 Currently launching Touge Chime
-        </p>
-        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left"  }}>
-          📬 100+ email subscribers for batch 1
-        </p>
-        <p style={{ margin: "0", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left"  }}>
-          📸 450+ followers on Instagram with 150k+ organic views
+          🚀 Building PowerBander - a JDM-inspired hardware brand <br/>
+          🔔 Currently launching Touge Chime<br/>
+          📬 100+ email subscribers for batch 1<br/>
+          📸 500+ followers on Instagram with 500k+ organic views across platforms
         </p>
       </div>
 
       {/* Current Projects */}
       <div style={sectionStyle}>
         <h3 style={{ margin: "0 0 10px" }}>💡 Current Projects</h3>
-        <ul style={{ margin: 0, paddingLeft: "1.2rem", lineHeight: "2", fontSize: "0.9rem", color: "#eee" }}>
-          <li>
-            🔔 <strong>Touge Chime</strong> — ESP32-powered mechanical chime inspired by the Toyota AE86 "speeding chime" ·{" "}
-            <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Launching Soon</a>
-          </li>
-          <li>
-            📱 <strong>Bluetooth Companion App</strong> — Flutter app to control the Touge Chime ·{" "}
-            <a href="https://apps.apple.com/app/powerbander/id6762231997" target="_blank" rel="noopener noreferrer" style={linkStyle}>App Store</a> ✅
-          </li>
-          <li>
-            🏎️ <strong>3D Store</strong> — Interactive Three.js shop with Stripe checkout ·{" "}
+        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
+          🔔 <strong>Touge Chime</strong> — ESP32-powered mechanical speed chime, inspired by the Toyota AE86 ·{" "}
+          <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Launching Soon</a> <br/>
+          📱 <strong>Bluetooth Companion App</strong> — Flutter app to control the Touge Chime ·{" "}
+            <a href="https://apps.apple.com/app/powerbander/id6762231997" target="_blank" rel="noopener noreferrer" style={linkStyle}>App Store</a> ✅ <br/>
+          🏎️ <strong>3D Store</strong> — Interactive Three.js shop with Stripe checkout ·{" "}
             <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>powerbander.tech</a> ✅
-          </li>
-        </ul>
+        </p>
       </div>
 
       {/* Skills */}
       <div style={sectionStyle}>
         <h4 style={{ margin: "0 0 10px" }}>Languages</h4>
-        <div style={{ ...cardStyle, marginTop: "10px" }}>
-          <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-            <RandomColorDivOnlyText text="English" />
-            <RandomColorDivOnlyText text="Ukrainian" />
-            <RandomColorDivOnlyText text="Russian" />
-          </div>
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          <RandomColorDivOnlyText text="English" />
+          <RandomColorDivOnlyText text="Ukrainian" />
+          <RandomColorDivOnlyText text="Russian" />
         </div>
         <h4 style={{ margin: "0 0 8px" }}>Hobbies</h4>
-        <div style={{ ...cardStyle, marginTop: "10px" }}>
-          <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-            <RandomColorDivOnlyText text="Volleyball" />
-            <RandomColorDivOnlyText text="Fitness" />
-            <RandomColorDivOnlyText text="Video Production" />
-            <RandomColorDivOnlyText text="Travelling" />
-            <RandomColorDivOnlyText text="Cars" />
-          </div>
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          <RandomColorDivOnlyText text="Volleyball" />
+          <RandomColorDivOnlyText text="Fitness" />
+          <RandomColorDivOnlyText text="Video Production" />
+          <RandomColorDivOnlyText text="Travelling" />
+          <RandomColorDivOnlyText text="Cars" />
         </div>
       </div>
 
