@@ -31,8 +31,6 @@ function ReadMe({ title, link, desc }) {
   };
 
   const sectionStyle = {
-    border: "1px solid #ddd",
-    borderRadius: "8px",
     padding: "10px",
     marginBottom: "12px",
     overflow: "hidden",
@@ -45,17 +43,15 @@ function ReadMe({ title, link, desc }) {
       style={{
         margin: "10px",
         padding: "5px",
-        border: "2px solid #dddddd8e",
-        borderRadius: "8px",
         width: "100%",
         boxSizing: "border-box",
       }}
     >
-      <h4 style={{ marginBottom: "4px", marginTop: "0" }}>
+      <h2 style={{ marginBottom: "4px", marginTop: "0" }}>
         <a href={link} style={{ color: "inherit", textDecoration: "underline" }}>
           {title}
         </a>
-      </h4>
+      </h2>
         {/* Header */}
         <div style={sectionStyle}>
           <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
@@ -72,7 +68,7 @@ function ReadMe({ title, link, desc }) {
 
         {/* About Me */}
         <div style={sectionStyle}>
-          <h5 style={{ textAlign: "center", margin: "0 0 6px" }}>🧑‍🔧 About Me</h5>
+          <h3 style={{ textAlign: "center", margin: "0 0 6px" }}>🧑‍🔧 About Me</h3>
           <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
             🚀 Building PowerBander - a JDM-inspired hardware brand
           </p>
@@ -89,21 +85,15 @@ function ReadMe({ title, link, desc }) {
 
         {/* Current Projects */}
         <div style={sectionStyle}>
-          <h5 style={{ textAlign: "left", margin: "0 0 6px", textAlign: "center" }}>💡 Current Projects</h5>
-          <ul style={{ margin: "0 0 6px", paddingLeft: "1.2rem", lineHeight: "2", fontSize: "0.9rem", color: "#eee", textAlign: "left"  }}>
-            <li>
-              🔔 <strong>Touge Chime</strong> — ESP32-powered mechanical chime inspired by the Toyota AE86 "speeding chime" ·{" "}
-              <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Launching Soon</a>
-            </li>
-            <li>
-              📱 <strong>Bluetooth Companion App</strong> — Flutter app to control the Touge Chime ·{" "}
-              <a href="https://apps.apple.com/app/powerbander/id6762231997" target="_blank" rel="noopener noreferrer" style={linkStyle}>App Store</a> ✅
-            </li>
-            <li>
-              🏎️ <strong>3D Store</strong> — Interactive Three.js shop with Stripe checkout ·{" "}
-              <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>powerbander.tech</a> ✅
-            </li>
-          </ul>
+          <h3 style={{ textAlign: "left", margin: "0 0 6px", textAlign: "center" }}>💡 Current Projects</h3>
+          <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
+          🔔 <strong>Touge Chime</strong> — ESP32-powered mechanical speed chime, inspired by the Toyota AE86 ·{" "}
+          <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Launching Soon</a> <br/>
+          📱 <strong>Bluetooth Companion App</strong> — Flutter app to control the Touge Chime ·{" "}
+            <a href="https://apps.apple.com/app/powerbander/id6762231997" target="_blank" rel="noopener noreferrer" style={linkStyle}>App Store</a> ✅ <br/>
+          🏎️ <strong>3D Store</strong> — Interactive Three.js shop with Stripe checkout ·{" "}
+            <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>powerbander.tech</a> ✅
+        </p>
           <p style={{ display: "flex", flexWrap: "wrap", gap: "6px", margin: "10px 0 12px" }}>
           <a href="https://instagram.com/powerbander" target="_blank" rel="noopener noreferrer">
             <img src="https://img.shields.io/badge/Instagram-@powerbander-E4405F?logo=instagram&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }} alt="Instagram" />
