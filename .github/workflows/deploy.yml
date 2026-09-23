@@ -4,7 +4,34 @@ on:
     branches:
       - main
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/portfolio:latest
+          platforms: linux/arm64
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Install cloudflared
@@ -12,7 +39,6 @@ jobs:
           curl -L https://github.com/cloudflare/cloudflared/releases/download/2024.11.0/cloudflared-linux-amd64 -o cloudflared
           chmod +x cloudflared
           sudo mv cloudflared /usr/local/bin/
-          cloudflared --version
 
       - name: Setup SSH
         run: |
@@ -36,14 +62,11 @@ jobs:
             -i ~/.ssh/id_rsa \
             ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
           set -e
-          free -h
-          cd ~/projects/Linux_portfolio_website
-          git pull origin main
-          docker build -t portfolio .
+          docker pull ghcr.io/${{ github.repository_owner }}/portfolio:latest
           docker rm -f portfolio || true
           docker run -d \
             --name portfolio \
             --restart unless-stopped \
             -p 3001:80 \
-            portfolio
+            ghcr.io/${{ github.repository_owner }}/portfolio:latest
           EOF
