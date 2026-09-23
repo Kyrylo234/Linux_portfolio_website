@@ -34,6 +34,20 @@ jobs:
             -i ~/.ssh/id_rsa \
             ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
           set -e
+
+          if [ ! -f /swapfile ]; then
+            echo "Creating 2G swapfile..."
+            sudo fallocate -l 2G /swapfile
+            sudo chmod 600 /swapfile
+            sudo mkswap /swapfile
+            sudo swapon /swapfile
+            echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+          else
+            echo "Swapfile already exists, ensuring it's active..."
+            sudo swapon /swapfile || true
+          fi
+          free -h
+
           cd ~/projects/Linux_portfolio_website
           git pull origin main
           docker build -t portfolio .
