@@ -47,7 +47,7 @@ function AboutMe() {
           <div style={{alignItems: "center", gap: "16px", display: "flex", flexDirection: "column"}}>
             <h2 style={{ margin: "0 0 4px" }}>👋 Hi, I'm Kyrylo</h2>
             <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
-              Incoming MSc Computer Science @ St Andrews · Maker of Touge Chime · Startup Enthusiast
+              MSc Computer Science @ St Andrews | Founder
             </p>
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
               <a href="https://kyrylo.uk/" target="_blank" rel="noopener noreferrer" style={linkStyle}>🌐 Portfolio</a>
@@ -62,23 +62,7 @@ function AboutMe() {
       <div style={sectionStyle}>
         <h5 style={{ textAlign: "center", margin: "0 0 6px" }}>🧑‍🔧 About Me</h5>
         <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
-          🚀 Building PowerBander - a JDM-inspired hardware brand <br/>
-          🔔 Currently launching Touge Chime<br/>
-          📬 100+ email subscribers for batch 1<br/>
-          📸 500+ followers on Instagram with 500k+ organic views across platforms
-        </p>
-      </div>
-
-      {/* Current Projects */}
-      <div style={sectionStyle}>
-        <h3 style={{ margin: "0 0 10px" }}>💡 Current Projects</h3>
-        <p style={{ margin: "0 0 4px", fontSize: "0.9rem", color: "#eee", lineHeight: "1.6", textAlign: "left" }}>
-          🔔 <strong>Touge Chime</strong> — ESP32-powered mechanical speed chime, inspired by the Toyota AE86 ·{" "}
-          <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Launching Soon</a> <br/>
-          📱 <strong>Bluetooth Companion App</strong> — Flutter app to control the Touge Chime ·{" "}
-            <a href="https://apps.apple.com/app/powerbander/id6762231997" target="_blank" rel="noopener noreferrer" style={linkStyle}>App Store</a> ✅ <br/>
-          🏎️ <strong>3D Store</strong> — Interactive Three.js shop with Stripe checkout ·{" "}
-            <a href="https://powerbander.tech/" target="_blank" rel="noopener noreferrer" style={linkStyle}>powerbander.tech</a> ✅
+          Master's student at the University of St Andrews focusing on Artificial Intelligence & Software Product Management, with a strong interest in the intersection of embedded systems and machine learning.
         </p>
       </div>
 
