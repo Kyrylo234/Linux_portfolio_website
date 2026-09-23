@@ -1,11 +1,6 @@
 import DraggableApplication from "../../../DraggableApplication";
 import ApplicationTopBar from "../../../ApplicationTopBar";
 import React, { useRef} from "react";
-
-
-
-
-import ReadMeProject from "../../shared/Projects/ReadMeProject.jsx"
 import ThreeJSProject from "../../shared/Projects/ThreeJSProject.jsx";
 import LinuxPortfolioWesbiteProject from "../../shared/Projects/LinuxPortfolioWesbiteProject.jsx";
 import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx";
@@ -27,8 +22,6 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
 
     const getContent = () => {
     switch (appWindow.content) {
-        case "1":
-            return <ReadMeProject/>;
         case "2":
             return <ThreeJSProject/>;
         case "3":
@@ -39,7 +32,7 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
             return <ImageToSTL/>;
         case "6":
             return <CSPPTProject/>;
-        case "7":
+        case "1":
             return <TougeChime/>;
       default:
         return null;
@@ -76,12 +69,6 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "1" ? "active" : ""}`}
                 onClick={() => handleClick("1")}
-                >
-                <h5>Read Me</h5>
-                </div>
-                <div
-                className={`ApplicationOptionsOption ${appWindow.content === "7" ? "active" : ""}`}
-                onClick={() => handleClick("7")}
                 >
                 <h5>Touge Chime★</h5>
                 </div>

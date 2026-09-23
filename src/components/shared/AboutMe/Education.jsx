@@ -12,7 +12,7 @@ function Education() {
   >
     University of St Andrews
   </a></h2>
-        <p style={{margin: "0" }}>Incoming in September</p>
+        <p style={{margin: "0" }}>Studying</p>
         <h4 style={{ margin: "10px 0" }}>Master of Science</h4>
         <p style={{margin: "10px 0" }}>in</p>
         <h4 style={{margin: "10px 0 50px 0px" }}>Computer Science</h4>

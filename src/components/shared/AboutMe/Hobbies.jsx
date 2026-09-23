@@ -1,5 +1,6 @@
 import car from '../../../assets/images/Hobbies/Cars/1.webp'
-import car2 from '../../../assets/images/Hobbies/Cars/rx7.webp'
+import car3 from '../../../assets/images/Hobbies/Cars/rx7.webp'
+import car2 from '../../../assets/images/Hobbies/Cars/working.webp'
 import travel1 from '../../../assets/images/Hobbies/Travelling/2.webp'
 import travel2 from '../../../assets/images/Hobbies/Travelling/3.webp'
 import travel3 from '../../../assets/images/Hobbies/Travelling/4.webp'
@@ -52,7 +53,7 @@ function Hobbies() {
         </div>
         </div>
       <Carousel
-        images={[car, car2]}
+        images={[car, car2, car3]}
         imgStyle={{
           maxHeight: "70vh",  // don’t exceed 70% of viewport height
           maxWidth: "90vw",   // don’t exceed 90% of viewport width

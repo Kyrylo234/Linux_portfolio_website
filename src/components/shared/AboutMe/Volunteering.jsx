@@ -26,7 +26,7 @@ function Volunteering() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >Coordinated a team of volunteers (myself included) to pack and load humanitarian aid onto the lorries. I also raised funds by running the social media.</p>
+          >Coordinated a team of volunteers (myself included) to pack and load humanitarian aid onto the lorries. Also raised funds by running the social media.</p>
           <div style={{ 
               display: "flex", 
               justifyContent: "center", // center horizontally
