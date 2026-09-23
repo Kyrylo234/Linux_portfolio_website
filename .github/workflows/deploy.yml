@@ -6,8 +6,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      owner_lc: ${{ steps.owner.outputs.owner_lc }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set lowercase owner
+        id: owner
+        run: echo "owner_lc=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -27,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/portfolio:latest
+          tags: ghcr.io/${{ steps.owner.outputs.owner_lc }}/portfolio:latest
           platforms: linux/arm64
 
   deploy:
@@ -55,18 +61,20 @@ jobs:
           chmod 600 ~/.ssh/config
 
       - name: Deploy on Pi4
+        env:
+          OWNER_LC: ${{ needs.build.outputs.owner_lc }}
         run: |
           ssh -T \
             -o StrictHostKeyChecking=no \
             -o ConnectTimeout=30 \
             -i ~/.ssh/id_rsa \
-            ${{ secrets.SSH_USER }}@ssh.powerbander.tech << 'EOF'
+            ${{ secrets.SSH_USER }}@ssh.powerbander.tech << EOF
           set -e
-          docker pull ghcr.io/${{ github.repository_owner }}/portfolio:latest
+          docker pull ghcr.io/$OWNER_LC/portfolio:latest
           docker rm -f portfolio || true
           docker run -d \
             --name portfolio \
             --restart unless-stopped \
             -p 3001:80 \
-            ghcr.io/${{ github.repository_owner }}/portfolio:latest
+            ghcr.io/$OWNER_LC/portfolio:latest
           EOF
