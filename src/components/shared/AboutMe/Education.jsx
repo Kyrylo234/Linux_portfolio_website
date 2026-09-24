@@ -3,7 +3,7 @@ import StAndrews from "../../../assets/stAndrews.webp"
 function Education() {
     return (
         <>
-        <div className="fiftyPix" style={{ marginTop: "10%" }}>
+        <div className="fiftyPix" style={{ marginTop: "10%", marginBottom: "10%" }}>
 
         <img src={StAndrews} style={{width:'160px', height:'160px'}} alt="St Andrews University Logo"></img>
         <h2><a 
@@ -31,10 +31,6 @@ function Education() {
         <h4 style={{margin: "10px 0" }}>Computer Science</h4>
         
         
-      </div>
-      <div className="fiftyPix" style={{ marginBottom: "10%" }}>
-        <h3>A-Levels</h3>
-        <h4>Economics(A), Maths(B), Physics(B)</h4>        
       </div>
         </>
         

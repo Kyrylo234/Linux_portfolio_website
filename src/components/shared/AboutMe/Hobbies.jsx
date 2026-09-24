@@ -94,7 +94,7 @@ function Hobbies() {
       />    
       </div>
        <div style={{ marginTop: "10px",padding: "5px"}}>
-        <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Volleyball/Fitness</h3>
+        <h3 style={{ marginTop: "0" , marginBottom: "0"}}>Volleyball</h3>
         <div style={{ marginTop: "10px",padding: "5px"}}>
           <p
             style={{
@@ -104,7 +104,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >I enjoy volleyball and fitness.</p>
+          >I enjoy volleyball.</p>
         </div>
         <Carousel
         images={[volleyball]}

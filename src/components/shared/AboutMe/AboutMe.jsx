@@ -46,14 +46,9 @@ function AboutMe() {
           <ProfilePic src={Pic} />
           <div style={{alignItems: "center", gap: "16px", display: "flex", flexDirection: "column"}}>
             <h2 style={{ margin: "0 0 4px" }}>👋 Hi, I'm Kyrylo</h2>
-            <p style={{ margin: "0 0 8px", color: "#aaa", fontSize: "0.9rem" }}>
+            <p style={{ margin: "0 0 8px", color: "#eee", fontSize: "0.9rem", fontWeight: "bold" }}>
               MSc Computer Science @ St Andrews | Founder
             </p>
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
-              <a href="https://kyrylo.uk/" target="_blank" rel="noopener noreferrer" style={linkStyle}>🌐 Portfolio</a>
-              <a href="https://www.linkedin.com/in/kyryloposty/" target="_blank" rel="noopener noreferrer" style={linkStyle}>💼 LinkedIn</a>
-              <a href="https://www.kaggle.com/kyrylo234" target="_blank" rel="noopener noreferrer" style={linkStyle}>🤖 Kaggle</a>
-            </div>
           </div>
         </div>
       </div>
@@ -73,14 +68,6 @@ function AboutMe() {
           <RandomColorDivOnlyText text="English" />
           <RandomColorDivOnlyText text="Ukrainian" />
           <RandomColorDivOnlyText text="Russian" />
-        </div>
-        <h4 style={{ margin: "0 0 8px" }}>Hobbies</h4>
-        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-          <RandomColorDivOnlyText text="Volleyball" />
-          <RandomColorDivOnlyText text="Cars" />
-          <RandomColorDivOnlyText text="Fitness" />
-          <RandomColorDivOnlyText text="Video Production" />
-          <RandomColorDivOnlyText text="Travelling" />
         </div>
       </div>
 
