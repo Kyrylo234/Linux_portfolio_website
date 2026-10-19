@@ -1,6 +1,6 @@
 import Carousel from "./Carousel";
 
-function Project({ source, elements, title, link, desc }) {
+function Project({ source, elements, imageAlt, title, link, desc }) {
   return (
     <div
       style={{
@@ -56,6 +56,7 @@ function Project({ source, elements, title, link, desc }) {
             margin: "0 auto", // center horizontally
             paddingTop: "10px",
           }}
+          imgAlt={imageAlt}
         />
       </div>
     </div>

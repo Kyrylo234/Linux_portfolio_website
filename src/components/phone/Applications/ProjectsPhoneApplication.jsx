@@ -6,6 +6,7 @@ import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx"
 import CSPPTProject from "../../shared/Projects/CSPPTProject.jsx"
 import PowerbanderApp from "../../shared/Projects/PowerbanderApp.jsx"
 import TougeChime from "../../shared/Projects/TougeChime.jsx";
+import RPER from "../../shared/Projects/RPERProject.jsx";
 
 
 function ProjectsPhoneApplication() {
@@ -27,6 +28,7 @@ function ProjectsPhoneApplication() {
       <PowerbanderApp/>
       <LinuxPortfolioWesbiteProject/>
       <ImageToSTL />
+      <RPER/>
       <CSPPTProject/>
     </div>
   )

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useRef, useCallback} from "react";
 
 export default function Carousel({ images, imgStyle, imgAlt }) {
   const containerRef = useRef(null);

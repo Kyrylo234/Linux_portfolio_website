@@ -13,7 +13,8 @@ function CSPPTProject() {
     return (
       <Project source={[Photo1, Photo2, Photo3, Photo4, Photo5]} elements={[<img src="https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>
       ,<img src="https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white" style={{ height: "20px", margin: "0px", width: "auto" }}/>]} 
-      title={"Computer Science PowerPoint"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"A presentation application for the tech field, integrating UML diagrams, a built-in command line, and live coding support — all inside your slides."}/>
+      title={"Computer Science PowerPoint"} link={"https://github.com/Kyrylo234/CSPPT"} desc={"A presentation application for the tech field, integrating UML diagrams, a built-in command line, and live coding support — all inside your slides."} 
+      imageAlt={["Command Line interface", "Graph diagrams", "Presentation demo", "UML diagrams and in presentation coding", "UML diagram creation"]}/>
     )
   }
 

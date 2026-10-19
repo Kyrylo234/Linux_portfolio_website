@@ -7,6 +7,7 @@ import ImageToSTL from "../../shared/Projects/ImageToSTLProject.jsx";
 import CSPPTProject from "../../shared/Projects/CSPPTProject.jsx";
 import PowerbanderApp from "../../shared/Projects/PowerbanderApp.jsx";
 import TougeChime from "../../shared/Projects/TougeChime.jsx";
+import RPERProject from "../../shared/Projects/RPERProject.jsx";
 
 function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVisibility, onFocus}) {
     const appContainerRef = useRef(null);
@@ -34,6 +35,8 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
             return <CSPPTProject/>;
         case "1":
             return <TougeChime/>;
+        case "7":
+            return <RPERProject/>;
       default:
         return null;
     }
@@ -95,6 +98,12 @@ function ProjectsDesktopApplication({ appWindow, setWindows, onClose, onToggleVi
                 onClick={() => handleClick("5")}
                 >
                 <h5>Image-To-STL Converter</h5>
+                </div>
+                <div
+                className={`ApplicationOptionsOption ${appWindow.content === "7" ? "active" : ""}`}
+                onClick={() => handleClick("7")}
+                >
+                <h5>RPER Website</h5>
                 </div>
                 <div
                 className={`ApplicationOptionsOption ${appWindow.content === "6" ? "active" : ""}`}

@@ -77,7 +77,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >Some places I traveled to recently:</p>
+          >Some cool places I've traveled to recently!</p>
         </div>
         <Carousel
         images={[travel1, travel2, travel3, travel4, travel5, travel6]}
@@ -104,7 +104,7 @@ function Hobbies() {
               color: "#eee", // closer to white
               fontWeight: "300",
             }}
-          >I enjoy volleyball.</p>
+          >Playing volleyball recreationally at St Andrew's and played it in Lancaster.</p>
         </div>
         <Carousel
         images={[volleyball]}
