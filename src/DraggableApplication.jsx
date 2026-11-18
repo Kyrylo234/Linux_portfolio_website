@@ -1,4 +1,5 @@
 import React, { forwardRef, useState, useEffect  } from "react";
+import { clamp, getDragLimits, getWindowLimits, MIN_HEIGHT, MIN_WIDTH } from "./components/desktop/windowBounds";
 
 const EDGE_THRESHOLD = 10;
 
@@ -22,15 +23,20 @@ const DraggableApplication = forwardRef(
 
     // ---- Helpers ----
     const updateWindowProperties = (element) => {
+      if (document.fullscreenElement === element) return;
+
+      const geometry = {
+        width: parseInt(element.style.width, 10),
+        height: parseInt(element.style.height, 10),
+        left: parseInt(element.style.left, 10),
+        top: parseInt(element.style.top, 10),
+      };
       setWindows((prev) =>
         prev.map((w) =>
           w.id === window.id
             ? {
                 ...w,
-                width: parseInt(element.style.width),
-                height: parseInt(element.style.height),
-                left: parseInt(element.style.left),
-                top: parseInt(element.style.top),
+                ...geometry,
               }
             : w
         )
@@ -153,55 +159,41 @@ const DraggableApplication = forwardRef(
       event.preventDefault();
 
       const { x: initialX, y: initialY } = getClientCoords(event);
-      const initialWidth = element.clientWidth;
-      const initialHeight = element.clientHeight;
-      const startX = initialX - element.offsetLeft;
-      const startY = initialY - element.offsetTop;
+      const initialLeft = element.offsetLeft;
+      const initialTop = element.offsetTop;
+      const initialRight = initialLeft + element.offsetWidth;
+      const initialBottom = initialTop + element.offsetHeight;
+      const limits = getWindowLimits(document.documentElement.clientWidth, document.documentElement.clientHeight);
+      const dragLimits = getDragLimits(element.offsetWidth, document.documentElement.clientWidth, document.documentElement.clientHeight);
 
       const action = getActionAtPosition(element, initialX, initialY);
 
-      const handlers = {
-        "resize-tl": ({ x, y }) => {
-          element.style.width = `${initialWidth + initialX - x}px`;
-          element.style.height = `${initialHeight + initialY - y}px`;
-          element.style.left = `${x - startX}px`;
-          element.style.top = `${y - startY}px`;
-        },
-        "resize-tr": ({ x, y }) => {
-          element.style.width = `${initialWidth + x - initialX}px`;
-          element.style.height = `${initialHeight + initialY - y}px`;
-          element.style.top = `${y - startY}px`;
-        },
-        "resize-bl": ({ x, y }) => {
-          element.style.width = `${initialWidth - x + initialX}px`;
-          element.style.height = `${initialHeight + y - initialY}px`;
-          element.style.left = `${x - startX}px`;
-        },
-        "resize-br": ({ x, y }) => {
-          element.style.width = `${initialWidth + x - initialX}px`;
-          element.style.height = `${initialHeight + y - initialY}px`;
-        },
-        "resize-l": ({ x }) => {
-          element.style.width = `${initialWidth + initialX - x}px`;
-          element.style.left = `${x - startX}px`;
-        },
-        "resize-r": ({ x }) => {
-          element.style.width = `${initialWidth + x - initialX}px`;
-        },
-        "resize-t": ({ y }) => {
-          element.style.height = `${initialHeight - y + initialY}px`;
-          element.style.top = `${y - startY}px`;
-        },
-        "resize-b": ({ y }) => {
-          element.style.height = `${initialHeight + y - initialY}px`;
-        },
-        drag: ({ x, y }) => {
-          element.style.left = `${x - startX}px`;
-          element.style.top = `${y - startY}px`;
-        },
-      };
+      addHandler(({ x, y }) => {
+        const dx = x - initialX;
+        const dy = y - initialY;
+        let left = initialLeft;
+        let right = initialRight;
+        let top = initialTop;
+        let bottom = initialBottom;
 
-      addHandler(handlers[action]);
+        if (action === "drag") {
+          left = clamp(initialLeft + dx, dragLimits.left, dragLimits.right);
+          top = clamp(initialTop + dy, dragLimits.top, dragLimits.bottom);
+          right = left + element.offsetWidth;
+          bottom = top + element.offsetHeight;
+        } else {
+          const edges = action.slice(7);
+          if (edges.includes("l")) left = clamp(initialLeft + dx, limits.left, right - MIN_WIDTH);
+          if (edges.includes("r")) right = clamp(initialRight + dx, left + MIN_WIDTH, limits.right);
+          if (edges.includes("t")) top = clamp(initialTop + dy, limits.top, bottom - MIN_HEIGHT);
+          if (edges.includes("b")) bottom = clamp(initialBottom + dy, top + MIN_HEIGHT, limits.bottom);
+        }
+
+        element.style.left = `${left}px`;
+        element.style.top = `${top}px`;
+        element.style.width = `${right - left}px`;
+        element.style.height = `${bottom - top}px`;
+      });
     };
 
     return (

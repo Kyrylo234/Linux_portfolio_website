@@ -228,6 +228,7 @@ body{
 }
 
 .DraggableApplication{
+  box-sizing: border-box;
   border-color:#2C2C2C;
   border-width: 5px;
   border-radius:10px;
