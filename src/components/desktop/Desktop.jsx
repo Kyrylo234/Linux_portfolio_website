@@ -1,7 +1,8 @@
 import Application from '../../Application.jsx'
 import TopBar from '../../TopBar.jsx';
 import TaskBar from '../../TaskBar.jsx';
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
+import { fitWindowToViewport } from './windowBounds';
 import AboutMeDesktopApplication from './Applications/AboutMeDesktopApplication.jsx';
 import ProjectsDesktopApplication from './Applications/ProjectsDesktopApplication.jsx';
 import NotePad from '../../assets/appIcons/notepad.svg'
@@ -12,7 +13,7 @@ import RunningTetrisApplication from './Applications/FallingBlocksDesktopApplica
 import Game from '../../assets/appIcons/game.svg'
 
 function Desktop() { 
-  const [windows, setWindows] = useState([
+  const [windows, setWindows] = useState(() => [
     { id: "aboutMe", 
       title: "About Me", 
       visible: true, 
@@ -63,7 +64,18 @@ function Desktop() {
       left: 800,
       top: 400,
       order: 3}
-  ]);
+  ].map((win) => fitWindowToViewport(win, window.innerWidth, window.innerHeight)));
+
+  useEffect(() => {
+    const fitOpenWindows = () => {
+      setWindows((previous) => previous.map((win) =>
+        fitWindowToViewport(win, window.innerWidth, window.innerHeight)
+      ));
+    };
+
+    window.addEventListener('resize', fitOpenWindows);
+    return () => window.removeEventListener('resize', fitOpenWindows);
+  }, []);
 
   const bringToFront = (id) => {
     setWindows((prev) => {
